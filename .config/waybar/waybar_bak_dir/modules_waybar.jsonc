@@ -1,0 +1,110 @@
+{
+     "hyprland/workspaces": {
+	    "format": "{icon}",
+	    "format-icons": {
+		    "active": "",
+            //
+		    "default": ""
+	        },
+        "on-scroll-up": "hyprctl dispatch workspace e-1",
+        "on-scroll-down": "hyprctl dispatch workspace e+1",
+        "persistent-workspaces": {
+            "*" :2
+            }
+    },
+
+    "hyprland/window": {
+    "format": " {}",
+    "rewrite": {
+        "(.*) — Mozilla Firefox": "🌎 $1",
+        //dsd🌎ddd
+        "(.*) - kitty": "> [$1]"
+        },
+    "separate-outputs": true
+    },
+
+    "group/perfomance": {
+        "orientation": "horizontal",
+        "drawer": "enabled",
+        "modules":[
+            "memory",
+            "cpu" 
+            //"network",
+                ]
+    },
+
+    "keyboard-state": {
+        "numlock":true,
+        "capslock":true,
+        "format":"{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "group/clock_leave":{
+        "orientation":"horizontal",
+        "modules":[
+            "clock",
+            "custom/wleave"
+        ]
+    },
+
+    "custom/wleave": {
+        "format": "",
+        "on-click": "wleave",
+        "tooltip": false
+    },
+
+  "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+         //"exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    
+
+    "wireplumber": {
+        "format": "{volume}%",
+        "format-muted": "",
+        "on-click": "helvum",
+        "on-click-right": "pw-volume mute",
+        "max-volume": 100,
+        "scroll-step": 2 
+    },
+
+    "mpris": {
+	    "format": "{player_icon} {dynamic}",
+        "format-playing": "{player_icon} {title} {position}",
+	    //"format-paused": "{status_icon} <i>{dynamic}</i>",
+	    "format-paused": "{status_icon} {player} {title} {album} {position}",
+        "format-len": 2,
+        "interval": 1,
+	    "player-icons": {
+		    "default": "▶",
+            "spotify": "",
+		    "mpv": "🎵"
+	    },
+	    "status-icons": {
+		    "paused": "⏸",
+            "playing": "",
+            "stopped": ""
+	    },
+	    "ignored-players": ["firefox"],
+        //"dynamic-order": ["title", "artist", "album", "position", "length"],
+        "dynamic-importance-order": ["title", "artist", "album", "position", "length"]
+        //"dynamic-len": 1
+
+    }
+
+    
+
+
+
+}

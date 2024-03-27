@@ -1,0 +1,448 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: JetBrainsMono Nerd Font,FontAwesome,Cartograph CF Nerd Font, monospace;
+    font-size: 12px;
+    min-height: 0;
+    font-weight: bold;
+    border: none;
+    border-radius: 0;
+}
+
+tooltip {
+    font-family: JetBrainsMono Nerd Font;
+    /*background: #1e1e2e;*/
+    /*background: rgba(9,59,80,0.9);*/
+    background: #183D3D;
+    /*margin: 6px 4px 6px 4px;*/
+    border-radius: 19px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #116A7B;
+    /*border-color: #11111b;*/
+}
+
+window#waybar {
+    /*background: rgba(21, 18, 27, 0);*/
+    color: #E5CB9F;
+    /*adding this for reduce waybar height*/
+    /*background-color: #002B36;*/
+    /*background-color: rgba(9,59,80,0.7);*/
+    font-size: 14px;
+    background-color: rgba(19,35,36,0);
+    border-bottom: 0px solid #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+window#waybar.kitty {
+    /*background-color: rgba(9,59,80,0.9);*/
+    /*background-color: rgba(19,35,36,0.73);*/
+    /*background-color: rgba(25,24,37,0.78);*/
+    background-color: rgba(25,24,37,0);
+}
+
+window#waybar.Spotify {
+    /*background-color: rgba(9,59,80,0.9);*/
+    background-color: rgba(0,0,0,1);
+}
+
+window#waybar.firefox {
+    /*background-color: rgba(9,59,80,1);*/
+    /*background-color: rgba(13,17,23,0.93);*/
+    background-color: rgba(13,17,23,0.93);
+}
+
+window#waybar.org\.gnome\.Nautilus {
+    /*background-color: rgba(9,59,80,1);*/
+    /*background-color: rgba(13,17,23,0.93);*/
+    background-color: rgba(30,30,30,0.99);
+}
+
+window#waybar.lollypop {
+    /*background-color: rgba(9,59,80,1);*/
+    background-color: rgba(53,53,53,1);
+}
+
+window#waybar.com\.github\.wwmm\.easyeffects {
+    /*background-color: rgba(9,59,80,1);*/
+    background-color: rgba(36,36,36,1);
+}
+window#waybar.zsh {
+    /*background-color: rgba(9,59,80,1);*/
+    background-color: rgba(13,17,23,0.93);
+}
+
+window#waybar.empty {
+    background-color: rgba(19,35,36,0);
+}
+
+window#waybar.solo {
+    /*background-color: rgba(19,35,36,0.88);*/
+    border-bottom: 0px solid #ffffff;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    /*box-shadow: inset 0 -3px transparent;*/
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+  box-shadow: none; /* Remove predefined box-shadow */
+  text-shadow: none; /* Remove predefined text-shadow */
+  background: none; /* Remove predefined background color (white) */
+  transition: none; /* Disable predefined animations */    /*box-shadow: inset 0 -3px #ffffff;*/
+}
+
+#workspaces button.urgent {
+    color: red;
+    /*background: rgba(255, 255, 255, 0.5);*/
+    /*border-top: 3px solid rgba(255, 255, 255, 0.5);*/
+    /*border-radius: 10px;*/
+}
+
+/*This is the raabe workspace mod should sync with defaults?*/
+#workspaces {
+    /*margin: 5px 1px 5px 1px;*/
+/*    padding: 0px 1px;*/
+    /*border-radius: 15px;*/
+    border: 0px;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 10px;
+    color: white;
+}
+
+#workspaces button {
+    /*padding: 5px 5px 5px 5px;*/
+    /*margin: 3px 3px 3px 3px;*/
+    border-radius: 0px;
+    border: 0px;
+    /*margin: 2px;*/
+    color: rgba(255, 255, 255, 0.5);
+    margin: 6px 2px 6px 2px;
+    /*transition: all 0.3s ease-in-out;*/
+    /*border-top: 3px;*/
+}
+
+#workspaces button.focused {
+    background: rgba(255, 255, 255, 0.1);
+    color: #FFD700;
+    background: red;
+    border-radius: 4px;
+    /*padding: 0px 5px 0px 5px;*/
+    /*margin: 3px 3px 3px 3px;*/
+}
+
+#workspaces button.active {
+    font-size: 11px;
+    font-family:JetBrainsMono Nerd Font;
+    /*color:  #FBFF1E;*/
+    color: #FFD700;
+    /*border-top: 1px solid rgba(255, 255, 255, 0.2);*/
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    /*padding: 5px 5px 5px 5px;*/
+    margin: 6px 2px 6px 2px;
+    /*margin: 6px;*/
+    min-width: 4px;
+    /*transition: all 0.2s ease-in-out;*/
+}
+
+#workspaces button:hover {
+    box-shadow: none;
+    /*text-shadow: none;*/
+    /*border-top: 1px solid rgba(255, 255, 255, 0.4);*/
+    /*margin: 5px 2px 5px 2px;*/
+    /*padding: 0px 5px;*/
+    /*background: @workspacesbackground2;*/
+    /*padding: 0 3px;*/
+
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#clock {
+    margin-top: 6px;
+	margin-bottom: 6px;
+	/*margin-left: 8px;*/
+	padding-left: 10px;
+    font-family: JetBrainsMono Nerd Font;
+	padding-right: 10px;
+	border-radius: 15px;
+    transition: none;
+    /*color: #FFD700;*/
+    color: #e1b525;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#keyboard-state{
+    color: #fab387;
+    /*border-radius: 10px 0px 0px 10px;*/
+    /*margin-left: 5px;*/
+    margin-right: 5px;
+    padding:0;
+    /*border-right: 0px;*/
+    }
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#cpu {
+    font-family: JetBrainsMono Nerd Font;
+    margin-top: 0px;
+	/*margin-left: 8px;*/
+	padding-left: 2px;
+	margin-bottom: 0px;
+	padding-right: 2px;
+	/*border-radius: 10px;*/
+	transition: none;
+	color: #FFD700;
+	background: transparent;
+}
+
+#memory {
+    font-family: JetBrainsMono Nerd Font;
+    margin-top: 0px;
+	margin-left: 8px;
+	padding-left: 2px;
+	margin-bottom: 0px;
+    margin-right: 8px;
+	padding-right: 2px;
+	border-radius: 0px;
+	transition: none;
+	/*color: #E3DCC8;*/
+	color: #FFECAF;
+	background: transparent;
+    /*border-right: 2px solid grey;*/
+}
+
+#disk {
+    font-family: JetBrainsMono Nerd Font;
+    background-color: inherit;
+    /*border-right: 1px solid #6c3483;*/
+	/*color: #ff006a;*/
+    color: #F31559;
+    padding: 0px 4px;
+    margin: 6px 6px;
+}
+
+#backlight {
+    background-color: #90b1b1;
+}
+
+#network {
+    font-family: FantasqueSansM Nerd Font;
+    font-size: 15px;
+    margin: 6px 0px 6px 4px;
+	padding-left: 10px;
+	padding-right: 10px;
+    /*border: 2px dashed;*/
+    border: 1px solid;
+    border-color: rgba(255, 255, 255, 0.2);
+	border-radius: 15px;
+    /*font-family: FontAwesome;*/
+	transition: none;
+	/*color: #FF1493;*/
+    /*color: #E3DCC8;*/
+    color: #E5CB9F;
+	/*background: #cc6699;*/
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#network.disconnected {
+    /*background-color: grey;*/
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#pulseaudio {
+    color: #89b4fa;
+    /*border-left: 0px;*/
+    padding-left:4px;
+    margin-left:8px;
+    /*border-right: 0px;*/
+}
+
+#pulseaudio.muted {
+    background-color: #90b1b1;
+    color: #2a5c45;
+}
+
+#wireplumber {
+    background: rgba(255, 255, 255, 0.1);
+    font-family: JetBrainsMono Nerd Font;
+    margin: 6px 2px 6px 2px;
+    padding-right: 8px;
+    padding-left: 8px;
+    border-radius: 15px;
+    /*font-weight: normal;*/
+    /*font-style: normal;*/
+    border: 0px solid #4f4c4c;
+    transition: none;
+    /*color: #4cb2a5;*/
+    color: #5628B4;
+    /*color: #E3DCC8;*/
+    /*background: #383c4a;*/
+}
+
+#wireplumber.muted {
+    background-color: #f53c3c;
+    margin: 5px 5px 5px 5px;
+    padding-right: 8px;
+    padding-left: 8px;
+    border-radius: 10px;
+}
+
+#custom-media {
+    background-color: #66cc99;
+    color: #2a5c45;
+    min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+    background-color: #66cc99;
+}
+
+#custom-media.custom-vlc {
+    background-color: #ffa000;
+}
+
+#temperature {
+    /*background-color: #f0932b;*/
+    /*border-radius: 15px;*/
+    font-family: JetBrainsMono Nerd Font;
+    padding: 0px 6px 0px 6px;
+	border-radius: 15px;
+    margin: 6px 0px;
+    transition: none;
+    color: #CBFFA9;
+    /*background: #E3DCC8;*/
+}
+
+#temperature.critical {
+    background-color: #eb4d4b;
+}
+
+#tray {
+    margin-top: 5px;
+	margin-left: 1px;
+	margin-right: 1px;
+	/*padding-left: 10px;*/
+	margin-bottom: 5px;
+	/*padding-right: 10px;*/
+	border-radius: 10px;
+	transition: none;
+	color: #B5E8E0;
+	/*background: #161320;*/
+    background: transparent;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#custom-wleave {
+    padding-right: 6px;
+    margin-right:5px;
+    margin-top: 2px;
+    padding-left:2px;
+    margin-bottom: 2px;
+    color: #E5CB9F;
+    /*color: #E3DCC8;*/
+    /*color: #FBFF1E;*/
+    }
+
+#keyboard-state > label {
+    padding: 0px 5px 0px 5px;
+    /*margin: 5px;*/
+    color: #56403e;
+}
+
+#keyboard-state > label.numlock {
+    margin-left:2px;
+
+}
+
+#keyboard-state > label.locked {
+    /*background: rgba(0, 0, 0, 0.2);*/
+    color: #FBFF1E; 
+}
+
+#taskbar {
+    /*background: #275F75;*/
+    background: rgba(255, 255, 255, 0.2);
+    margin: 6px 2px 6px 0px;
+    padding:0px;
+    border-radius: 15px;
+    font-weight: normal;
+    font-style: normal;
+    border: 0px solid #4f4c4c;
+}
+
+#taskbar button {
+    margin:0;
+    border-radius: 15px;
+    padding: 0px 5px 0px 5px;
+}
+
+
+#mpris {
+    /*background: rgba(42, 154, 146, 0.5);*/
+    /*background: rgba(210, 149, 172, 0.4);*/
+    background: rgba(255, 255, 255, 0.1);
+    font-family: JetBrainsMono Nerd Font;
+    /*font-weight: bold;*/
+    font-size: 14px;
+    margin: 6px 0px 6px 2px;
+    padding: 0px 5px;
+    border-radius: 15px;
+    /*font-weight: normal;*/
+    /*font-style: normal;*/
+    /*border: 0px solid #4f4c4c;*/
+    /*transition: none;*/
+    color: #1CD6CE;
+    /*background: #383c4a;*/
+}
+
+#idle_inhibitor.activated {
+    background-color: transparent;
+    color: #03C988;
+}
+#idle_inhibitor.deactivated {
+    background-color: transparent;
+    color: #76745c;
+}
+
+#idle_inhibitor {
+    padding:0px;
+    margin: 6px 0px 6px 1px;
+    background-color: #d46547;
+}

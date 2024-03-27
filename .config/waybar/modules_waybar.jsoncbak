@@ -1,0 +1,202 @@
+{
+    "hyprland/workspaces": {
+    /*"format": "{icon}",*/
+    "format": "{name}",
+    "on-click": "activate",
+    "format-icons": {
+        "2": " ",
+        "8": " ",
+        "3": " ",
+        "10": " ",
+        "1": " ",
+        "5": " ",
+        "4": " ",
+        "7": " ",
+        "9": " ",
+        "6": " ",
+        "urgent": " ",
+        "focused": ""
+        /*"active": "",*/
+        /*"default": ""},*/
+        /*"default": "+"*/
+        },
+    /*"persistent-workspaces": {"*" :2},*/
+    "on-scroll-up": "hyprctl dispatch workspace e-1",
+    "on-scroll-down": "hyprctl dispatch workspace e+1",
+    "sort-by-number": true
+    },
+
+    "hyprland/window": {
+    //"format": " {}",
+    "format": "{}",
+    "rewrite": {
+        "(.*) — Mozilla Firefox": "🌎 $1",
+        //dsd🌎ddd
+        "(.*) - zsh": "> [$1]",
+        "(.*) - Spotify": "> $1"
+        },
+    "separate-outputs": true
+    },
+
+    "group/perfomance": {
+        "orientation": "horizontal",
+        "drawer": {"children-class": "not-light","transition-duration": 500,"transition-left-to-right": true},
+        "modules":[
+            //"network",
+            "cpu",
+            "idle_inhibitor",
+            "disk",
+            "memory"]
+    },
+
+    "keyboard-state": {
+        //"format":"{name} {icon}",
+        "numlock":true,
+        "capslock":false,
+        "format": { "numlock": "# {icon}",
+                    "capslock": "C {icon}"},
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "timezone": "Africa/Nairobi",
+        //"tooltip-format": "{:%a-%d %b %Y}", //dayabbr,month.abbrv,dayofmonth,year
+        "format-alt": "{:%Y-%m-%d}",
+        "format": "{:%a,%d %H:%M}",
+        "tooltip": true
+    },
+
+    "group/clock_leave":{
+        "orientation":"horizontal",
+        "drawer": {
+            "children-class": "not-light",
+            "transition-duration": 500,
+            "transition-left-to-right": true
+            },
+        "modules":[
+            "clock"
+        ]
+    },
+
+    "custom/wleave": {
+        "format": "",
+        "on-click": "wlogout",
+        "tooltip": false
+    },
+
+  "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify":" " ,
+            "default": "🎜"
+            //
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+         //"exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    
+
+    "wireplumber": {
+        //"format": "{volume}% ",
+        "format": "{volume}  ",
+        "format-muted": "",
+        "on-click": "helvum",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "max-volume": 100,
+        "scroll-step": 2,
+        "tooltip":false
+    },
+
+    "mpris": {
+	    //"format-paused": "{status_icon} <i>{dynamic}</i>",
+	    "format": "{player_icon} {dynamic}",
+        "format-playing": "{player_icon} {dynamic}",
+	    "format-paused": "{status_icon} {album} {position}",
+        //"format-playing-len": 8,
+        "ellipsis": "...",
+        "interval": 1,
+	    "player-icons": {
+		    "default": "▶",
+            "Lollypop": " ",
+            "spotify":" ",
+		    "mpv": "🎵"
+	        },
+	    "status-icons": {
+		    "paused": "⏸",
+            "playing": "",
+            "stopped": ""
+	        },
+	    "ignored-players": ["firefox", "smplayer"],
+        "dynamic-importance-order": ["title", "artist", "album", "position", "length"],
+        //"dynamic-len": 40,
+        "dynamic-len": 28,
+        //"dynamic-separator": "-",
+        "dynamic-order":["title", "artist", "album", "position", "length"]
+    },
+
+    "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 18,
+    //"active-first": true,
+    "icon-theme": "Yaru",
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    //"on-click-right": "minimize-raise",
+    "ignore-list": [
+       "Easy Effects"
+    ],
+    "app_ids-mapping": {
+      "firefoxdeveloperedition": "firefox-developer-edition"
+    },
+    "rewrite": {
+        "Firefox Web Browser": "Firefox",
+        "Foot Server": "Terminal"
+    }
+},
+
+"disk": {
+    "interval": 90,
+    "format": "{percentage_free}% ",
+    "path": "/"
+},
+    // Updates Count
+    "custom/updates": {
+        "format": "  {}",
+        "tooltip-format": "{}",
+        "escape": true,
+        "return-type": "json",       
+        "exec": "~/dotfiles/scripts/updates.sh",
+        "restart-interval": 60,
+        "on-click": "alacritty -e ~/dotfiles/scripts/installupdates.sh",
+        "on-click-right": "~/dotfiles/.settings/software.sh",
+        "tooltip": false
+    },
+
+"hyprland/submap": {
+    "format": "✌️ {}",
+    "max-length": 8,
+    "tooltip": false
+},
+
+"custom/audio_idle_inhibitor": {
+	"format": "{icon}",
+	"exec": "sway-audio-idle-inhibit --dry-print-both-waybar",
+	"exec-if": "which sway-audio-idle-inhibit",
+	"return-type": "json",
+	"format-icons": {
+		"output": "",
+		"input": "",
+		"output-input": "  ",
+		"none": ""
+		}
+}
+
+}
