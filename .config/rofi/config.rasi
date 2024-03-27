@@ -1,0 +1,20 @@
+
+configuration {
+    modi:                       "drun,filebrowser,window";
+    font:                       "FiraMono Nerd Font Bold 14";
+    show-icons:                 true;
+    display-drun:               " ";
+    display-run:                " ";
+    display-filebrowser:        " ";
+    display-window:             " ";
+	drun-display-format:        "{icon} {name}";
+    hover-select:               true;
+    me-select-entry:            "MouseSecondary";
+    terminal:                   "kitty";
+    me-accept-entry:            "MousePrimary";
+    window-format:              "{w} · {c} · {t}";
+    icon-theme:                 "Dracula";
+	dpi:						1;
+}
+@theme "/dev/null"
+@theme "~/.config/rofi/theme.rasi"
