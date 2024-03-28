@@ -137,7 +137,8 @@ button:hover {
 
 #workspaces button {
     font-family:Quicksand;
-    margin: 3px 4px;
+    font-size: 13px;
+    margin: 3px 3px;
     color: #D79921;
     min-width: 20px;
     padding: 0px 0px;
@@ -275,7 +276,7 @@ label:focus {
     margin: 3px 0px 3px 4px;
     padding: 0px 5px;
     /*border: 2px dashed;*/
-    border-bottom: 1px solid;
+    border: 1px solid;
     border-color: rgba(255, 255, 255, 0.2);
 	border-radius: 15px;
     /*font-family: FontAwesome;*/
@@ -284,7 +285,7 @@ label:focus {
     /*color: #E3DCC8;*/
     color: #E5CB9F;
 	/*background: #cc6699;*/
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 #network.disconnected {
