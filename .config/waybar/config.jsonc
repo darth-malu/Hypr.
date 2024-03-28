@@ -2,7 +2,7 @@
     "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 20, // Waybar height (to be removed for auto height)
-    //"width": 1900, // Waybar width
+    "width": 1800, // Waybar width
     //"spacing": 0, // Gaps between modules (4px)
     
 //    "passthrough": true,
@@ -12,28 +12,28 @@
 
     // Choose the order of the modules
     "modules-left": [
-        "temperature",
-        "wlr/taskbar",
+        "hyprland/workspaces",
+        //"wlr/taskbar",
         "hyprland/submap",
         "hyprland/window"
         ],
 
     "modules-center": [
-        "hyprland/workspaces"
-        //"hyprland/submap"
+        "mpris",
+        "hyprland/submap"
         ],
 
     "modules-right": [
         "tray",
         "network",
         "group/perfomance",
-        "mpris",
         //"pulseaudio/slider",
         "wireplumber",
         "clock",
         "idle_inhibitor",
-        "custom/wleave"
         //"custom/notification"
+        "temperature",
+        "custom/wleave"
         ]
 }
 

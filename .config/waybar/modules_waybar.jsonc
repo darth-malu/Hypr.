@@ -33,9 +33,9 @@
 
     "hyprland/window": {
     //"format": " {}",
-    "format": "{}",
+    "format": " {}",
     "rewrite": {
-        "(.*) — Mozilla Firefox": " $1",
+        "(.*) — Mozilla Firefox": "$1",
         //dsd🌎ddd
         "(.*) - kitty": "> [$1]",
         "(.*) - Spotify": "> $1",
@@ -72,7 +72,7 @@
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "timezone": "Africa/Nairobi",
         "format-alt": "{:%Y-%m-%d}",
-            "format": "{:%H:%M || %a,%d}",
+            "format": "{:%H:%M}",
         "tooltip": true,
         "calendar": {
                     "mode"          : "month",
@@ -100,7 +100,7 @@
 
     "custom/wleave": {
         //"format": "",
-        "format": "",
+        "format": "",
         "on-click": "wlogout",
         //"on-click-right": "$ (~/.config/waybar/launch_waybar.sh)",
         "tooltip": false
@@ -156,7 +156,7 @@
         "dynamic-importance-order": ["title", "artist", "album", "position", "length"],
         "dynamic-len": 24,
         //"dynamic-separator": "-",
-        "dynamic-order":["title", "artist", "album", "position"]
+        "dynamic-order":["title", "artist", "album"]
     },
 
 "wlr/taskbar": {
@@ -279,7 +279,7 @@
     // "interface": "wlp2*", // (Optional) To force the use of this interface
     //"format-wifi": "{essid} ({signalStrength}%) -- {bandwidthDownBytes}  ",
     //"format-wifi": " {essid} {bandwidthDownBytes}",
-    "format-wifi": " {bandwidthDownBytes}",
+    "format-wifi": " {bandwidthDownBytes}",
     "format-ethernet": "{bandwidthDownBytes} ",
     "interval": 2,
     "tooltip-format-ethernet": "{gwaddr} ",

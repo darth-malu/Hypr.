@@ -30,8 +30,9 @@ window#waybar {
     /*font-size: 14px;*/
     /*margin: 0 16px;*/
     /*background-color: rgba(19,35,36,1);*/
-    background-color: rgba(0, 0, 0,0.7);
+    background-color: rgba(8, 8, 8,0.46);
     border-bottom: 0px solid #ffffff;
+    border-radius: 18px;
     /*transition-property: background-color;*/
     /*transition-duration: .5s;*/
 }
@@ -140,7 +141,7 @@ button:hover {
     font-size: 13px;
     margin: 3px 3px;
     color: #D79921;
-    min-width: 20px;
+    min-width: 19px;
     padding: 0px 0px;
     border: 1px solid rgba(255, 255, 255, 0.0);
     /*min-width: 12px;*/
@@ -272,7 +273,7 @@ label:focus {
 
 #network {
     font-family: FantasqueSansM Nerd Font Mono;
-    /*font-size: 15px;*/
+    font-size: 13px;
     margin: 3px 0px 3px 4px;
     padding: 0px 5px;
     /*border: 2px dashed;*/
@@ -449,8 +450,8 @@ label:focus {
 #mpris {
     /*background: rgba(42, 154, 146, 0.5);*/
     /*background: rgba(210, 149, 172, 0.4);*/
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px;
+    /*background: rgba(255, 255, 255, 0.1);*/
+    border: 0px;
     border-color: rgba(255, 255, 255, 0.2);
     border-style: solid;
     font-family: JetBrainsMono Nerd Font;

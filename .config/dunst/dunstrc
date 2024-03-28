@@ -45,7 +45,7 @@
 
     # Offset from the origin
     #offset = 8x30
-    offset = 8x28
+    offset = 56x14
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -107,7 +107,7 @@
     frame_width = 1
 
     # Defines color of the frame around the notification window.
-    frame_color = "#BEFFF7"
+    frame_color = "#F7418F"
 
     # Size of gap to display between notifications - requires a compositor.
     # If value is greater than 0, separator_height will be ignored and a border
@@ -264,7 +264,7 @@
     # corners.
     # the radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 10
+    corner_radius = 12
 
     # ignore the dbus closenotification message.
     # useful to enforce the timeout set by dunst configuration. without this
@@ -328,20 +328,21 @@
     # important: colors have to be defined in quotation marks.
     # otherwise the "#" and following would be interpreted as a comment.
     #background = "#00000090"
-    background = "#000000ff"
+    background = "#00000060"
     foreground = "#fcf9be"
     timeout = 2
-    highlight = "#D6589F" #pinkish
-    frame_color = "#430A5D" #purplish
+    highlight = "#D6589F" 
+    frame_color = "#F7418F"
     # Icon for notifications with low urgency, uncomment to enable
     #default_icon = /path/to/icon
 
 [urgency_normal]
     #background = "#00000070"
-    background = "#000000FF"
+    background = "#00000080"
     foreground = "#ffffff"
     timeout = 4
-    frame_color = "#2C7865"
+    #frame_color = "#F7418F"
+    frame_color = "#F7418F"
     highlight = "#D6589F"
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
