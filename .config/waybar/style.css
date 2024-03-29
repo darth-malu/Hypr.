@@ -62,12 +62,14 @@ button:hover {
 }
 
 #workspaces {
-    margin: 3px 0px;
-    background: rgba(255 ,255 ,255, 0.3);
+    margin: 4px 0px;
     padding: 0 2px;
-    border-right: 3px solid rgba(255 ,255,255, 0.664);
-    border-left: 3px solid rgba(255 ,255,255, 0.664);
+    border-right: 3px solid rgba(255, 255, 255, 0.8);
+    border-left: 3px solid rgba(255, 255, 255, 0.8);
     border-radius: 2px;
+    /*background: rgba(214 ,28 ,78, 0.22);*/
+    background: rgba(0 ,0 ,0, 0.12);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 #workspaces button.urgent {
@@ -82,10 +84,9 @@ button:hover {
     font-size: 13px;
     margin: 3px 2px;
     /*color: #d79921;*/
-    color: #DB97FF;
+    color: rgba(0,0,0,0.4);
     min-width: 19px;
     padding: 0px 0px;
-    border: 1px solid rgba(255 ,207 ,129, 0.0);
     /*min-width: 12px;*/
     /*margin: 2px 2px 2px 2px;*/
     /*transition: all 0.1s ease-in-out;*/
@@ -106,7 +107,7 @@ button:hover {
 
 #workspaces button.empty {
     /*color: #fc819e;*/
-    color: #E4FFFE;
+    color: rgba(255, 255, 255, 1);
 }
 
 #workspaces button.active {
@@ -114,8 +115,12 @@ button:hover {
     font-family:quicksand;
     /*border: 1px solid rgba(0, 0, 0, 0.3);*/
     /*background: rgba(255, 255, 255, 0.69);*/
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 8px;
-    color: #6C22A6;
+    /*color: #6C22A6;*/
+    color: rgba(247 ,39 ,152,0.82);
     /*transition: all 0.4s ease-in-out;*/
 }
 
@@ -137,12 +142,12 @@ button:hover {
 
 #clock {
     /*font-size: 15px;*/
-    margin: 3px 3px;
-    border-right: 3px solid rgba(255, 255, 255, 0.6);
-    border-left: 3px solid rgba(255, 255, 255, 0.6);
+    margin: 4px 3px;
+    border-right: 2px solid rgba(255, 255, 255, 0.6);
+    border-left: 2px solid rgba(255, 255, 255, 0.6);
     /*border-color: rgba(247, 65, 143, 0.5);*/
     border-radius: 2px;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.2);
     padding: 0 2px;
     font-family: quicksand;
     font-size: 15px;
@@ -150,7 +155,7 @@ button:hover {
     /*color: #ffd700;*/
     /*color: #e1b525;*/
     /*color: #d3ab27;*/
-    color: rgba(0 ,2 ,161,0.654);
+    color: rgba(255, 255, 255, 0.86);
 }
 
 #keyboard-state{
@@ -175,20 +180,21 @@ label:focus {
 
 #cpu {
     font-family: quicksand;
-    font-size: 14px;
+    font-size: 13px;
 	/*margin-left: 8px;*/
     padding: 0 2px;
     margin: 0 2px;
 	/*border-radius: 10px;*/
 	/*transition: none;*/
-	color: #52057b;
+	color: rgba(255 ,253 ,140,0.88);
     /*border-right: 1px solid #6c3483;*/
 	background: transparent;
 }
 
 #memory {
     font-family: quicksand;
-    margin: 3px 0px 3px 2px;
+    margin: 4px 0px 4px 2px;
+    font-size: 14px;
     padding: 0 4px;
     border-right: 3px solid rgba(255, 255, 255, 0.6);
     border-left: 3px solid rgba(255, 255, 255, 0.6);
@@ -199,12 +205,13 @@ label:focus {
 }
 
 #disk {
-    margin: 3px 0px 3px 2px;
+    margin: 4px 0px 4px 2px;
+    font-size: 14px;
     padding: 0 4px;
     border-right: 3px solid rgba(255, 255, 255, 0.6);
     border-left: 3px solid rgba(255, 255, 255, 0.6);
     border-radius: 2px;
-	color: #35013f;
+    color: rgba(255, 255, 255, 0.9);
     background: rgba(176 ,97, 97, 0.5);
 }
 
@@ -216,17 +223,18 @@ label:focus {
     font-family: fantasquesansm nerd font mono;
     font-size: 14px;
     padding:  0px 2px;
-    margin: 3px 3px;
-    border-right: 3px solid rgba(255, 255, 255, 0.5);
-    border-left: 3px solid rgba(255, 255, 255, 0.5);
+    margin: 4px 3px;
+    border-right: 2px solid rgba(255, 255, 255, 0.5);
+    border-left: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 2px;
-    /*background: rgba(17 ,106 ,123, 0.3); nice blue*/ 
     background: rgba(214 ,28 ,78, 0.424);
+    color: rgba(255, 255, 255, 0.9);
+
+	/*background: #cc6699;*/
+    /*background: rgba(17 ,106 ,123, 0.3); nice blue*/ 
     /*font-family: fontawesome;*/
 	/*color: #ff1493;*/
     /*color: #e3dcc8;*/
-    color: rgba(255, 255, 255, 0.9);
-	/*background: #cc6699;*/
 }
 
 #network.disconnected {
@@ -253,11 +261,11 @@ label:focus {
 #wireplumber {
     background: rgba(146 ,199 ,207, 0.6);
     font-family: JetBrainsMono Nerd Font;
-    font-size: 14px;
-    margin: 3px 0px 3px 2px;
+    font-size: 13px;
+    margin: 4px 0px 4px 0px;
     padding: 0 4px;
-    border-right: 3px solid rgba(255, 255, 255, 0.6);
-    border-left: 3px solid rgba(255, 255, 255, 0.6);
+    border-right: 2px solid rgba(255, 255, 255, 0.6);
+    border-left: 2px solid rgba(255, 255, 255, 0.6);
     border-radius: 2px;
     color: rgba(0,0,0,1)
     /*color: #4cb2a5;*/
@@ -365,7 +373,7 @@ label:focus {
 
 #mpris {
     font-size: 14px;
-    margin: 3px 0px 3px 4px;
+    margin: 4px 0px 4px 4px;
     padding: 0px 5px;
     font-family: JetBrainsMono Nerd Font;
     color: rgba(0,0,0,0.8);
@@ -373,7 +381,11 @@ label:focus {
 
 #mpris.spotify{
     /*color: #1ED760;*/
-    color: rgba(82 ,5 ,123,0.8);
+    background: rgba(255 ,255 ,255, 0.1);
+    border-right: 2px solid rgba(255 ,255,255, 0.664);
+    border-left: 2px solid rgba(255 ,255,255, 0.664);
+    border-radius: 2px;
+    color: rgba(22 ,255 ,0,0.8);
 }
 
 

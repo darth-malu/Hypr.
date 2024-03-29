@@ -328,7 +328,7 @@
     # important: colors have to be defined in quotation marks.
     # otherwise the "#" and following would be interpreted as a comment.
     #background = "#00000090"
-    background = "#00000060"
+    background = "#00000080"
     foreground = "#fcf9be"
     timeout = 2
     highlight = "#D6589F" 
@@ -342,7 +342,8 @@
     foreground = "#ffffff"
     timeout = 4
     #frame_color = "#F7418F"
-    frame_color = "#52057b"
+    frame_color = "#ffffff60"
+    frame_widht = 5
     highlight = "#D6589F"
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
