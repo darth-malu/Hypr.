@@ -23,7 +23,7 @@ tooltip {
 window#waybar {
     font-family: JetBrainsMono Nerd Font;
     /*background: rgba(21, 18, 27, 0);*/
-    color: rgba(8, 8, 8,0);
+    color: rgba(8, 8, 8,0.58);
     background-color: rgba(8, 8, 8,0);
     border-bottom: 0px solid #ffffff;
     border-radius: 18px;
@@ -82,9 +82,10 @@ button:hover {
 #workspaces button {
     font-family:quicksand;
     font-size: 13px;
-    margin: 3px 2px;
+    margin: 3px 0px;
     /*color: #d79921;*/
-    color: rgba(0,0,0,0.4);
+    /*color: #fc819e;*/
+    color: rgba(255, 255, 255, 1);
     min-width: 19px;
     padding: 0px 0px;
     /*min-width: 12px;*/
@@ -107,7 +108,7 @@ button:hover {
 
 #workspaces button.empty {
     /*color: #fc819e;*/
-    color: rgba(255, 255, 255, 1);
+    color: rgba(0,0,0,0.2);
 }
 
 #workspaces button.active {
@@ -115,10 +116,11 @@ button:hover {
     font-family:quicksand;
     /*border: 1px solid rgba(0, 0, 0, 0.3);*/
     /*background: rgba(255, 255, 255, 0.69);*/
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-    border-top: 1px solid rgba(255, 255, 255, 0.4);
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
+    /*border-bottom: 1px solid rgba(255, 255, 255, 0.4);*/
+    /*border: 1px solid rgba(255, 255, 255, 0.4);*/
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 18px;
+    margin:2px 0px;
     /*color: #6C22A6;*/
     color: rgba(247 ,39 ,152,0.82);
     /*transition: all 0.4s ease-in-out;*/
