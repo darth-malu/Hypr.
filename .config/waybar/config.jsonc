@@ -2,7 +2,7 @@
     "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 20, // Waybar height (to be removed for auto height)
-    "width": 1910, // Waybar width
+    "width": 1902, // Waybar width
     //"spacing": 0, // Gaps between modules (4px)
     
 //    "passthrough": true,
@@ -19,11 +19,11 @@
         ],
 
     "modules-center": [
-        "mpris",
         "hyprland/submap"
         ],
 
     "modules-right": [
+        "mpris",
         "tray",
         "group/perfomance",
         "network",

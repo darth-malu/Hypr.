@@ -23,13 +23,7 @@ tooltip {
 window#waybar {
     font-family: JetBrainsMono Nerd Font;
     /*background: rgba(21, 18, 27, 0);*/
-    color: #910A67;
-    /*adding this for reduce waybar height*/
-    /*background-color: #002B36;*/
-    /*background-color: rgba(9,59,80,0.7);*/
-    /*font-size: 14px;*/
-    /*margin: 0 16px;*/
-    /*background-color: rgba(19,35,36,1);*/
+    color: rgba(8, 8, 8,0);
     background-color: rgba(8, 8, 8,0);
     border-bottom: 0px solid #ffffff;
     border-radius: 18px;
@@ -52,30 +46,6 @@ window#waybar.empty {
     background-color: rgba(19,35,36,0.0);
 }
 
-window#waybar.kitty {
-    /*background-color: rgba(25,24,37,0);*/
-    background-color: rgba(0,0,0,0.47);
-}
-
-window#waybar.smplayer {
-    /*background-color: rgba(9,59,80,0.9);*/
-    background-color: rgba(0,0,0,1);
-}
-
-window#waybar.kitty-teal {
-    /*background-color: rgba(9,59,80,1);*/
-    /*background-color: rgba(13,17,23,0.93);*/
-    background-color: rgba(13,17,23,0.93);
-}
-
-window#waybar.dark-kitty {
-    /*background-color: rgba(9,59,80,1);*/
-    /*background-color: rgba(13,17,23,0.93);*/
-    background-color: rgba(13,17,23,0.93);
-}
-
-
-
 button {
     /* Use box-shadow instead of border so the text isn't offset */
     /*box-shadow: inset 0 -3px transparent;*/
@@ -91,6 +61,15 @@ button:hover {
   transition: none; /* Disable predefined animations */    /*box-shadow: inset 0 -3px #ffffff;*/
 }
 
+#workspaces {
+    margin: 3px 0px;
+    background: rgba(255 ,255 ,255, 0.3);
+    padding: 0 2px;
+    border-right: 3px solid rgba(255 ,255,255, 0.664);
+    border-left: 3px solid rgba(255 ,255,255, 0.664);
+    border-radius: 2px;
+}
+
 #workspaces button.urgent {
     color: red;
     /*background: rgba(255, 255, 255, 0.5);*/
@@ -99,30 +78,18 @@ button:hover {
 }
 
 #workspaces button {
-    font-family:Quicksand;
+    font-family:quicksand;
     font-size: 13px;
-    margin: 3px 3px;
-    /*color: #D79921;*/
-    color: #910A67;
+    margin: 3px 2px;
+    /*color: #d79921;*/
+    color: #DB97FF;
     min-width: 19px;
     padding: 0px 0px;
-    border: 1px solid rgba(255, 255, 255, 0.0);
+    border: 1px solid rgba(255 ,207 ,129, 0.0);
     /*min-width: 12px;*/
     /*margin: 2px 2px 2px 2px;*/
     /*transition: all 0.1s ease-in-out;*/
     /*border-top: 3px;*/
-}
-#workspaces button.active {
-    /*border: 1px solid rgba(255, 255, 255, 0.2);*/
-    font-family:Quicksand;
-    /*color:  #FBFF1E;*/
-    /*color: #F0DE36;*/
-    /*color: #F3B664;*/
-    /*color: #D79921;*/
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    background: rgba(255, 255, 255, 0.4);
-    border-radius: 28px;
-    /*transition: all 0.4s ease-in-out;*/
 }
 
 
@@ -138,16 +105,27 @@ button:hover {
 }
 
 #workspaces button.empty {
-    /*color: #FC819E;*/
-    color: #FDFCE5;
+    /*color: #fc819e;*/
+    color: #E4FFFE;
 }
-/* If workspaces is the leftmost module, omit left margin */
+
+#workspaces button.active {
+    /*border: 1px solid rgba(255, 255, 255, 0.2);*/
+    font-family:quicksand;
+    /*border: 1px solid rgba(0, 0, 0, 0.3);*/
+    /*background: rgba(255, 255, 255, 0.69);*/
+    border-radius: 8px;
+    color: #6C22A6;
+    /*transition: all 0.4s ease-in-out;*/
+}
+
+/* if workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
     margin-left: 0;
     margin-right:8px;
 }
 
-/* If workspaces is the rightmost module, omit right margin */
+/* if workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child > #workspaces {
     margin-right: 0;
 }
@@ -160,8 +138,8 @@ button:hover {
 #clock {
     /*font-size: 15px;*/
     margin: 3px 3px;
-    border-right: 4px solid rgba(255, 255, 255, 0.6);
-    border-left: 4px solid rgba(255, 255, 255, 0.6);
+    border-right: 3px solid rgba(255, 255, 255, 0.6);
+    border-left: 3px solid rgba(255, 255, 255, 0.6);
     /*border-color: rgba(247, 65, 143, 0.5);*/
     border-radius: 2px;
     background: rgba(255, 255, 255, 0.5);
@@ -169,10 +147,10 @@ button:hover {
     font-family: quicksand;
     font-size: 15px;
     transition: none;
-    /*color: #FFD700;*/
+    /*color: #ffd700;*/
     /*color: #e1b525;*/
-    /*color: #D3AB27;*/
-    color: #80558C;
+    /*color: #d3ab27;*/
+    color: rgba(0 ,2 ,161,0.654);
 }
 
 #keyboard-state{
@@ -203,7 +181,7 @@ label:focus {
     margin: 0 2px;
 	/*border-radius: 10px;*/
 	/*transition: none;*/
-	color: #52057B;
+	color: #52057b;
     /*border-right: 1px solid #6c3483;*/
 	background: transparent;
 }
@@ -212,21 +190,21 @@ label:focus {
     font-family: quicksand;
     margin: 3px 0px 3px 2px;
     padding: 0 4px;
-    border-right: 4px solid rgba(255, 255, 255, 0.6);
-    border-left: 4px solid rgba(255, 255, 255, 0.6);
+    border-right: 3px solid rgba(255, 255, 255, 0.6);
+    border-left: 3px solid rgba(255, 255, 255, 0.6);
     border-radius: 2px;
-	color: #35013F;
-	color: #35013F;
+	color: #35013f;
+	color: #35013f;
     background: rgba(236, 238 ,129, 0.5);
 }
 
 #disk {
     margin: 3px 0px 3px 2px;
     padding: 0 4px;
-    border-right: 4px solid rgba(255, 255, 255, 0.6);
-    border-left: 4px solid rgba(255, 255, 255, 0.6);
+    border-right: 3px solid rgba(255, 255, 255, 0.6);
+    border-left: 3px solid rgba(255, 255, 255, 0.6);
     border-radius: 2px;
-	color: #35013F;
+	color: #35013f;
     background: rgba(176 ,97, 97, 0.5);
 }
 
@@ -235,19 +213,19 @@ label:focus {
 }
 
 #network {
-    font-family: FantasqueSansM Nerd Font Mono;
+    font-family: fantasquesansm nerd font mono;
     font-size: 14px;
     padding:  0px 2px;
     margin: 3px 3px;
-    border-right: 4px solid rgba(255, 255, 255, 0.6);
-    border-left: 4px solid rgba(255, 255, 255, 0.6);
+    border-right: 3px solid rgba(255, 255, 255, 0.5);
+    border-left: 3px solid rgba(255, 255, 255, 0.5);
     border-radius: 2px;
-    background: rgba(255, 255, 255, 0.6);
-    /*font-family: FontAwesome;*/
-	transition: none;
-	/*color: #FF1493;*/
-    /*color: #E3DCC8;*/
-    color: #000000;
+    /*background: rgba(17 ,106 ,123, 0.3); nice blue*/ 
+    background: rgba(214 ,28 ,78, 0.424);
+    /*font-family: fontawesome;*/
+	/*color: #ff1493;*/
+    /*color: #e3dcc8;*/
+    color: rgba(255, 255, 255, 0.9);
 	/*background: #cc6699;*/
 }
 
@@ -256,11 +234,8 @@ label:focus {
     background: rgba(255, 255, 255, 0.1);
 }
 
-#network.wifi {
-    /*color: #FC819E;*/
-	color: #E3DCC8;
-    background: rgba(183, 132 ,183,0.8)
-}
+/*#network.wifi*/
+
 
 #pulseaudio {
     color: #89b4fa;
@@ -276,13 +251,13 @@ label:focus {
 }
 
 #wireplumber {
-    background: rgba(146 ,199 ,207, 0.5);
+    background: rgba(146 ,199 ,207, 0.6);
     font-family: JetBrainsMono Nerd Font;
     font-size: 14px;
     margin: 3px 0px 3px 2px;
     padding: 0 4px;
-    border-right: 4px solid rgba(255, 255, 255, 0.6);
-    border-left: 4px solid rgba(255, 255, 255, 0.6);
+    border-right: 3px solid rgba(255, 255, 255, 0.6);
+    border-left: 3px solid rgba(255, 255, 255, 0.6);
     border-radius: 2px;
     color: rgba(0,0,0,1)
     /*color: #4cb2a5;*/
@@ -389,25 +364,16 @@ label:focus {
 }
 
 #mpris {
-    /*background: rgba(42, 154, 146, 0.5);*/
-    /*background: rgba(210, 149, 172, 0.4);*/
-    /*background: rgba(255, 255, 255, 0.1);*/
-    font-family: JetBrainsMono Nerd Font;
-    /*font-weight: bold;*/
     font-size: 14px;
     margin: 3px 0px 3px 4px;
     padding: 0px 5px;
-    /*font-weight: normal;*/
-    /*font-style: normal;*/
-    /*border: 0px solid #4f4c4c;*/
-    /*transition: none;*/
-    color: #0A91AB;
-    /*background: #383c4a;*/
+    font-family: JetBrainsMono Nerd Font;
+    color: rgba(0,0,0,0.8);
 }
 
 #mpris.spotify{
-/*    color: #1ED760;*/
-    color: #3B5249;
+    /*color: #1ED760;*/
+    color: rgba(82 ,5 ,123,0.8);
 }
 
 
