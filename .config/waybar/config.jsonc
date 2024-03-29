@@ -2,7 +2,7 @@
     "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 20, // Waybar height (to be removed for auto height)
-    "width": 1800, // Waybar width
+    "width": 1910, // Waybar width
     //"spacing": 0, // Gaps between modules (4px)
     
 //    "passthrough": true,
@@ -25,8 +25,8 @@
 
     "modules-right": [
         "tray",
-        "network",
         "group/perfomance",
+        "network",
         //"pulseaudio/slider",
         "wireplumber",
         "clock",

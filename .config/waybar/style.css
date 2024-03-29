@@ -23,14 +23,14 @@ tooltip {
 window#waybar {
     font-family: JetBrainsMono Nerd Font;
     /*background: rgba(21, 18, 27, 0);*/
-    color: #E5CB9F;
+    color: #910A67;
     /*adding this for reduce waybar height*/
     /*background-color: #002B36;*/
     /*background-color: rgba(9,59,80,0.7);*/
     /*font-size: 14px;*/
     /*margin: 0 16px;*/
     /*background-color: rgba(19,35,36,1);*/
-    background-color: rgba(8, 8, 8,0.46);
+    background-color: rgba(8, 8, 8,0);
     border-bottom: 0px solid #ffffff;
     border-radius: 18px;
     /*transition-property: background-color;*/
@@ -43,8 +43,13 @@ window#waybar.solo {
     /*background-color: rgba(40,40,40,1);*/
 }
 
+
 window#waybar.hidden {
     opacity: 0.2;
+}
+
+window#waybar.empty {
+    background-color: rgba(19,35,36,0.0);
 }
 
 window#waybar.kitty {
@@ -52,24 +57,9 @@ window#waybar.kitty {
     background-color: rgba(0,0,0,0.47);
 }
 
-window#waybar.obsidian {
-    /*background-color: rgba(25,24,37,0);*/
-    background-color: rgba(45,53,59,1);
-}
-window#waybar.Spotify {
-    /*background-color: rgba(9,59,80,0.9);*/
-    background-color: rgba(0,0,0,1);
-}
-
 window#waybar.smplayer {
     /*background-color: rgba(9,59,80,0.9);*/
     background-color: rgba(0,0,0,1);
-}
-
-window#waybar.firefox {
-    /*background-color: rgba(9,59,80,1);*/
-    /*background-color: rgba(13,17,23,0.93);*/
-    background-color: rgba(13,17,23,0.93);
 }
 
 window#waybar.kitty-teal {
@@ -84,31 +74,6 @@ window#waybar.dark-kitty {
     background-color: rgba(13,17,23,0.93);
 }
 
-window#waybar.vscodium {
-    /*background-color: rgba(9,59,80,1);*/
-    /*background-color: rgba(13,17,23,0.93);*/
-    background-color: rgba(13,17,23,0.93);
-}
-
-window#waybar.org\.gnome\.Nautilus {
-    /*background-color: rgba(9,59,80,1);*/
-    /*background-color: rgba(13,17,23,0.93);*/
-    background-color: rgba(30,30,30,0.99);
-}
-
-window#waybar.lollypop {
-    /*background-color: rgba(9,59,80,1);*/
-    background-color: rgba(17,17,27,1);
-}
-
-window#waybar.com\.github\.wwmm\.easyeffects {
-    /*background-color: rgba(9,59,80,1);*/
-    background-color: rgba(36,36,36,1);
-}
-
-window#waybar.empty {
-    background-color: rgba(19,35,36,0);
-}
 
 
 button {
@@ -119,7 +84,6 @@ button {
     border-radius: 0;
 }
 
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
   box-shadow: none; /* Remove predefined box-shadow */
   text-shadow: none; /* Remove predefined text-shadow */
@@ -134,13 +98,12 @@ button:hover {
     /*border-radius: 10px;*/
 }
 
-
-
 #workspaces button {
     font-family:Quicksand;
     font-size: 13px;
     margin: 3px 3px;
-    color: #D79921;
+    /*color: #D79921;*/
+    color: #910A67;
     min-width: 19px;
     padding: 0px 0px;
     border: 1px solid rgba(255, 255, 255, 0.0);
@@ -155,17 +118,13 @@ button:hover {
     /*color:  #FBFF1E;*/
     /*color: #F0DE36;*/
     /*color: #F3B664;*/
-    color: #D79921;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    background: rgba(255, 255, 255, 0.2);
+    /*color: #D79921;*/
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.4);
     border-radius: 28px;
     /*transition: all 0.4s ease-in-out;*/
 }
 
-#workspaces button.empty {
-    /*color: #FC819E;*/
-    color: #a89984;
-}
 
 #workspaces button:hover {
     box-shadow: none;
@@ -178,6 +137,10 @@ button:hover {
 
 }
 
+#workspaces button.empty {
+    /*color: #FC819E;*/
+    color: #FDFCE5;
+}
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
     margin-left: 0;
@@ -196,22 +159,20 @@ button:hover {
 
 #clock {
     /*font-size: 15px;*/
-    margin: 2px 2px;
-    /*border-width: 1px;*/
-    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
-    /*border-top: 1px solid rgba(255, 255, 255, 0.5);*/
-	/*margin-left: 8px;*/
+    margin: 3px 3px;
+    border-right: 4px solid rgba(255, 255, 255, 0.6);
+    border-left: 4px solid rgba(255, 255, 255, 0.6);
+    /*border-color: rgba(247, 65, 143, 0.5);*/
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.5);
     padding: 0 2px;
     font-family: quicksand;
     font-size: 15px;
-	/*border-radius: 15px;*/
-    border-radius: 0px;
     transition: none;
     /*color: #FFD700;*/
     /*color: #e1b525;*/
     /*color: #D3AB27;*/
-    color: #F3B664;
-    background: rgba(255, 255, 255, 0.0);
+    color: #80558C;
 }
 
 #keyboard-state{
@@ -242,29 +203,31 @@ label:focus {
     margin: 0 2px;
 	/*border-radius: 10px;*/
 	/*transition: none;*/
-	color: #D79921;
+	color: #52057B;
     /*border-right: 1px solid #6c3483;*/
 	background: transparent;
 }
 
 #memory {
     font-family: quicksand;
-    margin: 3px 2px;
-    padding: 0px 6px;
-    border: 1px solid #6c3483;
-	border-radius: 18px;
-	color: #DC84F3;
-	background: transparent;
+    margin: 3px 0px 3px 2px;
+    padding: 0 4px;
+    border-right: 4px solid rgba(255, 255, 255, 0.6);
+    border-left: 4px solid rgba(255, 255, 255, 0.6);
+    border-radius: 2px;
+	color: #35013F;
+	color: #35013F;
+    background: rgba(236, 238 ,129, 0.5);
 }
 
 #disk {
-    font-family: quicksand;
-	border-radius: 18px;
-    margin: 3px 2px;
-    padding: 0px 8px;
-    /*border: 1px solid #6c3483;*/
-    border: 1px solid #6c3483;
-    color: #FC819E;
+    margin: 3px 0px 3px 2px;
+    padding: 0 4px;
+    border-right: 4px solid rgba(255, 255, 255, 0.6);
+    border-left: 4px solid rgba(255, 255, 255, 0.6);
+    border-radius: 2px;
+	color: #35013F;
+    background: rgba(176 ,97, 97, 0.5);
 }
 
 #backlight {
@@ -273,20 +236,19 @@ label:focus {
 
 #network {
     font-family: FantasqueSansM Nerd Font Mono;
-    font-size: 13px;
-    margin: 3px 0px 3px 4px;
-    padding: 0px 5px;
-    /*border: 2px dashed;*/
-    border: 1px solid;
-    border-color: rgba(255, 255, 255, 0.2);
-	border-radius: 15px;
+    font-size: 14px;
+    padding:  0px 2px;
+    margin: 3px 3px;
+    border-right: 4px solid rgba(255, 255, 255, 0.6);
+    border-left: 4px solid rgba(255, 255, 255, 0.6);
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.6);
     /*font-family: FontAwesome;*/
 	transition: none;
 	/*color: #FF1493;*/
     /*color: #E3DCC8;*/
-    color: #E5CB9F;
+    color: #000000;
 	/*background: #cc6699;*/
-    background: rgba(255, 255, 255, 0.1);
 }
 
 #network.disconnected {
@@ -296,7 +258,8 @@ label:focus {
 
 #network.wifi {
     /*color: #FC819E;*/
-    color: inherit;
+	color: #E3DCC8;
+    background: rgba(183, 132 ,183,0.8)
 }
 
 #pulseaudio {
@@ -313,20 +276,17 @@ label:focus {
 }
 
 #wireplumber {
-    background: rgba(255, 255, 255, 0.0);
+    background: rgba(146 ,199 ,207, 0.5);
     font-family: JetBrainsMono Nerd Font;
     font-size: 14px;
-    margin: 0px 0px 0px 2px;
+    margin: 3px 0px 3px 2px;
     padding: 0 4px;
-    border-radius: 15px;
-    /*font-weight: normal;*/
-    /*font-style: normal;*/
-    /*border-right: 1px solid rgba(255, 255, 255, 0.6);*/
-    /*border-left: 1px solid rgba(255, 255, 255, 0.6);*/
-	border-radius: 4px;
-    transition: none;
+    border-right: 4px solid rgba(255, 255, 255, 0.6);
+    border-left: 4px solid rgba(255, 255, 255, 0.6);
+    border-radius: 2px;
+    color: rgba(0,0,0,1)
     /*color: #4cb2a5;*/
-    color: #FC819E;
+    /*color: #FC819E;*/
     /*color: #E3DCC8;*/
     /*background: #383c4a;*/
 }
@@ -339,20 +299,6 @@ label:focus {
     border-radius: 10px;
 }
 
-#custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
-    min-width: 100px;
-}
-
-#custom-media.custom-spotify {
-    background-color: #66cc99;
-}
-
-#custom-media.custom-vlc {
-    background-color: #ffa000;
-}
-
 #temperature {
     /*background-color: #f0932b;*/
     /*border-radius: 15px;*/
@@ -363,7 +309,7 @@ label:focus {
     margin: 2px 0px;
     transition: none;
     /*color: #CBFFA9;*/
-    color: #E5CB9F;
+    color: rgba(0,0,0,1)
     /*background: #E3DCC8;*/
 }
 
@@ -373,12 +319,6 @@ label:focus {
 
 #tray {
     margin: 2px 6px 2px 2px;
-	/*padding-left: 10px;*/
-	/*padding-right: 10px;*/
-	/*border-radius: 10px;*/
-	/*transition: none;*/
-	/*color: #B5E8E0;*/
-	/*background: #161320;*/
     background: transparent;
     padding: 0 0px;
 }
@@ -401,7 +341,7 @@ label:focus {
     /*border: 1px solid rgba(255, 255, 255, 0.3);*/
     /*background: rgba(255, 255, 255, 0.2);*/
     border-radius: 26px;
-    color: #E5CB9F;
+    color: #000000
     /*font-family: JetBrainsMono Nerd Font;*/
     /*color: #E3DCC8;*/
     /*color: #FBFF1E;*/
@@ -442,6 +382,7 @@ label:focus {
 
 #taskbar.empty {
     margin:0;
+    min-width: 0px;
     padding: 0px;
     background: transparent;
     border:0;
@@ -451,25 +392,22 @@ label:focus {
     /*background: rgba(42, 154, 146, 0.5);*/
     /*background: rgba(210, 149, 172, 0.4);*/
     /*background: rgba(255, 255, 255, 0.1);*/
-    border: 0px;
-    border-color: rgba(255, 255, 255, 0.2);
-    border-style: solid;
     font-family: JetBrainsMono Nerd Font;
     /*font-weight: bold;*/
     font-size: 14px;
     margin: 3px 0px 3px 4px;
     padding: 0px 5px;
-    border-radius: 15px;
     /*font-weight: normal;*/
     /*font-style: normal;*/
     /*border: 0px solid #4f4c4c;*/
     /*transition: none;*/
-    color: #1CD6CE;
+    color: #0A91AB;
     /*background: #383c4a;*/
 }
 
 #mpris.spotify{
-    color: #1ED760;
+/*    color: #1ED760;*/
+    color: #3B5249;
 }
 
 
@@ -520,6 +458,6 @@ label:focus {
     background-color: #CC0E74;
 }
 
-#custom-notification {
-  font-family: "NotoSansMono Nerd Font";
+#drawer-child {
+    background: black;
 }

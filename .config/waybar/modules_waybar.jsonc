@@ -26,9 +26,8 @@
     "show-special": true,
     "on-scroll-up": "hyprctl dispatch workspace e-1",
     "on-scroll-down": "hyprctl dispatch workspace e+1",
-    "sort-by-number": true
+    "sort-by-number": false
     //"ignore-workspaces": {10}
-    //"sort-by-coordinates": true
     },
 
     "hyprland/window": {
@@ -46,7 +45,7 @@
 
     "group/perfomance": {
         "orientation": "horizontal",
-        "drawer": {"transition-duration": 400,"transition-left-to-right": true},
+        "drawer": {"transition-duration": 400,"transition-left-to-right": true, "children-class": "drawer-child"},
         "modules":[
             //"network",
             "cpu",
@@ -180,62 +179,16 @@
     }
 },
 
-"custom/notification": {
-    "tooltip": false,
-    "format": "{icon}",
-    "format-icons": {
-      "notification": "<span foreground='red'><sup></sup></span>",
-      "none": "",
-      "dnd-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-none": "",
-      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "inhibited-none": "",
-      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-inhibited-none": ""
-    },
-    "return-type": "json",
-    "exec-if": "which swaync-client",
-    "exec": "swaync-client -swb",
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "swaync-client -d -sw",
-    "escape": true
-},
-
 "disk": {
     "interval": 90,
     "format": "{percentage_free}%    ",
     "path": "/"
 },
-    // Updates Count
-    "custom/updates": {
-        "format": "  {}",
-        "tooltip-format": "{}",
-        "escape": true,
-        "return-type": "json",       
-        "exec": "~/dotfiles/scripts/updates.sh",
-        "restart-interval": 60,
-        "on-click": "alacritty -e ~/dotfiles/scripts/installupdates.sh",
-        "on-click-right": "~/dotfiles/.settings/software.sh",
-        "tooltip": false
-    },
 
 "hyprland/submap": {
     "format": "✌️ {}",
     "max-length": 8,
     "tooltip": false
-},
-
-"custom/audio_idle_inhibitor": {
-	"format": "{icon}",
-	"exec": "sway-audio-idle-inhibit --dry-print-both-waybar",
-	"exec-if": "which sway-audio-idle-inhibit",
-	"return-type": "json",
-	"format-icons": {
-		"output": "",
-		"input": "",
-		"output-input": "  ",
-		"none": ""
-		}
 },
 
 
