@@ -23,8 +23,8 @@
         //],
 
     "modules-right": [
-        "mpris",
         "tray",
+        "mpris",
         "group/perfomance",
         "network",
         //"pulseaudio/slider",

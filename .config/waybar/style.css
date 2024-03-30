@@ -68,7 +68,7 @@ button:hover {
     border-left: 3px solid rgba(255, 255, 255, 0.8);
     border-radius: 2px;
     /*background: rgba(214 ,28 ,78, 0.22);*/
-    background: rgba(0 ,0 ,0, 0.12);
+    background: rgba(0 ,0 ,0, 0.148);
     color: rgba(255, 255, 255, 0.9);
 }
 
@@ -261,7 +261,7 @@ label:focus {
 }
 
 #wireplumber {
-    background: rgba(146 ,199 ,207, 0.6);
+    background: rgba(146 ,199 ,207, 0.5);
     font-family: JetBrainsMono Nerd Font;
     font-size: 13px;
     margin: 4px 0px 4px 0px;
@@ -387,7 +387,7 @@ label:focus {
     border-right: 2px solid rgba(255 ,255,255, 0.664);
     border-left: 2px solid rgba(255 ,255,255, 0.664);
     border-radius: 2px;
-    color: rgba(22 ,255 ,0,0.8);
+    color: rgba(22 ,255 , 0, 1);
 }
 
 

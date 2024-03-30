@@ -2,7 +2,7 @@
 
 swayidle -w \
 	timeout 400 '/home/malu/Documents/dotfiles/hypr/scripts/sway_lock_idle/lock.sh' \
-	timeout 900 '
+	timeout 410 '
 		hyprctl monitors | grep HDMI
 		ret=$?
         

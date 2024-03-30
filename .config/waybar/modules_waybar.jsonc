@@ -136,7 +136,7 @@
 	    "format": "{player_icon} {dynamic}",
         "format-playing": "{player_icon} {dynamic}",
 	    "format-paused": "{status_icon} {dynamic}",
-        "on-click-right": "hyprctl dispatch workspace 8",
+        "on-click-middle": "hyprctl dispatch workspace 8",
         "tooltip":false,
         //"format-playing-len": 8,
         "ellipsis": "...",
