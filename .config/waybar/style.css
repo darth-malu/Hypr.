@@ -1,7 +1,7 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     /*font-family: JetBrainsMono Nerd Font,FontAwesome,Cartograph CF Nerd Font, monospace;*/
-    /*font-size: 15px;*/
+    font-size: 13px;
     min-height: 0;
     /*padding-top: 0px;*/
     /*padding-bottom: 0px;*/
@@ -21,12 +21,13 @@ tooltip {
 }
 
 window#waybar {
+    /*this is the actual text of active window*/
     font-family: JetBrainsMono Nerd Font;
     /*background: rgba(21, 18, 27, 0);*/
-    color: rgba(8, 8, 8,0.58);
+    color: rgba(235 ,184 ,114, 0.724);
     background-color: rgba(8, 8, 8,0);
     border-bottom: 0px solid #ffffff;
-    border-radius: 18px;
+    /*border-radius: 18px;*/
     /*transition-property: background-color;*/
     /*transition-duration: .5s;*/
 }
@@ -62,14 +63,13 @@ button:hover {
 }
 
 #workspaces {
-    margin: 4px 0px;
-    padding: 0 2px;
-    border-right: 3px solid rgba(255, 255, 255, 0.8);
-    border-left: 3px solid rgba(255, 255, 255, 0.8);
-    border-radius: 2px;
+    /*margin: 2px 2px 4px 2px;*/
+    /*padding: 1px 2px;*/
+    /*border-right: 3px solid rgba(255, 255, 255, 0.7);*/
+    /*border-left: 3px solid rgba(255, 255, 255, 0.7);*/
+    border-radius: 12px;
     /*background: rgba(214 ,28 ,78, 0.22);*/
-    background: rgba(0 ,0 ,0, 0.148);
-    color: rgba(255, 255, 255, 0.9);
+    /*background: rgba(0 ,0 ,0, 0.389);*/
 }
 
 #workspaces button.urgent {
@@ -81,14 +81,17 @@ button:hover {
 
 #workspaces button {
     font-family:quicksand;
-    font-size: 13px;
-    margin: 3px 0px;
+    margin:3px 2px 3px 0px;
+    /*margin: 2px 0px;*/
     /*color: #d79921;*/
     /*color: #fc819e;*/
-    color: rgba(255, 255, 255, 1);
-    min-width: 19px;
+    /*color: rgba(229, 201 ,155, 0.724);*/
+    color: rgba(235 ,184 ,114, 0.624);
+    color: rgba(14 ,124 ,232,0.784);
+    min-width: 17px;
     padding: 0px 0px;
     /*min-width: 12px;*/
+    border: 1px solid rgba(0 ,196 ,255,0);
     /*margin: 2px 2px 2px 2px;*/
     /*transition: all 0.1s ease-in-out;*/
     /*border-top: 3px;*/
@@ -108,22 +111,20 @@ button:hover {
 
 #workspaces button.empty {
     /*color: #fc819e;*/
-    color: rgba(0,0,0,0.2);
+    color: rgba(255, 255, 255, 0.234);
 }
 
 #workspaces button.active {
-    /*border: 1px solid rgba(255, 255, 255, 0.2);*/
-    font-family:quicksand;
-    /*border: 1px solid rgba(0, 0, 0, 0.3);*/
-    /*background: rgba(255, 255, 255, 0.69);*/
-    /*border-bottom: 1px solid rgba(255, 255, 255, 0.4);*/
-    /*border: 1px solid rgba(255, 255, 255, 0.4);*/
-    background: rgba(255, 255, 255, 0.6);
+    /*font-family:quicksand;*/
+    /*color: rgba(255, 255, 255, 0.82);*/
+    /*border-radius: 18px;*/
+    /*background: rgba(214 ,28 ,78, 0.428);*/
+    /*min-width: 14px;*/
+    color: rgba(76 ,205 ,153, 0.96);
+    color: rgba(253 ,164 ,3, 0.768);
+    background: rgba(0 ,196 ,255,0.248);
+    border: 1px solid rgba(0 ,196 ,255,0.469);
     border-radius: 18px;
-    margin:2px 0px;
-    /*color: #6C22A6;*/
-    color: rgba(247 ,39 ,152,0.82);
-    /*transition: all 0.4s ease-in-out;*/
 }
 
 /* if workspaces is the leftmost module, omit left margin */
@@ -138,26 +139,30 @@ button:hover {
 }
 
 .modules-left {
-    margin-right:8px;
-    padding-right:8px;
+    margin-right:0px;
+    padding-right:0px;
 }
 
 #clock {
     /*font-size: 15px;*/
-    margin: 4px 3px;
-    border-right: 2px solid rgba(255, 255, 255, 0.6);
-    border-left: 2px solid rgba(255, 255, 255, 0.6);
+    margin: 0px 2px 0px 0px;
+    /*padding: 0px 6px 0px 6px;*/
+    /*border-right: 2px solid rgba(255, 255, 255, 0.6);*/
+    /*border-left: 2px solid rgba(255, 255, 255, 0.6);*/
     /*border-color: rgba(247, 65, 143, 0.5);*/
-    border-radius: 2px;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 0 2px;
+    /*border-radius: 12px;*/
+    /*background: rgba(0, 0, 0, 0.7);*/
+    /*background: rgba(255 ,255 ,255, 0.11);*/
+    /*border-top: 2px solid rgba(255 ,255,255, 0.364);*/
+    /*border-bottom: 1px solid rgba(255 ,255,255, 0.124);*/
+    /*padding: 0 5px;*/
     font-family: quicksand;
-    font-size: 15px;
-    transition: none;
+    font-size: 13px;
+    /*transition: none;*/
     /*color: #ffd700;*/
     /*color: #e1b525;*/
     /*color: #d3ab27;*/
-    color: rgba(255, 255, 255, 0.86);
+    color: rgba(255, 255, 255, 0.56);
 }
 
 #keyboard-state{
@@ -181,40 +186,39 @@ label:focus {
 }
 
 #cpu {
-    font-family: quicksand;
-    font-size: 13px;
+    /*font-family: quicksand;*/
+    font-size:11px;
 	/*margin-left: 8px;*/
-    padding: 0 2px;
-    margin: 0 2px;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 4px 0px 2px;
 	/*border-radius: 10px;*/
 	/*transition: none;*/
-	color: rgba(255 ,253 ,140,0.88);
-    /*border-right: 1px solid #6c3483;*/
-	background: transparent;
+    color: rgba(253 ,164 ,3, 0.89);
+    /*border-left: 1px solid #6c3483;*/
+    border-bottom: 2px solid rgba(253 ,164 ,3, 0.89);
 }
 
 #memory {
-    font-family: quicksand;
-    margin: 4px 0px 4px 2px;
-    font-size: 14px;
-    padding: 0 4px;
-    border-right: 3px solid rgba(255, 255, 255, 0.6);
-    border-left: 3px solid rgba(255, 255, 255, 0.6);
-    border-radius: 2px;
-	color: #35013f;
-	color: #35013f;
-    background: rgba(236, 238 ,129, 0.5);
+    margin: 0px 4px 0px 2px;
+    /*border-radius: 12px;*/
+    border-bottom: 2px solid rgba(21 ,245 ,186, 0.76);
+    padding: 0px 0px 0px 0px;
+    /*border-left: 2px solid rgba(255 ,62 ,165, 0.48);*/
+    /*border: 1px solid rgba(76 ,205 ,153, 0.42);*/
+    font-size:11px;
+    /*background: rgba(21 ,245 ,186, 0.26);*/
+    /*padding: 0 5px;*/
+    transition: none;
+    color: rgba(76 ,205 ,153, 0.96);
 }
 
 #disk {
-    margin: 4px 0px 4px 2px;
-    font-size: 14px;
-    padding: 0 4px;
-    border-right: 3px solid rgba(255, 255, 255, 0.6);
-    border-left: 3px solid rgba(255, 255, 255, 0.6);
-    border-radius: 2px;
-    color: rgba(255, 255, 255, 0.9);
-    background: rgba(176 ,97, 97, 0.5);
+    margin: 0px 4px 4px 2px;
+    margin: 0px 4px 0px 2px;
+    font-size:11px;
+    border-bottom: 2px solid rgba(229, 201 ,155, 0.8);
+    padding: 0px 0px 0px 0px;
+    color: rgba(229, 201 ,155, 0.8);
 }
 
 #backlight {
@@ -223,14 +227,16 @@ label:focus {
 
 #network {
     font-family: fantasquesansm nerd font mono;
-    font-size: 14px;
-    padding:  0px 2px;
-    margin: 4px 3px;
-    border-right: 2px solid rgba(255, 255, 255, 0.5);
-    border-left: 2px solid rgba(255, 255, 255, 0.5);
-    border-radius: 2px;
-    background: rgba(214 ,28 ,78, 0.424);
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    padding:  0px 6px;
+    margin: 0px 5px 2px 0px;
+    /*border-right: 2px solid rgba(255, 255, 255, 0.5);*/
+    /*border-left: 2px solid rgba(255, 255, 255, 0.5);*/
+    border-radius: 0px;
+    /*background: rgba(214 ,28 ,78, 0.324);*/
+    /*background: rgba(214 ,28 ,78, 0.344);*/
+    color: rgba(255, 255, 255, 0.8);
+    color: rgba(214 ,28 ,78, 0.944);
 
 	/*background: #cc6699;*/
     /*background: rgba(17 ,106 ,123, 0.3); nice blue*/ 
@@ -261,15 +267,17 @@ label:focus {
 }
 
 #wireplumber {
-    background: rgba(146 ,199 ,207, 0.5);
+    /*background: rgba(146 ,199 ,207, 0.38);*/
     font-family: JetBrainsMono Nerd Font;
-    font-size: 13px;
-    margin: 4px 0px 4px 0px;
-    padding: 0 4px;
-    border-right: 2px solid rgba(255, 255, 255, 0.6);
-    border-left: 2px solid rgba(255, 255, 255, 0.6);
-    border-radius: 2px;
-    color: rgba(0,0,0,1)
+    font-size: 12px;
+    margin: 4px 4px 5px 4px;
+    margin: 2px 2px 4px 4px;
+    /*padding: 0 4px;*/
+    border-radius: 12px;
+    /*border-right: 2px solid rgba(255, 255, 255, 0.6);*/
+    /*border-left: 2px solid rgba(255, 255, 255, 0.6);*/
+    color: rgba(0,0,0,1);
+    color: rgba(255, 255, 255, 0.66);
     /*color: #4cb2a5;*/
     /*color: #FC819E;*/
     /*color: #E3DCC8;*/
@@ -278,23 +286,24 @@ label:focus {
 
 #wireplumber.muted {
     background-color: #9d0006;
-    margin: 2px 5px 2px 5px;
+    margin: 2px 0px 5px 0px;
     padding-right: 8px;
     padding-left: 8px;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
 }
 
 #temperature {
     /*background-color: #f0932b;*/
     /*border-radius: 15px;*/
-    font-size: 14px;
+    font-size: 13px;
     font-family: JetBrainsMono Nerd Font;
-    padding: 0px 6px 0px 6px;
+    padding: 0px 0px 0px 0px;
 	border-radius: 15px;
-    margin: 2px 0px;
+    margin: 0px 0px 3px 0px;
     transition: none;
-    /*color: #CBFFA9;*/
-    color: rgba(0,0,0,1)
+    color: rgba(203 ,255 ,169, 0.89);
+    color: rgba(253 ,164 ,3, 0.89);
+    /*color: rgba(0,0,0,1)*/
     /*background: #E3DCC8;*/
 }
 
@@ -303,7 +312,7 @@ label:focus {
 }
 
 #tray {
-    margin: 2px 6px 2px 2px;
+    margin: 0px 2px 0px 2px;
     background: transparent;
     padding: 0 0px;
 }
@@ -319,17 +328,18 @@ label:focus {
 }
 
 #custom-wleave {
-    font-size: 14px;
-    padding: 0px 8px 0px 2px;
-    margin: 3px 0px;
+    font-size: 12px;
+    padding: 0px 0px 0px 0px;
+    /*margin: 3px 0px;*/
+    margin: 0px 2px 2px 4px;
     min-width:10px;
     /*border: 1px solid rgba(255, 255, 255, 0.3);*/
     /*background: rgba(255, 255, 255, 0.2);*/
     border-radius: 26px;
-    color: #000000
+    /*color: #000000*/
     /*font-family: JetBrainsMono Nerd Font;*/
     /*color: #E3DCC8;*/
-    /*color: #FBFF1E;*/
+    color: rgba(229, 201 ,155, 0.8);
     }
 
 #keyboard-state > label {
@@ -374,44 +384,38 @@ label:focus {
 }
 
 #mpris {
-    font-size: 14px;
-    margin: 4px 0px 4px 4px;
-    padding: 0px 5px;
+    font-size: 13px;
+    margin: 3px 4px 4px 4px;
+    margin: 0px 5px 2px 0px;
+    padding: 0px 4px;
+    /*background: rgba(255 ,255 ,255, 0.122);*/
+    /*border-bottom: 1px solid rgba(255 ,255,255, 0.124);*/
+    /*border-right: 2px solid rgba(255 ,255,255, 0.464);*/
+    /*border-radius: 12px;*/
     font-family: JetBrainsMono Nerd Font;
-    color: rgba(0,0,0,0.8);
+    color: rgba(229, 201 ,155, 0.72);
 }
 
 #mpris.spotify{
     /*color: #1ED760;*/
-    background: rgba(255 ,255 ,255, 0.1);
-    border-right: 2px solid rgba(255 ,255,255, 0.664);
-    border-left: 2px solid rgba(255 ,255,255, 0.664);
-    border-radius: 2px;
     color: rgba(22 ,255 , 0, 1);
-}
-
-
-#idle_inhibitor {
-    font-size:14px;
 }
 
 #idle_inhibitor.activated {
     background-color: transparent;
     color: #FFD700;
     padding-bottom: 2px;
-    margin: 2px 2px 2px 0px;
 }
 #idle_inhibitor.deactivated {
     background-color: transparent;
     padding-bottom: 1px;
-    margin: 2px 0px 2px 0px;
     /*color: #76745c;*/
     color: rgba(255, 255, 255, 0.4);
 }
 
 #idle_inhibitor {
     padding:0px;
-    margin: 2px 0px 2px 0px;
+    margin: 1px 0px 3px 0px;
     background-color: #d46547;
 }
 

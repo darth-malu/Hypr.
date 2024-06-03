@@ -3,6 +3,7 @@
     /*"format": "{icon}",*/
     "format": "{name}",
     "on-click": "activate",
+    "on-click-right": "close",
     "format-icons": {
         "2": " ",
         "8": " ",
@@ -23,16 +24,19 @@
         //"default": "+"
         },
     "persistent-workspaces": {"*" :10},
+    //"persistent-workspaces": {"5": [],"6": [],"7": []},
     "show-special": true,
     "on-scroll-up": "hyprctl dispatch workspace e-1",
     "on-scroll-down": "hyprctl dispatch workspace e+1",
-    "sort-by-number": false
+    "sort-by-number": true
     //"ignore-workspaces": {10}
     },
 
     "hyprland/window": {
     //"format": " {}",
     "format": " {}",
+    "icon": false,
+    "icon-size": 14,
     "rewrite": {
         "(.*) — Mozilla Firefox": "$1",
         //dsd🌎ddd
@@ -45,7 +49,7 @@
 
     "group/perfomance": {
         "orientation": "horizontal",
-        "drawer": {"transition-duration": 400,"transition-left-to-right": true, "children-class": "drawer-child"},
+        //"drawer": {"transition-duration": 400,"transition-left-to-right": true, "children-class": "drawer-child"},
         "modules":[
             //"network",
             "cpu",
@@ -71,7 +75,7 @@
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "timezone": "Africa/Nairobi",
         "format-alt": "{:%Y-%m-%d}",
-            "format": "{:%H:%M}",
+        "format": "{:%a %d, %H:%M}",
         "tooltip": true,
         "calendar": {
                     "mode"          : "month",
@@ -124,7 +128,7 @@
         //"format": "{volume}% ",
         "format": "{volume}  ",
         "format-muted": "",
-        "on-click": "pavucontrol",
+        "on-click": "killall pavucontrol || pavucontrol",
         "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "max-volume": 100,
         "scroll-step": 2,
@@ -182,7 +186,7 @@
 
 "disk": {
     "interval": 90,
-    "format": "{percentage_free}%    ",
+    "format": "{percentage_free}%  ",
     "path": "/"
 },
 
@@ -205,8 +209,8 @@
 },
 
 "tray": {
-    "icon-size": 14,
-    "spacing": 10
+    "icon-size": 12,
+    "spacing": 8
 },
 
 "cpu": {
@@ -215,7 +219,7 @@
 },
 
 "memory": {
-    "format": "{}%    "
+    "format": "{}%  "
 },
 
 "temperature": {
@@ -233,7 +237,7 @@
     // "interface": "wlp2*", // (Optional) To force the use of this interface
     //"format-wifi": "{essid} ({signalStrength}%) -- {bandwidthDownBytes}  ",
     //"format-wifi": " {essid} {bandwidthDownBytes}",
-    "format-wifi": " {bandwidthDownBytes}",
+    "format-wifi": " {essid} {bandwidthDownBytes}",
     "format-ethernet": "{bandwidthDownBytes} ",
     "interval": 2,
     "tooltip-format-ethernet": "{gwaddr} ",

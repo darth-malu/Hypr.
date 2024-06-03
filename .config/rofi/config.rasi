@@ -13,8 +13,9 @@ configuration {
     terminal:                   "kitty";
     me-accept-entry:            "MousePrimary";
     window-format:              "{w} · {c} · {t}";
-    icon-theme:                 "Dracula";
-	dpi:						1;
+    icon-theme:                 "dracula-icons-git";
+	dpi:						94;
+    scroll-method:              1;
 }
 @theme "/dev/null"
 @theme "~/.config/rofi/theme.rasi"
