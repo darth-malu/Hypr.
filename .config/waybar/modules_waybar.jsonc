@@ -25,7 +25,7 @@
         },
     "persistent-workspaces": {"*" :10},
     //"persistent-workspaces": {"5": [],"6": [],"7": []},
-    "show-special": true,
+    "show-special": false,
     "on-scroll-up": "hyprctl dispatch workspace e-1",
     "on-scroll-down": "hyprctl dispatch workspace e+1",
     "sort-by-number": true
@@ -55,6 +55,27 @@
             "cpu",
             "disk",
             "memory"
+        ]
+    },
+
+    "group/conglo": {
+        "orientation": "horizontal",
+        "drawer": {"transition-duration": 400,"transition-left-to-right": true, "children-class": "drawer-child"},
+        "modules":[
+            //"network",
+            "network",
+            "idle_inhibitor",
+            "temperature"
+        ]
+    },
+
+    "group/media": {
+        "orientation": "horizontal",
+        "drawer": {"transition-duration": 400,"transition-left-to-right": true, "children-class": "drawer-child"},
+        "modules":[
+            //"network",
+            "wireplumber",
+            "mpris"
         ]
     },
 
@@ -109,20 +130,35 @@
         "tooltip": false
     },
 
-  "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify":" " ,
-            "default": "🎜"
-            //
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-         //"exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    "custom/swap_workspace": {
+        //"format": "",
+        //   
+        "format": "",
+        "on-click": "hyprctl dispatch focuscurrentorlast",
+        "on-click-right": "hyprctl dispatch workspace 2",
+        //"on-click-right": "$ (~/.config/waybar/launch_waybar.sh)",
+        "tooltip": false
     },
-    
+
+     "custom/updates": {
+        "format": "{}  ",
+        "exec": "checkupdates --nocolor | wc -l",
+        "exec-if": "[[ $(checkupdates --nocolor | wc -l) != 0 ]]",
+        "interval": 3600,
+        "on-click": "kitty -e sudo pacman -Syu ; notify-send 'The system has been updated -pacsyu' ; pkill -RTMIN+8 waybar",
+        "on-click-right": "kitty -e paru -Syu ; notify-send 'The system has been updated -aursyu' ; pkill -RTMIN+8 waybar",
+        //"tooltip-format": "{}"
+        "signal": 8
+    }, 
+
+    "custom/weather": {
+    //"exec": "~/.local/darthfiles/get_weather.sh Nairobi+Kenya",
+    "exec": "~/.local/darthfiles/weather.sh Nairobi",
+    "return-type": "json",
+    "format": "{}",
+    "tooltip": false,
+    "interval": 10
+    },
 
     "wireplumber": {
         //"format": "{volume}% ",
@@ -140,16 +176,19 @@
 	    "format": "{player_icon} {dynamic}",
         "format-playing": "{player_icon} {dynamic}",
 	    "format-paused": "{status_icon} {dynamic}",
-        "on-click-middle": "hyprctl dispatch workspace 8",
+        "on-click-middle":"~/.local/darthfiles/player_focus.sh", 
+        //"on-scroll-down": "playerctl -p spotify,lollypop volume 0.1-",
+        "on-scroll-down": "~/.local/darthfiles/mpris_volume.sh -",
+        "on-scroll-up": "~/.local/darthfiles/mpris_volume.sh +",
         "tooltip":false,
-        //"format-playing-len": 8,
+        //"format-playing-len": 8playerctl -p spotify,lollypop volume 0.8+,
         "ellipsis": "...",
         //"interval": 3,
 	    "player-icons": {
 		    "default": "",
             "Lollypop": " ",
-            "spotify":" ",
-		    "mpv": "🎵"
+            "spotify":" "
+		    //"mpv": "🎵"
 	        },
 	    "status-icons": {
 		    "paused": "⏸",
@@ -158,7 +197,8 @@
 	        },
 	    "ignored-players": ["firefox", "smplayer"],
         "dynamic-importance-order": ["title", "artist", "album", "position", "length"],
-        "dynamic-len": 24,
+        //"dynamic-len": 24,
+        "dynamic-len": 35,
         //"dynamic-separator": "-",
         "dynamic-order":["title", "artist", "album"]
     },
@@ -209,7 +249,7 @@
 },
 
 "tray": {
-    "icon-size": 12,
+    "icon-size": 10,
     "spacing": 8
 },
 
@@ -237,8 +277,9 @@
     // "interface": "wlp2*", // (Optional) To force the use of this interface
     //"format-wifi": "{essid} ({signalStrength}%) -- {bandwidthDownBytes}  ",
     //"format-wifi": " {essid} {bandwidthDownBytes}",
+    //"format-ethernet": "{bandwidthDownBytes} ",
     "format-wifi": " {essid} {bandwidthDownBytes}",
-    "format-ethernet": "{bandwidthDownBytes} ",
+    "format-ethernet": "{bandwidthDownBytes}",
     "interval": 2,
     "tooltip-format-ethernet": "{gwaddr} ",
     "tooltip-format-wifi": "{signalStrength}% signal",
@@ -246,7 +287,10 @@
     "format-disconnected": "Disconnected ⚠",
     "format-alt": "{ipaddr}/{cidr} ",
     "tooltip": true,
-    "max-length": 24
+    "max-length": 9,
+    "min-length": 9,
+    "justify": "right"
+    /*"align": 1*/
 },
 
 "pulseaudio/slider": {
