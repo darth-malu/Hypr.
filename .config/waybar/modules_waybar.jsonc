@@ -145,8 +145,8 @@
         "exec": "checkupdates --nocolor | wc -l",
         "exec-if": "[[ $(checkupdates --nocolor | wc -l) != 0 ]]",
         "interval": 3600,
-        "on-click": "kitty -e sudo pacman -Syu ; notify-send 'The system has been updated -pacsyu' ; pkill -RTMIN+8 waybar",
-        "on-click-right": "kitty -e paru -Syu ; notify-send 'The system has been updated -aursyu' ; pkill -RTMIN+8 waybar",
+        "on-click": "kitty -e sudo pacman -Syu && notify-send 'The system has been updated -pacsyu' && pkill -RTMIN+8 waybar",
+        "on-click-right": "kitty -e paru -Syu && notify-send 'The system has been updated -aursyu' && pkill -RTMIN+8 waybar",
         //"tooltip-format": "{}"
         "signal": 8
     }, 
@@ -174,8 +174,8 @@
     "mpris": {
 	    //"format-paused": "{status_icon} <i>{dynamic}</i>",
 	    "format": "{player_icon} {dynamic}",
-        "format-playing": "{player_icon} {dynamic}",
-	    "format-paused": "{status_icon} {dynamic}",
+        "format-playing": "{player_icon}  {dynamic}",
+	    "format-paused": "{status_icon}   {dynamic}",
         "on-click-middle":"~/.local/darthfiles/player_focus.sh", 
         //"on-scroll-down": "playerctl -p spotify,lollypop volume 0.1-",
         "on-scroll-down": "~/.local/darthfiles/mpris_volume.sh -",
@@ -198,7 +198,7 @@
 	    "ignored-players": ["firefox", "smplayer"],
         "dynamic-importance-order": ["title", "artist", "album", "position", "length"],
         //"dynamic-len": 24,
-        "dynamic-len": 35,
+        "dynamic-len": 40,
         //"dynamic-separator": "-",
         "dynamic-order":["title", "artist", "album"]
     },
@@ -226,7 +226,7 @@
 
 "disk": {
     "interval": 90,
-    "format": "{percentage_free}%  ",
+    "format": "{percentage_free}%    ",
     "path": "/"
 },
 
@@ -254,12 +254,12 @@
 },
 
 "cpu": {
-    "format": "{usage}% ",
+    "format": "{usage}%   ",
     "tooltip": false
 },
 
 "memory": {
-    "format": "{}%  "
+    "format": "{}%   "
 },
 
 "temperature": {
@@ -287,8 +287,8 @@
     "format-disconnected": "Disconnected ⚠",
     "format-alt": "{ipaddr}/{cidr} ",
     "tooltip": true,
-    "max-length": 9,
-    "min-length": 9,
+    "max-length": 7,
+    "min-length": 7,
     "justify": "right"
     /*"align": 1*/
 },

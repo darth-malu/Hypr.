@@ -19,7 +19,7 @@ function get_current_sink () {
     #wpctl status |sed -n '/Sinks:/,/^[[:space:]]*$/p'| sed -n '1,/^[[:space:]]*$/p' | grep -i "*"
     #outputs a number eg. 55 54 44
     #wpctl status | grep "*" | cut -d ' ' -f7 | tr -d '.'
-    wpctl status | grep -o "*\s\+[0-9]\+\." | tr -cd [:digit:]
+    wpctl status |grep -A3 Sinks| grep -o "*\s\+[0-9]\+\." | tr -cd [:digit:]
 }
 
 function sink_getter () {

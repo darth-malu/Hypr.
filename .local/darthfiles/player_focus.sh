@@ -4,17 +4,31 @@ function query_playerctl () {
     playerctl -l
 }
 
-function get_current_player () {
+function focus_current_player () {
     local players=$(query_playerctl)
 
     for player in $players;do
-        local playing_status=$(playerctl -p $player status 2>/dev/null)
-        if [[ $player == *"spotify"* ]] && [[ $playing_status == "Playing" ]]; then 
-            hyprctl dispatch focuswindow Spotify
-        elif [[ $player == *"Lollypop"* ]] && [[ $playing_status == "Playing" ]]; then
-            hyprctl dispatch focuswindow lollypop
-        fi
-    done
-}
 
-get_current_player
+        local playing_status=$(playerctl -p $player status 2>/dev/null)
+
+        case $player in
+            *"spotify"*)
+                case $playing_status in
+                    "Playing")
+                        hyprctl dispatch focuswindow Spotify
+                        ;;
+                esac
+                ;;
+            *"Lollypop"*)
+                case $playing_status in
+                    "Playing")
+                        hyprctl dispatch focuswindow lollypop
+                        ;;
+                esac
+                ;;
+        esac
+    done
+
+}
+focus_current_player
+
