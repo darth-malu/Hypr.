@@ -23,7 +23,7 @@
         //"active": "",
         //"default": "+"
         },
-    "persistent-workspaces": {"*" :10},
+    "persistent-workspaces": {"*" :9},
     //"persistent-workspaces": {"5": [],"6": [],"7": []},
     "show-special": false,
     "on-scroll-up": "hyprctl dispatch workspace e-1",
@@ -41,8 +41,8 @@
         "(.*) — Mozilla Firefox": "$1",
         //dsd🌎ddd
         "(.*) - kitty": "> [$1]",
-        "(.*) - Spotify": "> $1",
-        "(.*) - Lollypop": "> $1"
+        "(.*) - Spotify": "molog",
+        "(.*) - Lollypop": "molog"
         },
     "separate-outputs": true
     },
@@ -60,7 +60,7 @@
 
     "group/conglo": {
         "orientation": "horizontal",
-        "drawer": {"transition-duration": 400,"transition-left-to-right": true, "children-class": "drawer-child"},
+        "drawer": {"transition-duration": 400,"transition-left-to-right": false, "children-class": "drawer-child"},
         "modules":[
             //"network",
             "network",
@@ -157,7 +157,7 @@
     "return-type": "json",
     "format": "{}",
     "tooltip": false,
-    "interval": 10
+    "interval": 60
     },
 
     "wireplumber": {
@@ -195,7 +195,7 @@
             "playing": "",
             "stopped": ""
 	        },
-	    "ignored-players": ["firefox", "smplayer"],
+	    //"ignored-players": ["firefox", "smplayer"],
         "dynamic-importance-order": ["title", "artist", "album", "position", "length"],
         //"dynamic-len": 24,
         "dynamic-len": 40,
@@ -254,7 +254,7 @@
 },
 
 "cpu": {
-    "format": "{usage}%   ",
+    "format": "{usage}%   ",
     "tooltip": false
 },
 
@@ -287,8 +287,8 @@
     "format-disconnected": "Disconnected ⚠",
     "format-alt": "{ipaddr}/{cidr} ",
     "tooltip": true,
-    "max-length": 7,
-    "min-length": 7,
+    "max-length": 8,
+    "min-length": 8,
     "justify": "right"
     /*"align": 1*/
 },
@@ -297,5 +297,12 @@
     "min": 0,
     "max": 100,
     "orientation": "horizontal"
+},
+
+"load": {
+    "interval": 10,
+    "format": " {load1}",
+    "max-length": 10
 }
+
 }

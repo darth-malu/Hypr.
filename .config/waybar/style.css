@@ -21,13 +21,14 @@ tooltip {
 
 window#waybar {
     /*this is the actual text of active window*/
-    /*font-family: JetBrainsMono Nerd Font;*/
+    font-family: JetBrainsMono Nerd Font;
     /*background: rgba(21, 18, 27, 0);*/
     color: rgba(255 ,158 ,170, 0.78);
     color: rgba(255 ,158 ,170, 0.88);
+    color: rgba(156 ,207 ,216, 0.68);
     background-color: rgba(42 ,9 ,66,0);
     border-bottom: 0px solid #ffffff;
-    font-size: 13px;
+    font-size: 14px;
     /*border-radius: 18px;*/
     /*transition-property: background-color;*/
     /*transition-duration: .5s;*/
@@ -50,7 +51,13 @@ window#waybar.empty {
 
 window#waybar.kitty {
     /*background-color: rgba(19,35,36,0.88);*/
-    background-color: rgba(8, 8, 8,0.2);
+    background-color: rgba(25 ,23 ,36,0.596);
+    /*background-color: rgba(40,40,40,1);*/
+}
+
+window#waybar.firefox {
+    /*background-color: rgba(19,35,36,0.88);*/
+    background-color: rgba(0,0,0,1);
     /*background-color: rgba(40,40,40,1);*/
 }
 
@@ -90,13 +97,13 @@ button:hover {
 #workspaces button {
     font-family:quicksand;
     font-size: 12px;
-    margin:2px 0px 2px 0px;
+    margin:3px 0px 2px 0px;
     /*margin: 2px 0px;*/
     /*color: #d79921;*/
     /*color: #fc819e;*/
     /*color: rgba(229, 201 ,155, 0.724);*/
     color: rgba(14 ,124 ,232,0.954);
-    min-width: 17px;
+    min-width: 16px;
     padding: 0px 0px;
     border: 1px solid rgba(0 ,196 ,255,0);
     border-radius: 12px;
@@ -122,7 +129,7 @@ button:hover {
     /*min-width: 14px;*/
     color: rgba(156 ,207 ,216, 1);
     background:rgba(14 ,124 ,232,0.360); 
-    border: 1px solid rgba(0 ,196 ,255,0.889);
+    border: 1px solid rgba(0 ,196 ,255,0.752);
 }
 
 #workspaces button.empty {
@@ -227,7 +234,7 @@ label:focus {
     /*font-family: fantasquesansm nerd font mono;*/
     font-size: 12px;
     padding:  0px 0px;
-    margin: 0px 5px 0px 4px;
+    margin: 0px 2px 0px 4px;
     /*border-right: 2px solid rgba(255, 255, 255, 0.5);*/
     /*border-left: 2px solid rgba(255, 255, 255, 0.5);*/
     border-radius: 0px;
