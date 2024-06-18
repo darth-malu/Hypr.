@@ -18,6 +18,10 @@ playerctl_add_sub () {
     playerctl -p $1 volume 0.1$2
 }
 
+wpctl_add_sub () {
+    wpctl set-volume $1 0.1$2
+}
+
 query_playerctl () {
     playerctl -l
 }
@@ -26,9 +30,14 @@ current_volume () {
     convert_to_percentage $(playerctl -p $1 volume)
 }
 
+extract_firefox_stream () {
+    wpctl status | grep -iA5 -m 1 streams | grep -i firefox | tr -d [:alpha:] | tr -d '.'
+}
+
 player_volume () {
     local current_player=$(playerctl metadata --format '{{ playerName }}')
     local add_minus=$1
+
     case $current_player in
         "spotify")
             playerctl_add_sub $current_player $add_minus 
@@ -37,11 +46,15 @@ player_volume () {
                 -h string:x-dunst-stack-tag:$msgTag "Spotify    $volume%" -h int:value:"$volume"
             ;;
         "Lollypop")
-            local volume=$(current_volume $current_player)
             playerctl_add_sub $current_player $add_minus 
+            local volume=$(current_volume $current_player)
             dunstify -t 1000 -a "changeVolume" -u low -i ~/.local/darthfiles/iconss/lolly.png \
-                -h string:x-dunst-stack-tag:$msgTag "Lollypop    $volume_percentage%" -h int:value:"$volume_percentage"
+                -h string:x-dunst-stack-tag:$msgTag "Lollypop    $volume%" -h int:value:"$volume"
             ;;
+        #"firefox")
+            #local fire_stream=$(extract_firefox_stream)
+            #wpctl_add_sub $fire_stream $add_minus
+            #;;
     esac
 }
 

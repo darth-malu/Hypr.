@@ -19,13 +19,13 @@ function get_current_sink () {
     #wpctl status |sed -n '/Sinks:/,/^[[:space:]]*$/p'| sed -n '1,/^[[:space:]]*$/p' | grep -i "*"
     #outputs a number eg. 55 54 44
     #wpctl status | grep "*" | cut -d ' ' -f7 | tr -d '.'
-    wpctl status |grep -A3 Sinks| grep -o "*\s\+[0-9]\+\." | tr -cd [:digit:]
+    wpctl status |grep -A3 Sinks|sed "/--/q"| grep -o "*\s\+[0-9]\+\." | tr -cd [:digit:]
 }
 
 function sink_getter () {
     #outputs a number :  42 earphones , 44 easy , 55 speaker
     #wpctl status|grep -A3 Sinks| grep -oP '[│*]\s*(\d+)\.\s*([^\s]+)'|grep -oP "(\d+)" | sed -n "$1p"
-    wpctl status|grep -A3 Sinks| grep -oP '[│*]\s*(\d+)\.\s*([^\s]+)'|grep -i $1 |grep -oP "(\d+)"
+    wpctl status|grep -A3 Sinks|sed "/--/q"|grep -oP '[│*]\s*(\d+)\.\s*([^\s]+)'|grep -i $1 |grep -oP "(\d+)"
 }
 
 function sink_switcher (){

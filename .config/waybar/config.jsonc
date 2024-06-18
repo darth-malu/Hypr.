@@ -24,8 +24,8 @@
         ],
 
     "modules-right": [
-        "tray",
         "custom/updates",
+        "tray",
         //"idle_inhibitor",
         //"mpris",
         //"temperature",

@@ -8,7 +8,7 @@ configuration {
     display-filebrowser:        " ";
     display-window:             " ";
 	drun-display-format:        "{icon} {name}";
-    hover-select:               true;
+    hover-select:               false;
     me-select-entry:            "MouseSecondary";
     terminal:                   "kitty";
     me-accept-entry:            "MousePrimary";
