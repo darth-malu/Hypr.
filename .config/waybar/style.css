@@ -80,14 +80,14 @@ button:hover {
 }
 
 #workspaces button {
+    /*removing padding causes issues*/
     font-family:quicksand;
     font-size: 13px;
-    margin:3px 0px;
+    margin:0px 1px 4px 0px;
     color: rgba(14 ,124 ,232,0.954);
     padding: 0px 0px;
     border: 1px solid rgba(0 ,196 ,255,0);
-    border-radius: 2px;
-    /*min-width: 17px;*/
+    min-width: 18px;
     /*border-radius: 12px;*/
 }
 
@@ -98,8 +98,9 @@ button:hover {
 
 #workspaces button.active {
     color: rgba(156 ,207 ,216, 1);
-    background:rgba(14 ,124 ,232,0.560); 
-    /*border-bottom: 1px solid rgba(0 ,196 ,255,0.752);*/
+    color: rgba(255 ,255 ,255, 0.79);
+    background:rgba(14 ,124 ,232,0.410); 
+    border-bottom: 1px solid rgba(0 ,196 ,255,0.752);
 }
 
 #workspaces button.empty {
