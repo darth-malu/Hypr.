@@ -5,6 +5,7 @@
     //"width": 1898, // Waybar width
     "width": 1920, // Waybar width
     //"spacing": 0, // Gaps between modules (4px)
+    "margin": 0,
     
 //    "passthrough": true,
 //    "reload_style_on_change": true,
@@ -25,8 +26,8 @@
 
     "modules-right": [
         "custom/updates",
-        "tray",
         "custom/weather",
+        "tray",
         //"idle_inhibitor",
         //"mpris",
         "mpris",

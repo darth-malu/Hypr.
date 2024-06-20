@@ -34,13 +34,15 @@
 
     "hyprland/window": {
     //"format": " {}",
-    "format": " {}",
+    "format": " {}",
     "icon": false,
     "icon-size": 14,
+    "max-length": 50,
     "rewrite": {
         "(.*) — Mozilla Firefox": "$1",
         //dsd🌎ddd
-        "(.*) - kitty": "> [$1]",
+        "(.*) - fish": " [$1]",
+        "(.*) - kitty": " [$1]",
         "(.*) - Spotify": "molog",
         "(.*) - Lollypop": "molog"
         },
@@ -132,10 +134,11 @@
         "tooltip": false
     },
 
+
     "custom/swap_workspace": {
         //"format": "",
-        //   
-        "format": "",
+        //   
+        "format": "#",
         "on-click": "hyprctl dispatch focuscurrentorlast",
         "on-click-right": "hyprctl dispatch workspace 2",
         //"on-click-right": "$ (~/.config/waybar/launch_waybar.sh)",
@@ -243,6 +246,7 @@
     "format": "{icon}",
     "format-icons": {
         //"activated": "",
+        //"activated": "  ",
         "activated": "  ",
         //"deactivated": ""
         "deactivated": "  "
@@ -251,8 +255,8 @@
 },
 
 "tray": {
-    "icon-size": 10,
-    "spacing": 10
+    "icon-size": 11,
+    "spacing": 8
 },
 
 "cpu": {
