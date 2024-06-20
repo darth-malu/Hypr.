@@ -7,6 +7,7 @@ configuration {
     modi: "window,run,drun";
     show-icons: true;
     icon-theme: "We10X-blue";
+    dpi: 90;
 }
 
 @theme "/dev/null"

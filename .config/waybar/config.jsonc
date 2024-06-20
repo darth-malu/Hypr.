@@ -26,20 +26,20 @@
     "modules-right": [
         "custom/updates",
         "tray",
+        "custom/weather",
         //"idle_inhibitor",
         //"mpris",
-        //"temperature",
+        "mpris",
         "group/conglo",
         //"load",
-        "mpris",
         //"network",
         "group/perfomance",
         //"pulseaudio/slider",
         //"group/media",
         //"custom/notification"
         "wireplumber",
-        "custom/weather",
         "clock",
+        "temperature",
         "custom/wleave"
         ]
 }

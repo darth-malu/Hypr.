@@ -64,8 +64,8 @@
         "modules":[
             //"network",
             "network",
-            "idle_inhibitor",
-            "temperature"
+            "idle_inhibitor"
+            //"temperature"
         ]
     },
 
@@ -96,7 +96,9 @@
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "timezone": "Africa/Nairobi",
         "format-alt": "{:%Y-%m-%d}",
-        "format": "{:%a %d, %H:%M}",
+        //"format": "{:%B %a, %d  %I:%M %p }",
+        "format": "{:%a %d,  %I:%M %p }",
+        //"format": "{:%H:%M}",
         "tooltip": true,
         "calendar": {
                     "mode"          : "month",
@@ -250,7 +252,7 @@
 
 "tray": {
     "icon-size": 10,
-    "spacing": 8
+    "spacing": 10
 },
 
 "cpu": {

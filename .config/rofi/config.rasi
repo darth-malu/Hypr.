@@ -1,20 +1,19 @@
 
 configuration {
     modi:                       "drun,filebrowser,window";
-    font:                       "FiraMono Nerd Font Bold 14";
+    font:                       "FiraMono Nerd Font Bold 11";
     show-icons:                 true;
     display-drun:               " ";
     display-run:                " ";
     display-filebrowser:        " ";
     display-window:             " ";
 	drun-display-format:        "{icon} {name}";
-    hover-select:               false;
+    hover-select:               true;
     me-select-entry:            "MouseSecondary";
     terminal:                   "kitty";
     me-accept-entry:            "MousePrimary";
     window-format:              "{w} · {c} · {t}";
-    icon-theme:                 "dracula-icons-git";
-	dpi:						94;
+    icon-theme:                 "WhiteSur";
     scroll-method:              1;
 }
 @theme "/dev/null"
