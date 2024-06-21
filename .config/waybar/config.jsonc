@@ -16,7 +16,7 @@
     "modules-left": [
         "hyprland/workspaces",
         //"wlr/taskbar",
-        "custom/swap_workspace",
+        //"custom/swap_workspace",
         "hyprland/window"
         ],
 
