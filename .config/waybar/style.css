@@ -266,15 +266,15 @@ label:focus {
 }
 
 #temperature {
-    font-size: 13px;
+    font-size: 12px;
     font-family: quicksand;
     padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 3px;
+    margin: 0px 2px 0px 3px;
     transition: none;
     color: rgba(253 ,164 ,3, 0.89);
     color: rgba(202 ,155 ,249, 0.896);
-    color: rgba(255 ,255 ,255, 0.564);
-    color: rgba(255 ,158 ,170, 0.83);
+    color: rgba(255 ,255 ,255, 0.494);
+    /*color: rgba(255 ,158 ,170, 0.83);*/
 }
 
 #temperature.critical {
@@ -299,10 +299,10 @@ label:focus {
 
 #custom-wleave {
     /*font-size: 12px;*/
-    padding: 0px 0px 2px 0px;
+    padding: 0px 0px 0px 0px;
     margin: 0px 8px 0px 4px;
     color: rgba(255 ,158 ,170, 0.83);
-    color: rgba(255 ,255 ,255, 0.564);
+    /*color: rgba(255 ,255 ,255, 0.564);*/
     }
 
 #custom-updates {
@@ -382,8 +382,8 @@ label:focus {
 
 #mpris.spotify{
     /*color: #1ED760;*/
-    color: rgba(22 ,255 , 0, 0.766);
-    background: rgba(22 ,255 , 0, 0.168);
+    color: rgba(22 ,255 , 0, 0.666);
+    background: rgba(22 ,255 , 0, 0.106);
 }
 
 #idle_inhibitor.activated {
