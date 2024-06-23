@@ -42,7 +42,11 @@ pause_player () {
             fi
             ;;
         *)
-            playerctl -ps $active_player play-pause
+            if  check_running "spotify" || check_running "python3 /sbin/lollypop";then
+                playerctl -ps spotify play-pause || playerctl -sp Lollypop play-pause
+            else
+                playerctl -ps $active_player play-pause
+            fi
             ;;
     esac
     }

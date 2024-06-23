@@ -109,16 +109,16 @@
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 1
+    frame_width = 0
 
     # Defines color of the frame around the notification window.
-    frame_color = "#F7418F"
+    frame_color = "#98C8D3"
 
     # Size of gap to display between notifications - requires a compositor.
     # If value is greater than 0, separator_height will be ignored and a border
     # of size frame_width will be drawn around each notification instead.
     # Click events on gaps do not currently propagate to applications below.
-    gap_size = 0
+    gap_size = 1
 
     # Define a color for the separator.
     # possible values are:
@@ -197,7 +197,7 @@
 
     # Specify where to make an ellipsis in long lines.
     # Possible values are "start", "middle" and "end".
-    ellipsize = middle
+    ellipsize = end
 
     # Ignore newlines '\n' in notifications.
     ignore_newline = no
@@ -219,7 +219,7 @@
     enable_recursive_icon_lookup = true
 
     # Set icon theme (only used for recursive icon lookup)
-    icon_theme = volume,Yaru,Qogir,We10X-black
+    #icon_theme = volume,Yaru,Qogir,We10X-black
     # You can also set multiple icon themes, with the leftmost one being used first.
     # icon_theme = "Adwaita, breeze"
 
@@ -236,7 +236,7 @@
 
     # Paths to default icons (only neccesary when not using recursive icon lookup)
     #icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
-    icon_path = /usr/share/icons/custom_icons/iconss/volume/:/usr/share/icons/Yaru/32x32:/usr/share/icons/Qogir/:/usr/share/icons/We10X-black/status/symbolic/:/home/malu/.local/darthfiles/iconss
+    #icon_path = /usr/share/icons/custom_icons/iconss/volume/:/usr/share/icons/Yaru/32x32:/usr/share/icons/Qogir/:/usr/share/icons/We10X-black/status/symbolic/:/home/malu/.local/darthfiles/iconss
 
     ### history ###
 
@@ -269,7 +269,7 @@
     # corners.
     # the radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 12
+    corner_radius = 8
 
     # ignore the dbus closenotification message.
     # useful to enforce the timeout set by dunst configuration. without this
@@ -326,7 +326,7 @@
     # dunst will attempt to calculate an appropriate dpi value for each monitor
     # using the resolution and physical size. this might be useful in setups
     # where there are multiple screens with very different dpi values.
-    per_monitor_dpi = false
+    #per_monitor_dpi = false
 
 
 [urgency_low]
@@ -334,9 +334,10 @@
     # otherwise the "#" and following would be interpreted as a comment.
     #background = "#00000090"
     background = "#000000"
-    foreground = "#fcf9be"
+    #foreground = "#fcf9be"
+    #foreground = "#D0A36B"
     timeout = 2
-    highlight = "#D6589F" 
+    highlight = "#16D10A"
     frame_color = "#2C1253"
     # Icon for notifications with low urgency, uncomment to enable
     #default_icon = /path/to/icon
@@ -344,12 +345,13 @@
 [urgency_normal]
     #background = "#00000070"
     background = "#000000"
-    foreground = "#fcf9be"
+    #foreground = "#9CCFD8"
+    foreground = "#B7B4BC"
     timeout = 4
     #frame_color = "#F7418F"
     frame_color = "#2C1253"
     #frame_width = 5
-    highlight = "#D6589F"
+    highlight = "#C17588"
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
 
@@ -377,7 +379,7 @@
 #
 # and you can override the
     background = "#07323A"
-#    foreground
+    foreground = "#D0A36B"
 #    format
 #    frame_color
 #    fullscreen

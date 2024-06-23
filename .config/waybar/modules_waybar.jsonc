@@ -33,7 +33,7 @@
     },
 
     "hyprland/window": {
-    "format": "  {}",
+    "format": "   {}",
     //"format": " {}",
     "icon": false,
     "icon-size": 14,
@@ -150,9 +150,12 @@
         "exec": "checkupdates --nocolor | wc -l",
         "exec-if": "[[ $(checkupdates --nocolor | wc -l) != 0 ]]",
         "interval": 3600,
-        "on-click": "kitty -e sudo pacman -Syu && notify-send 'The system has been updated -pacsyu' && pkill -RTMIN+8 waybar",
-        "on-click-right": "kitty -e paru -Syu && notify-send 'The system has been updated -aursyu' && pkill -RTMIN+8 waybar",
+        "on-click": "kitty --hold sh -c '~/.local/darthfiles/updates.sh main'",
+        //"on-click": "kitty --session '~/.local/darthfiles/custom_update.conf'",
+        //"on-click": "kitten run-shell --shell=/bin/bash ~/.local/darthfiles/updates.sh",
+        //"on-click-right": "kitty -e paru -Sua && notify-send 'AUR pkgs updated ' && pkill -RTMIN+8 waybar",
         //"tooltip-format": "{}"
+        "on-click-right": "kitty --hold sh -c '~/.local/darthfiles/updates.sh aur",
         "signal": 8
     }, 
 
