@@ -31,7 +31,7 @@ window#waybar {
     color: rgba(255 ,255 ,255, 0.684);
     background-color: rgba(42 ,9 ,66,0);
     border-bottom: 0px solid #ffffff;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 window#waybar.solo {
@@ -243,7 +243,7 @@ label:focus {
     /*background: rgba(146 ,199 ,207, 0.38);*/
     font-family: quicksand;
     font-size: 12px;
-    margin: 0px 0px 2px 8px;
+    margin: 0px 0px 0px 8px;
     /*padding: 0 4px;*/
     /*border-radius: 12px;*/
     /*border-right: 2px solid rgba(255, 255, 255, 0.6);*/
@@ -299,8 +299,8 @@ label:focus {
 
 #custom-wleave {
     /*font-size: 12px;*/
-    padding: 0px 0px 0px 0px;
-    margin: 0px 8px 2px 4px;
+    padding: 0px 0px 2px 0px;
+    margin: 0px 8px 0px 4px;
     color: rgba(255 ,158 ,170, 0.83);
     color: rgba(255 ,255 ,255, 0.564);
     }
@@ -314,7 +314,7 @@ label:focus {
 #custom-weather {
     color: rgba(76 ,205 ,153, 0.96);
     font-family: quicksand;
-    margin: 2px 4px 0px 6px;
+    margin: 0px 4px 0px 6px;
     font-size: 12px;
 }
 

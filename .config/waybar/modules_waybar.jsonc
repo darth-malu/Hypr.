@@ -33,7 +33,8 @@
     },
 
     "hyprland/window": {
-    "format": "   {}",
+    //"format": "   {}",
+    "format": "\t{}",
     //"format": " {}",
     "icon": false,
     "icon-size": 14,
