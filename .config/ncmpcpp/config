@@ -1,0 +1,140 @@
+
+###COLORS
+## Song List ##
+song_columns_list_format = "(38)[122]{t} (25)[147]{a} (25)[104]{b} (10)[104]{g} (4)[104]{l} "
+song_list_format = "{$8%t$9}|{$5%f$9}$R{$6%b $9}{$3%l$9}"
+#song_window_title_format
+execute_on_song_change = dunstify "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"
+
+## Current Item ##
+#current_item_prefix = "$(68)$r"
+current_item_prefix = "$(105)$r"
+
+current_item_suffix = "$/r$(end)"
+current_item_inactive_column_prefix = "$(147)"
+
+#progress bar
+#progressbar_color = 140
+progressbar_color = 61 
+progressbar_look = "─⊙┄"
+progressbar_elapsed_color = 104 
+volume_color = 115
+#progressbar_color = 244
+
+colors_enabled = yes
+
+#main-window
+#main_window_color = 141
+main_window_color = 147
+
+player_state_color = 147
+window_border_color = 104
+state_line_color = 104
+#visualizer_color = 25, 219, 33
+visualizer_color = 25, 38, 104
+alternative_ui_separator_color = 218
+
+#header -> top most, browse,playlist
+#header_window_color = 38 
+header_window_color = 147 
+
+#One of colors used in Song info, Tiny tag editor and Search engine.
+statusbar_color = 147
+statusbar_time_color = 147
+
+
+color1 = 8
+color2 = 8
+
+active_window_border = 21
+#header
+header_text_scrolling = "yes"
+header_visibility = "yes"
+#eg media-lib
+
+#playerstate
+#Color of player state shown in statusbar
+
+
+#for add to playlist window border
+
+#visualizer
+
+playlist_editor_display_mode = "columns"
+search_engine_display_mode = "columns"
+browser_display_mode = "columns"
+playlist_display_mode = "columns"
+
+#Status bar
+#status changes eg update db
+statusbar_visibility = "yes"
+
+#misc
+
+#UI
+user_interface = classic
+
+#visualizer
+visualizer_data_source = "/tmp/mpd.fifo"
+visualizer_output_name = "Visualizer feed"
+visualizer_type = "wave_filled"
+visualizer_in_stereo = "yes"
+visualizer_look = "◆▋"
+
+use_console_editor = yes
+mouse_list_scroll_whole_page = yes
+startup_screen = playlist
+
+
+## Visibility ##
+titles_visibility = "yes"
+
+
+
+autocenter_mode = "yes"
+follow_now_playing_lyrics = "yes"
+
+# Misc
+display_bitrate = "yes"
+enable_window_title = "yes"
+connected_message_on_startup = "yes"
+empty_tag_marker = ""
+
+#media
+#media_library_primary_tag = artist/album_artist/date/genre/composer/performer
+#media_library_primary_tag = album_artist
+
+#volume
+volume_change_step = 5
+
+## Navigation ##
+cyclic_scrolling = "yes"
+jump_to_now_playing_song_at_start = "yes"
+lines_scrolled = "2"
+
+## Seeking ##
+incremental_seeking = "yes"
+seek_time = "1"
+
+
+## Selected tracks ##
+selected_item_prefix = "+ "
+
+
+## Now Playing ##
+##now_playing_prefix = " "
+now_playing_prefix = " "
+centered_cursor = "yes"
+
+mpd_host = localhost
+mpd_port = 6600
+mpd_music_dir = ~/Music 
+ncmpcpp_directory = ~/.config/ncmpcpp
+
+ audio_output {
+        type            "fifo"
+        name            "Visualizer feed"
+        path            "/tmp/mpd.fifo"
+        format          "44100:16:2"
+ }
+external_editor = "/usr/bin/nvim"
