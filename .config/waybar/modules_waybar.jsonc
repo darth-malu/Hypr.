@@ -129,7 +129,7 @@
 
     "custom/wleave": {
         //"format": "",
-        "format": "",
+        "format": "󰣇 ",
         "on-click": "wlogout",
         //"on-click-right": "$ (~/.config/waybar/launch_waybar.sh)",
         "tooltip": false

@@ -222,8 +222,8 @@ def_key "j"
 #def_key "delete"
 #  delete_playlist_items
 #
-def_key "delete"
-  delete_browser_items
+#def_key "delete"
+# delete_browser_items
 #
 #def_key "delete"
 #  delete_stored_playlist
@@ -303,8 +303,8 @@ def_key "shift-tab"
 #def_key "@"
 #  show_server_info
 #
-#def_key "s"
-#  stop
+def_key "s"
+  save_playlist
 #
 #def_key "p"
 #  pause

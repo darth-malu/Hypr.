@@ -1,16 +1,18 @@
 
 ###COLORS
 ## Song List ##
-song_columns_list_format = "(38)[38]{t} (25)[62]{b}  (25)[62]{a} (10)[62]{g} (4)[105]{l} "
+song_columns_list_format = "(38)[81]{t} (25)[74]{b}  (25)[74]{a} (10)[74]{g} (4)[74]{l} "
 song_list_format = "{$8%t$9}|{$5%f$9}$R{$6%b $9}{$3%l$9}"
 #song_window_title_format
 #execute_on_song_change = dunstify "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"
+startup_screen = playlist
 execute_on_song_change = songinfo.sh
+mouse_support = no
 
 allow_for_physical_item_deletion = "yes"
 ## Current Item ##
 #current_item_prefix = "$(68)$r"
-current_item_prefix = "$(38)$r"
+current_item_prefix = "$(37)$r"
 
 current_item_suffix = "$/r$(end)"
 current_item_inactive_column_prefix = "$(104)$r"
@@ -18,10 +20,10 @@ current_item_inactive_column_prefix = "$(104)$r"
 #header -> top most, browse,playlist
 #header_window_color = 38 
 header_window_color = 81 
-state_line_color = 147
+state_line_color = 31
 main_window_color = 38 
-player_state_color = 38 
-statusbar_color = 147
+player_state_color = 81 
+statusbar_color = 176
 statusbar_time_color = 81
 volume_color = 81
 
@@ -85,7 +87,6 @@ visualizer_look = "+|"
 
 use_console_editor = yes
 mouse_list_scroll_whole_page = yes
-startup_screen = media_library
 
 ## Visibility ##
 titles_visibility = "no"

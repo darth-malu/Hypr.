@@ -298,10 +298,12 @@ label:focus {
 }
 
 #custom-wleave {
-    /*font-size: 12px;*/
+    font-size: 16px;
     padding: 0px 0px 0px 0px;
-    margin: 0px 8px 0px 4px;
+    margin: 0px 0px 0px 0px;
     color: rgba(255 ,158 ,170, 0.83);
+    color: rgba(32 ,125 ,231, 0.83);
+    color: rgba(23 ,147 ,209, 0.99);
     /*color: rgba(255 ,255 ,255, 0.564);*/
     }
 
