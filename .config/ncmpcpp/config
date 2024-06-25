@@ -1,46 +1,49 @@
 
 ###COLORS
 ## Song List ##
-song_columns_list_format = "(38)[81]{t} (25)[147]{a} (25)[104]{b} (10)[104]{g} (4)[104]{l} "
+song_columns_list_format = "(38)[50]{t}(25)[105]{b}  (25)[105]{a} (10)[105]{g} (4)[105]{l} "
 song_list_format = "{$8%t$9}|{$5%f$9}$R{$6%b $9}{$3%l$9}"
 #song_window_title_format
-execute_on_song_change = dunstify "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"
+#execute_on_song_change = dunstify "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"
+execute_on_song_change = songinfo.sh
 
+allow_for_physical_item_deletion = "yes"
 ## Current Item ##
 #current_item_prefix = "$(68)$r"
 current_item_prefix = "$(105)$r"
 
 current_item_suffix = "$/r$(end)"
-current_item_inactive_column_prefix = "$(147)$r"
+current_item_inactive_column_prefix = "$(61)$r"
+
+#header -> top most, browse,playlist
+#header_window_color = 38 
+header_window_color = 147 
+state_line_color = 147
+main_window_color = 147
+player_state_color = 50 
+statusbar_color = 147
+statusbar_time_color = 147
+volume_color = 50
 
 #progress bar
 #progressbar_color = 140
+#progressbar_color = 244
 progressbar_color = 61 
 progressbar_look = "─⊙┄"
-progressbar_elapsed_color = 104 
-volume_color = 115
-#progressbar_color = 244
+progressbar_elapsed_color = 39 
+window_border_color = 104
 
 colors_enabled = yes
 
 #main-window
 #main_window_color = 141
-main_window_color = 147
 
-player_state_color = 147
-window_border_color = 104
-state_line_color = 104
 #visualizer_color = 25, 219, 33
 visualizer_color = 25, 38, 104
 alternative_ui_separator_color = 218
 
-#header -> top most, browse,playlist
-#header_window_color = 38 
-header_window_color = 147 
 
 #One of colors used in Song info, Tiny tag editor and Search engine.
-statusbar_color = 81
-statusbar_time_color = 147
 
 
 color1 = 8
@@ -79,7 +82,8 @@ visualizer_data_source = "/tmp/mpd.fifo"
 visualizer_output_name = "Visualizer feed"
 visualizer_type = "wave_filled"
 visualizer_in_stereo = "yes"
-visualizer_look = "◆▋"
+#visualizer_look = "◆▋"
+visualizer_look = "+|"
 
 use_console_editor = yes
 mouse_list_scroll_whole_page = yes
