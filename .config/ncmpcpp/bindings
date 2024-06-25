@@ -157,15 +157,15 @@
 #def_key "mouse"
 #  mouse_event
 #
-#def_key "up"
-#  scroll_up
+def_key "k"
+  scroll_up
 #
 #def_key "shift-up"
 #  select_item
 #  scroll_up
 #
-#def_key "down"
-#  scroll_down
+def_key "j"
+  scroll_down
 #
 #def_key "shift-down"
 #  select_item
@@ -222,15 +222,17 @@
 #def_key "delete"
 #  delete_playlist_items
 #
-#def_key "delete"
-#  delete_browser_items
+def_key "delete"
+  delete_browser_items
 #
 #def_key "delete"
 #  delete_stored_playlist
 #
-#def_key "right"
-#  next_column
-#
+def_key "l"
+  next_column
+
+def_key "h"
+  previous_column
 #def_key "right"
 #  slave_screen
 #
@@ -240,8 +242,6 @@
 #def_key "+"
 #  volume_up
 #
-#def_key "left"
-#  previous_column
 #
 #def_key "left"
 #  master_screen
@@ -258,8 +258,8 @@
 #def_key "tab"
 #  next_screen
 #
-#def_key "shift-tab"
-#  previous_screen
+def_key "shift-tab"
+  previous
 #
 #def_key "f1"
 #  show_help
@@ -309,10 +309,10 @@
 #def_key "p"
 #  pause
 #
-#def_key ">"
-#  next
+def_key "tab"
+  next
 #
-#def_key "<"
+#def_key "backspace"
 #  previous
 #
 #def_key "ctrl-h"
@@ -324,8 +324,8 @@
 #def_key "backspace"
 #  jump_to_parent_directory
 #
-#def_key "backspace"
-#  replay_song
+def_key "backspace"
+  replay_song
 #
 #def_key "backspace"
 #  play
@@ -546,6 +546,6 @@
 #def_key "ctrl-p"
 #  set_selected_items_priority
 #
-#def_key "q"
-#  quit
+def_key "q"
+  quit
 #
