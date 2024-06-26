@@ -1,3 +1,16 @@
+mpd_host = localhost
+mpd_port = 6600
+mpd_music_dir = /home/malu/Music 
+ncmpcpp_directory = /home/malu/.config/ncmpcpp
+
+ audio_output {
+        type            "fifo"
+        name            "Visualizer feed"
+        path            "/tmp/mpd.fifo"
+        format          "44100:16:2"
+ }
+
+external_editor = "/usr/bin/nvim"
 
 ###COLORS
 ## Song List ##
@@ -95,8 +108,8 @@ autocenter_mode = "yes"
 follow_now_playing_lyrics = "yes"
 
 # Misc
-display_bitrate = "yes"
-enable_window_title = "yes"
+display_bitrate = "no"
+enable_window_title = "no"
 connected_message_on_startup = "yes"
 empty_tag_marker = ""
 
@@ -126,15 +139,3 @@ selected_item_prefix = "+ "
 now_playing_prefix = " "
 centered_cursor = "yes"
 
-mpd_host = localhost
-mpd_port = 6600
-mpd_music_dir = ~/Music 
-ncmpcpp_directory = ~/.config/ncmpcpp
-
- audio_output {
-        type            "fifo"
-        name            "Visualizer feed"
-        path            "/tmp/mpd.fifo"
-        format          "44100:16:2"
- }
-external_editor = "/usr/bin/nvim"
