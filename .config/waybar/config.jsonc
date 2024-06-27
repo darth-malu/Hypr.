@@ -6,6 +6,7 @@
     "width": 1920, // Waybar width
     //"spacing": 0, // Gaps between modules (4px)
     "margin": 0,
+    "reload_style_on_change": true,
     
 //    "passthrough": true,
 //    "reload_style_on_change": true,

@@ -1,7 +1,7 @@
 mpd_host = localhost
 mpd_port = 6600
-mpd_music_dir = /home/malu/Music 
-ncmpcpp_directory = /home/malu/.config/ncmpcpp
+mpd_music_dir = ~/Music 
+ncmpcpp_directory = ~/.config/ncmpcpp
 
  audio_output {
         type            "fifo"
@@ -32,11 +32,12 @@ current_item_inactive_column_prefix = "$(104)$r"
 
 #header -> top most, browse,playlist
 #header_window_color = 38 
-header_window_color = 81 
+header_window_color = 120 
 state_line_color = 31
 main_window_color = 38 
 player_state_color = 81 
-statusbar_color = 176
+#statusbar_color = 216
+statusbar_color = 120
 statusbar_time_color = 81
 volume_color = 81
 
