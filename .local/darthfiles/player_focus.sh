@@ -24,6 +24,11 @@ function focus_current_player () {
         *"firefox"*)
             hyprctl dispatch focuswindow firefox
             ;;
+        *"mpd"*)
+            #hyprctl dispatch focuswindow title:nc 2>&1 /dev/null | hyprctl dispatch focuswindow title:ncmpcpp 2> /dev/null
+            #hyprctl dispatch focuswindow title:nc || hyprctl dispatch focuswindow title:ncmpcpp || hyprctl dispatch exec '[workspace 6] kitty -e ncmpcpp'
+            hyprctl dispatch exec '[workspace 6] kitty -e ncmpcpp'
+            ;;
     esac
 }
 

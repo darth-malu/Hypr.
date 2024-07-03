@@ -5,6 +5,7 @@
     /*padding-top: 0px;*/
     /*padding-bottom: 0px;*/
     font-weight: bold;
+    margin: 0;
     border: none;
     border-radius: 0;
 }
@@ -23,11 +24,18 @@ window#waybar {
     /*this is the actual text of active window*/
     /*background: rgba(21, 18, 27, 0);*/
     /*color: rgba(255 ,158 ,170, 0.88);*/
-    color: rgba(255 ,255 ,255, 0.724);
+    color: rgba(255 ,255 ,255, 0.728);
     /*color: rgba(2 ,40 ,85, 1);*/
-    background-color: rgba(0 ,40 ,83,0.96);
     background-color: rgba(0 ,40 ,83,0.52);
+    background-color: rgba(0 ,40 ,83,0.96);
     background-color: rgba(140 ,108 ,145, 0.0);
+    background-color: rgba(60 ,56 ,54, 0.76);
+    background-color: rgba(45 ,30 ,47, 0.96);
+    background-color: rgba(23 ,10 ,28, 1);
+    background-color: rgba(12 ,16 ,23, 1);
+    background-color: rgba(24 ,44 ,37, 1);
+    background-color: rgba(8 ,28 ,21, 1);
+    background-color: rgba(23 ,39 ,41, 1);
     font-size: 14px;
 }
 
@@ -42,14 +50,12 @@ window#waybar.hidden {
     opacity: 0.2;
 }
 
-window#waybar.empty {
-    background-color: rgba(0,0,0,0.0);
-}
 
 /*window#waybar.kitty {*/
     /*background-color: rgba(19,35,36,0.88);*/
     /*background-color: rgba(25 ,23 ,36,0.596);*/
     /*background-color: rgba(40,40,40,1);*/
+    /*background-color: rgba(60 ,56 ,54, 0.76);*/
 /*}*/
 
 window#waybar.firefox {
@@ -87,12 +93,13 @@ button:hover {
     /*removing padding causes issues*/
     font-family:quicksand;
     font-size: 12px;
-    margin:3px 0px 3px 0px;
-    color: rgba(156 ,207 ,216, 0.99);
+    margin:2px 2px 2px 0px;
     padding: 0px 0px;
     border: 1px solid rgba(0 ,196 ,255,0);
     min-width: 17px;
     border-radius: 12px;
+    color: rgba(255 ,158 ,170, 0.63);
+    color: rgba(128 ,237 ,153, 0.59);
 }
 
 
@@ -101,14 +108,22 @@ button:hover {
 }
 
 #workspaces button.active {
-    background:rgba(14 ,124 ,232,0.360); 
-    background: rgba(156 ,207 ,216, 0.46);
-    color: rgba(255 ,255 ,255, 0.754);
+    /*color: rgba(255 ,255 ,255, 0.654);*/
+    /*color: rgba(217 ,133 ,149, 0.924);*/
+    /*background: rgba(217 ,133 ,149, 0.464);*/
+    border: 1px solid rgba(216 ,243 ,220, 0.214);
+    color: rgba(243 ,222 ,44, 0.79);
+    color: rgba(250 ,255 ,129, 1);
+    color: rgba(255 ,158 ,170, 1);
+    color: rgba(183 ,228 ,199, 0.569);
+    background: rgba(255 ,158 ,170, 0.369);
+    background: rgba(87 ,204 ,153, 0.169);
+    background: rgba(45 ,106 ,79, 0.52);
 }
 
 #workspaces button.empty {
     /*color: #fc819e;*/
-    color: rgba(255, 255, 255, 0.200);
+    color: rgba(255, 255, 255, 0.211);
 }
 /* if workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
@@ -129,7 +144,7 @@ button:hover {
 #clock {
     margin: 0px 4px;
     font-family: quicksand;
-    font-size: 13px;
+    font-size: 12px;
     color: rgba(156 ,207 ,216, 1);
     /*border-bottom: 2px solid rgba(156 ,207 ,216, 0.83);*/
     background: rgba(156 ,207 ,216, 0.13);
@@ -137,8 +152,8 @@ button:hover {
     background: rgba(255 ,255 ,255, 0.124);
     background: rgba(255 ,255 ,255, 0.144);
     border: 1px solid rgba(255 ,255,255, 0.052);
-    border-radius: 4px;
-    padding: 0px 2px;
+    border-radius: 18px;
+    padding: 0px 3px;
     margin: 3px 4px 3px 8px;
 }
 
@@ -162,29 +177,45 @@ label:focus {
 #cpu {
     font-family: quicksand;
     font-size:12px;
-    margin: 0px 5px 0px 0px;
+    margin: 2px 3px 0px 3px;
     color: rgba(253 ,164 ,3, 0.89);
     color: rgba(246 ,193 ,119, 0.89);
-    border-bottom: 2px solid rgba(253 ,164 ,3, 0.88);
+    color: rgba(243 ,222 ,44, 0.65);
+    color: rgba(255 ,238 ,147, 0.85);
+    color: rgba(159 ,162 ,178, 1);
+    /*border-bottom: 2px solid rgba(253 ,164 ,3, 0.88);*/
 }
 
 #memory {
     font-family: quicksand;
-    margin: 0px 4px 0px 0px;
-    border-bottom: 2px solid rgba(21 ,245 ,186, 0.76);
-    padding: 0px 0px 0px 0px;
+    margin: 2px 6px 1px 6px;
+    padding: 0px 2px 0px 0px;
     font-size:12px;
     transition: none;
-    color: rgba(76 ,205 ,153, 0.92);
+    color: rgba(107 ,255 ,122, 0.62);
+    color: rgba(188 ,235 ,203, 0.72);
+    color: rgba(219 ,213 ,110, 0.72);
+    color: rgba(205 ,214 ,221, 0.72);
+    color: rgba(201 ,173 ,167, 0.720);
+    color: rgba(76 ,205 ,153, 0.62);
+    color: rgba(204 ,213 ,255, 0.65);
+    color: rgba(255 ,217 ,206, 0.65);
+    color: rgba(207 ,255 ,229, 0.65);
+    color: rgba(92 ,128 ,188, 0.88);
+    color: rgba(72 ,191 ,227, 0.68);
+    color: rgba(159 ,162 ,178, 1);
+    /*border-bottom: 2px solid rgba(21 ,245 ,186, 0.76);*/
 }
 
 #disk {
-    margin: 0px 5px 0px 0px;
+    margin: 2px 10px 0px 0px;
     font-size:12px;
     font-family: quicksand;
-    border-bottom: 2px solid rgba(229, 201 ,155, 0.8);
     padding: 0px 0px 0px 0px;
-    color: rgba(246 ,193 ,119, 0.88);
+    color: rgba(205 ,214 ,221, 0.65);
+    color: rgba(72 ,191 ,227, 0.72);
+    color: rgba(255 ,158 ,170, 0.82);
+    /*border-bottom: 2px solid rgba(229, 201 ,155, 0.8);*/
 }
 
 #backlight {
@@ -196,10 +227,10 @@ label:focus {
     font-family: quicksand;
     font-size: 12px;
     padding:  0px 0px;
-    margin: 0px 5px 0px 4px;
+    margin: 0px 4px 0px 4px;
     border-radius: 0px;
-    border-bottom: 2px solid rgba(255 ,158 ,170, 0.83); 
     color: rgba(255 ,158 ,170, 0.83);
+    /*border-bottom: 2px solid rgba(255 ,158 ,170, 0.83); */
 
 	/*background: #cc6699;*/
     /*background: rgba(17 ,106 ,123, 0.3); nice blue*/ 
@@ -230,21 +261,11 @@ label:focus {
 }
 
 #wireplumber {
-    /*background: rgba(146 ,199 ,207, 0.38);*/
     font-family: quicksand;
     font-size: 12px;
-    margin: 0px 0px 0px 8px;
-    /*padding: 0 4px;*/
-    /*border-radius: 12px;*/
-    /*border-right: 2px solid rgba(255, 255, 255, 0.6);*/
-    /*border-left: 2px solid rgba(255, 255, 255, 0.6);*/
-    color: rgba(0,0,0,1);
-    color: rgba(255, 255, 255, 0.79);
+    margin: 1px 4px 0px 4px;
     color: rgba(255 ,158 ,170, 0.83);
-    /*color: #4cb2a5;*/
     /*color: #FC819E;*/
-    /*color: #E3DCC8;*/
-    /*background: #383c4a;*/
 }
 
 #wireplumber.muted {
@@ -256,19 +277,16 @@ label:focus {
 }
 
 #temperature {
-    font-size: 11px;
+    margin: 0px 4px 0px 0px;
+    font-size: 13px;
     font-family: quicksand;
-    padding: 0px 0px 0px 0px;
-    margin: 0px 2px 0px 3px;
-    transition: none;
-    color: rgba(253 ,164 ,3, 0.89);
-    color: rgba(202 ,155 ,249, 0.896);
     color: rgba(255 ,255 ,255, 0.524);
-    /*color: rgba(255 ,158 ,170, 0.83);*/
+    color: rgba(205 ,214 ,221, 0.66);
+    color: rgba(159 ,162 ,178, 1);
 }
 
 #temperature.critical {
-    color: #eb4d4b;
+    color: rgba(255 ,158 ,170, 0.83);
 }
 
 #tray {
@@ -294,20 +312,30 @@ label:focus {
     color: rgba(255 ,158 ,170, 0.83);
     color: rgba(32 ,125 ,231, 0.83);
     color: rgba(23 ,147 ,209, 1);
-    color: rgba(150 ,203 ,217, 1);
+    color: rgba(7 ,172 ,243, 1);
+    color: rgba(159 ,162 ,178, 1);
     /*color: rgba(255 ,255 ,255, 0.564);*/
     }
 
 #custom-updates {
-    color: rgba(76 ,205 ,153, 0.96);
+    color: rgba(76 ,205 ,153, 0.76);
     margin: 0px 0px 0px 0px;
     font-size: 12px;
 }
 
 #custom-weather {
     color: rgba(76 ,205 ,153, 0.96);
+    color: rgba(231 ,249 ,169, 0.62);
+    color: rgba(156 ,207 ,216, 0.66);
+    color: rgba(188 ,244 ,222, 0.76);
+    color: rgba(205 ,214 ,221, 0.92);
+    color: rgba(227 ,213 ,178, 0.86);
+    color: rgba(201 ,173 ,167, 0.810);
+    color: rgba(255 ,217 ,206, 0.65);
+    color: rgba(159 ,162 ,178, 0.84);
+    color: rgba(159 ,162 ,178, 0.99);
     font-family: quicksand;
-    margin: 0px 4px 0px 6px;
+    margin: 0px 6px 0px 6px;
     font-size: 12px;
 }
 
@@ -363,13 +391,13 @@ label:focus {
 #mpris {
     font-size: 12px;
     font-family: quicksand;
-    background: rgba(22 ,255 , 0, 0.142);
     background: rgba(142 ,122 ,181, 0.342);
+    background: rgba(22 ,255 , 0, 0.142);
     background: rgba(255 ,255 ,255, 0.144);
     border: 1px solid rgba(255 ,255,255, 0.052);
-    border-radius: 4px;
+    border-radius: 12px;
     padding: 0px 6px;
-    margin: 3px 4px 3px 8px;
+    margin: 3px 4px 3px 5px;
     color: rgba(156 ,207 ,216, 1);
 }
 
@@ -390,6 +418,7 @@ label:focus {
 
 #idle_inhibitor {
     padding:0px;
+    font-size: 12px;
     /*font-size:11px;*/
     margin: 0px 0px 0px 0px;
     background-color: #d46547;

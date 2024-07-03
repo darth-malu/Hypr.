@@ -33,10 +33,13 @@ pause_player () {
         "Lollypop")
             playerctl -p Lollypop play-pause
             ;;
+        "mpd")
+            mpc toggle
+            ;;
         "firefox")
             #while spotify or lollypop in background pause those first
-            if  check_running "spotify" || check_running "python3 /sbin/lollypop";then
-                playerctl -ps spotify play-pause || playerctl -sp Lollypop play-pause
+            if  check_running "spotify" || check_running "python3 /sbin/lollypop" || check_running ncmpcpp;then
+                playerctl -ps spotify play-pause || playerctl -sp Lollypop play-pause || mpc toggle
             else
                 playerctl -ps firefox play-pause
             fi

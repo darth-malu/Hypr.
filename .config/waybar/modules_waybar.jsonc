@@ -39,7 +39,7 @@
     //"format": " {}",
     "icon": false,
     "icon-size": 14,
-    "max-length": 50,
+    //"max-length": 50,
     "rewrite": {
         "(.*) — Mozilla Firefox": "$1",
         //dsd🌎ddd
@@ -53,20 +53,21 @@
 
     "group/perfomance": {
         "orientation": "horizontal",
-        //"drawer": {"transition-duration": 400,"transition-left-to-right": true, "children-class": "drawer-child"},
+        "drawer": {"transition-duration": 400,"transition-left-to-right": true, "children-class": "drawer-child"},
         "modules":[
             //"network",
             "cpu",
-            "disk",
-            "memory"
+            "temperature",
+            "idle_inhibitor"
+            //"memory",
+            //"disk"
         ]
     },
 
     "group/conglo": {
-        "orientation": "horizontal",
         "drawer": {"transition-duration": 400,"transition-left-to-right": false, "children-class": "drawer-child"},
+        "orientation": "horizontal",
         "modules":[
-            //"network",
             "network",
             "idle_inhibitor"
             //"temperature"

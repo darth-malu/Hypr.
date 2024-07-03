@@ -333,25 +333,29 @@
     # important: colors have to be defined in quotation marks.
     # otherwise the "#" and following would be interpreted as a comment.
     #background = "#00000090"
-    background = "#000000"
+    background = "#0C1017"
     #foreground = "#fcf9be"
     #foreground = "#D0A36B"
     timeout = 2
-    highlight = "#16D10A"
+    #highlight = "#16D10A"
+    #highlight = "#D38790"
+    #highlight = "#799C94"
     frame_color = "#2C1253"
+    foreground = "#799C94"
     # Icon for notifications with low urgency, uncomment to enable
     #default_icon = /path/to/icon
 
 [urgency_normal]
     #background = "#00000070"
-    background = "#000000"
+    background = "#0C1017"
     #foreground = "#9CCFD8"
-    foreground = "#B7B4BC"
+    foreground = "#799C94"
     timeout = 4
     #frame_color = "#F7418F"
     frame_color = "#2C1253"
     #frame_width = 5
-    highlight = "#C17588"
+    #highlight = "#C17588"
+    highlight = "#799C94"
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
 
@@ -378,8 +382,8 @@
 #    summary
 #
 # and you can override the
-    background = "#07323A"
-    foreground = "#D0A36B"
+    background = "#0C1017"
+    foreground = "#799C94"
 #    format
 #    frame_color
 #    fullscreen

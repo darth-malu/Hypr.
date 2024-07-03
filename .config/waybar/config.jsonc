@@ -3,9 +3,9 @@
     // "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 20, // Waybar height (to be removed for auto height)
     //"width": 1898, // Waybar width
-    "width": 1920, // Waybar width
+    //"width": 1920, // Waybar width
     //"spacing": 0, // Gaps between modules (4px)
-    "margin": 0,
+    //"margin-right": 20,
     "reload_style_on_change": true,
     
 //    "passthrough": true,
@@ -29,19 +29,17 @@
         "custom/updates",
         "custom/weather",
         "tray",
-        //"idle_inhibitor",
-        //"mpris",
         "mpris",
-        "group/conglo",
-        //"load",
-        //"network",
+        "network",
+        //"group/conglo",
+        "memory",
+        "disk",
         "group/perfomance",
+        //"load",
         //"pulseaudio/slider",
         //"group/media",
-        //"custom/notification"
-        "wireplumber",
         "clock",
-        "temperature",
+        "wireplumber",
         "custom/wleave"
         ]
 }

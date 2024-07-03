@@ -18,6 +18,11 @@ playerctl_add_sub () {
     playerctl -p $1 volume 0.1$2
 }
 
+mpc_add_sub () 
+{
+    mpc volume ${1}2
+}
+
 wpctl_add_sub () {
     wpctl set-volume $1 0.1$2
 }
@@ -50,6 +55,12 @@ player_volume () {
             local volume=$(current_volume $current_player)
             dunstify -t 1000 -a "changeVolume" -u low -i ~/.local/darthfiles/iconss/lolly.png \
                 -h string:x-dunst-stack-tag:$msgTag "Lollypop    $volume" -h int:value:"$volume"
+            ;;
+        "mpd")
+            mpc_add_sub $add_minus
+            local volume=$(mpc volume | tr -dc '[:digit:]')
+            dunstify -t 1000 -a "changeVolume" -u low -i ~/.local/darthfiles/iconss/lolly.png \
+                -h string:x-dunst-stack-tag:$msgTag "MPC    $volume" -h int:value:"$volume"
             ;;
         #"firefox")
             #local fire_stream=$(extract_firefox_stream)
