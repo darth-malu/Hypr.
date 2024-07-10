@@ -23,18 +23,12 @@ tooltip {
 window#waybar {
     /*this is the actual text of active window*/
     /*background: rgba(21, 18, 27, 0);*/
-    /*color: rgba(255 ,158 ,170, 0.88);*/
     color: rgba(255 ,255 ,255, 0.728);
+    color: rgba(128 ,237 ,153, 0.58);
+    color: rgba(45 ,149 ,150, 0.98);
+    color: rgba(154 ,208 ,194, 0.78);
     /*color: rgba(2 ,40 ,85, 1);*/
-    background-color: rgba(0 ,40 ,83,0.52);
-    background-color: rgba(0 ,40 ,83,0.96);
-    background-color: rgba(140 ,108 ,145, 0.0);
-    background-color: rgba(60 ,56 ,54, 0.76);
-    background-color: rgba(45 ,30 ,47, 0.96);
-    background-color: rgba(23 ,10 ,28, 1);
-    background-color: rgba(12 ,16 ,23, 1);
-    background-color: rgba(24 ,44 ,37, 1);
-    background-color: rgba(8 ,28 ,21, 1);
+    /*color: rgba(255 ,158 ,170, 0.88);*/
     background-color: rgba(23 ,39 ,41, 1);
     font-size: 14px;
 }
@@ -100,6 +94,7 @@ button:hover {
     border-radius: 12px;
     color: rgba(255 ,158 ,170, 0.63);
     color: rgba(128 ,237 ,153, 0.59);
+    color: rgba(128 ,237 ,153, 0.52);
 }
 
 
@@ -112,13 +107,19 @@ button:hover {
     /*color: rgba(217 ,133 ,149, 0.924);*/
     /*background: rgba(217 ,133 ,149, 0.464);*/
     border: 1px solid rgba(216 ,243 ,220, 0.214);
-    color: rgba(243 ,222 ,44, 0.79);
-    color: rgba(250 ,255 ,129, 1);
+    border: 1px solid rgba(156 ,207 ,216, 0.46);
+    color: rgba(255 ,158 ,170, 0.83);
+    color: rgba(22 ,255 , 0, 0.666);
     color: rgba(255 ,158 ,170, 1);
+    color: rgba(250 ,255 ,129, 1);
     color: rgba(183 ,228 ,199, 0.569);
+    color: rgba(0 ,159 ,189, 0.86);
+    color: rgba(45 ,149 ,150, 0.98);
+    color: rgba(82 ,211 ,216, 0.78);
     background: rgba(255 ,158 ,170, 0.369);
-    background: rgba(87 ,204 ,153, 0.169);
     background: rgba(45 ,106 ,79, 0.52);
+    background: rgba(87 ,204 ,153, 0.169);
+    background: rgba(45 ,149 ,150, 0.42);
 }
 
 #workspaces button.empty {
@@ -145,12 +146,11 @@ button:hover {
     margin: 0px 4px;
     font-family: quicksand;
     font-size: 12px;
-    color: rgba(156 ,207 ,216, 1);
+    color: rgba(156 ,207 ,216, 0.86);
     /*border-bottom: 2px solid rgba(156 ,207 ,216, 0.83);*/
-    background: rgba(156 ,207 ,216, 0.13);
-    background: rgba(142 ,122 ,181, 0.342);
-    background: rgba(255 ,255 ,255, 0.124);
-    background: rgba(255 ,255 ,255, 0.144);
+    background: rgba(255 ,255 ,255, 0.104);
+    background: rgba(87 ,204 ,153, 0.169);
+    /*background: rgba(0 ,0 ,0, 0.169);*/
     border: 1px solid rgba(255 ,255,255, 0.052);
     border-radius: 18px;
     padding: 0px 3px;
@@ -223,13 +223,13 @@ label:focus {
 }
 
 #network {
+    color: rgba(255 ,158 ,170, 0.83);
     /*font-family: fantasquesansm nerd font mono;*/
     font-family: quicksand;
     font-size: 12px;
     padding:  0px 0px;
     margin: 0px 4px 0px 4px;
     border-radius: 0px;
-    color: rgba(255 ,158 ,170, 0.83);
     /*border-bottom: 2px solid rgba(255 ,158 ,170, 0.83); */
 
 	/*background: #cc6699;*/
@@ -393,12 +393,13 @@ label:focus {
     font-family: quicksand;
     background: rgba(142 ,122 ,181, 0.342);
     background: rgba(22 ,255 , 0, 0.142);
-    background: rgba(255 ,255 ,255, 0.144);
+    background: rgba(255 ,255 ,255, 0.104);
+    background: rgba(87 ,204 ,153, 0.169);
     border: 1px solid rgba(255 ,255,255, 0.052);
     border-radius: 12px;
     padding: 0px 6px;
     margin: 3px 4px 3px 5px;
-    color: rgba(156 ,207 ,216, 1);
+    color: rgba(156 ,207 ,216, 0.86);
 }
 
 #mpris.spotify{

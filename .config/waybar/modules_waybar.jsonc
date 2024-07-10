@@ -158,7 +158,7 @@
         //"on-click": "kitten run-shell --shell=/bin/bash ~/.local/darthfiles/updates.sh",
         //"on-click-right": "kitty -e paru -Sua && notify-send 'AUR pkgs updated ' && pkill -RTMIN+8 waybar",
         //"tooltip-format": "{}"
-        "on-click-right": "kitty --hold sh -c '~/.local/darthfiles/updates.sh aur",
+        "on-click-right": "kitty --hold sh -c '~/.local/darthfiles/kitten_updates.sh aur'",
         "signal": 8
     }, 
 
