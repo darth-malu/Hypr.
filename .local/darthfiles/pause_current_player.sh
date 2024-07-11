@@ -4,12 +4,20 @@ query_playerctl () {
     playerctl -l
 }
 
-player_status () {
-    playerctl -p $1 status 2>/dev/null
-}
-
 general_playing_status () {
     playerctl status 2>/dev/null
+}
+
+music_playing_state () {
+    #ingest ... eg mpd, then check if playing and return Playing/Paused
+    while read -r player;do
+        #local status=$(playerctl -ps ${player} status)
+        case ${player} in
+            "mpd" | "spotify" | "lollypop")
+            playerctl -ps ${player} status
+                ;;
+        esac
+    done <<< $(playerctl -l)
 }
 
 check_running () {
@@ -36,12 +44,14 @@ pause_player () {
         "mpd")
             mpc toggle
             ;;
-        "firefox")
+        "firefox" | *brave*)
             #while spotify or lollypop in background pause those first
-            if  check_running "spotify" || check_running "python3 /sbin/lollypop" || check_running ncmpcpp;then
+            #if [[ ( $(check_running "spotify") || $(check_running "python3 /sbin/lollypop") || $(check_running "ncmpcpp") ) && $(music_playing_state) == "Playing" ]]; then
+            if [[ $(music_playing_state) == "Playing" ]]; then
                 playerctl -ps spotify play-pause || playerctl -sp Lollypop play-pause || mpc toggle
+                dunstify "Music paused"
             else
-                playerctl -ps firefox play-pause
+                playerctl -ps ${active_player} play-pause
             fi
             ;;
         *)

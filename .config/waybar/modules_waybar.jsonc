@@ -51,6 +51,15 @@
     "separate-outputs": true
     },
 
+    "custom/weather": {
+    //"exec": "~/.local/darthfiles/get_weather.sh Nairobi+Kenya",
+    "exec": "~/.local/darthfiles/weather.sh Nairobi+Kenya",
+    "return-type": "json",
+    "format": "{}",
+    "tooltip": false,
+    "interval": 60
+    },
+
     "group/perfomance": {
         "orientation": "horizontal",
         "drawer": {"transition-duration": 400,"transition-left-to-right": true, "children-class": "drawer-child"},
@@ -58,7 +67,8 @@
             //"network",
             "cpu",
             "temperature",
-            "idle_inhibitor"
+            "idle_inhibitor",
+            "custom/weather"
             //"memory",
             //"disk"
         ]
@@ -162,14 +172,6 @@
         "signal": 8
     }, 
 
-    "custom/weather": {
-    //"exec": "~/.local/darthfiles/get_weather.sh Nairobi+Kenya",
-    "exec": "~/.local/darthfiles/weather.sh Nairobi+Kenya",
-    "return-type": "json",
-    "format": "{}",
-    "tooltip": false,
-    "interval": 60
-    },
 
     "wireplumber": {
         //"format": "{volume}% ",
