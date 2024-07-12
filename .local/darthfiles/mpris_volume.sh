@@ -23,20 +23,12 @@ mpc_add_sub ()
     mpc volume ${1}2
 }
 
-wpctl_add_sub () {
-    wpctl set-volume $1 0.1$2
-}
-
 query_playerctl () {
     playerctl -l
 }
 
 current_volume () {
     convert_to_percentage $(playerctl -p $1 volume)
-}
-
-extract_firefox_stream () {
-    wpctl status | grep -iA5 -m 1 streams | grep -i firefox | tr -d [:alpha:] | tr -d '.'
 }
 
 player_volume () {
@@ -62,10 +54,6 @@ player_volume () {
             dunstify -t 1000 -a "changeVolume" -u low -i ~/.local/darthfiles/iconss/lolly.png \
                 -h string:x-dunst-stack-tag:$msgTag "MPC    $volume" -h int:value:"$volume"
             ;;
-        #"firefox")
-            #local fire_stream=$(extract_firefox_stream)
-            #wpctl_add_sub $fire_stream $add_minus
-            #;;
     esac
 }
 
