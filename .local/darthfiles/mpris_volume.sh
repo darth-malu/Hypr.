@@ -11,7 +11,7 @@ convert_to_percentage() {
     local value=$1
     local percentage=$(echo "scale=2; $value * 100 / 1" | bc)
     printf "%.0f" "$percentage"
-    #returns % percentage eg 100
+    #returns % eg 90
 }
 
 playerctl_add_sub () {

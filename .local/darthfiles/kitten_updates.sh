@@ -80,8 +80,8 @@ display_or_not () {
 
             #HALT
             0)
-                dunstify "QUITING";break
-                #exit 0
+                dunstify "QUITING"
+                exit 0
                 ;;
 
             #Default -> quiet

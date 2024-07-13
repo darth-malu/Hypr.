@@ -1,56 +1,60 @@
-mpd_host = localhost
-mpd_port = 6600
-mpd_music_dir = ~/Music 
-ncmpcpp_directory = ~/.config/ncmpcpp
-
- audio_output {
-        type            "fifo"
-        name            "Visualizer feed"
-        path            "/tmp/mpd.fifo"
-        format          "44100:16:2"
- }
-
+allow_for_physical_item_deletion = "yes"
+startup_screen = playlist
+execute_on_song_change = songinfo.sh
+mouse_support = no
 external_editor = "/usr/bin/nvim"
 
 ###COLORS
 ## Song List ##
-song_columns_list_format = "(38)[7]{t} (25)[7]{a}  (25)[7]{b} (10)[7]{g} (4)[7]{l} "
+song_columns_list_format = "(38)[37]{t} (25)[37]{a}  (25)[37]{b} (10)[7]{g} (4)[7]{l} "
 song_list_format = "{$8%t$9}|{$5%f$9}$R{$6%b $9}{$3%l$9}"
 #song_window_title_format
-#execute_on_song_change = dunstify "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"
-startup_screen = playlist
-execute_on_song_change = songinfo.sh
-mouse_support = no
 
-allow_for_physical_item_deletion = "yes"
+
 ## Current Item ##
-#current_item_prefix = "$(68)$r"
-current_item_prefix = "$(31)$r"
+#current_item_prefix = "$(69)$r"
+#current_item_prefix = "$(31)$r"
+current_item_prefix = "$(30)$r"
 
 current_item_suffix = "$/r$(end)"
-current_item_inactive_column_prefix = "$(3)$r"
+#current_item_inactive_column_prefix = "$(24)"
+current_item_inactive_column_prefix = "$(37)"
 
 #header -> top most, browse,playlist
+header_window_color = 80
+#header_window_color = 153 
 #header_window_color = 38 
 #header_window_color = 120 
-header_window_color = 3 
-state_line_color = 3
-main_window_color = 38 
-player_state_color = 3 
-#statusbar_color = 216
+#header_window_color = 3 
+
+#main
+state_line_color = 24
+main_window_color = 37 
+
+#add to playlist menu
+window_border_color = 212
+
+#playerstate -> playing/paused
+player_state_color = 212 
 
 #song playing
-statusbar_color = 114
-statusbar_time_color = 81
-volume_color = 81
+statusbar_color = 12
+statusbar_time_color = 80
+#statusbar_color = 114
+#statusbar_color = 142
+#statusbar_color = 216
+
+#volume
+volume_color = 80
+#volume_color = 205
 
 #progress bar
 #progressbar_color = 140
 #progressbar_color = 244
-progressbar_color = 61 
+progressbar_color = 60 
 progressbar_look = "─⊙┄"
-progressbar_elapsed_color = 81 
-window_border_color = 212
+progressbar_elapsed_color = 73 
+
 
 colors_enabled = yes
 
@@ -65,8 +69,8 @@ alternative_ui_separator_color = 218
 #One of colors used in Song info, Tiny tag editor and Search engine.
 
 
-color1 = 8
-color2 = 8
+color1 = 4
+color2 = 4
 
 active_window_border = 21
 #header
@@ -74,8 +78,6 @@ header_text_scrolling = "yes"
 header_visibility = "yes"
 #eg media-lib
 
-#playerstate
-#Color of player state shown in statusbar
 
 #for add to playlist window border
 
@@ -109,17 +111,17 @@ mouse_list_scroll_whole_page = yes
 titles_visibility = "no"
 
 autocenter_mode = "yes"
-follow_now_playing_lyrics = "yes"
+#follow_now_playing_lyrics = "yes"
 
 # Misc
 display_bitrate = "no"
 enable_window_title = "no"
-connected_message_on_startup = "yes"
-empty_tag_marker = ""
+connected_message_on_startup = "no"
+empty_tag_marker = "@darth"
 
 #media
 #media_library_primary_tag = artist/album_artist/date/genre/composer/performer
-#media_library_primary_tag = album_artist
+#media_library_primary_tag = artist
 
 #volume
 volume_change_step = 5
@@ -141,5 +143,16 @@ selected_item_prefix = "+ "
 ## Now Playing ##
 ##now_playing_prefix = " "
 now_playing_prefix = " "
-centered_cursor = "yes"
+#centered_cursor = "yes"
 
+mpd_host = localhost
+mpd_port = 6600
+mpd_music_dir = ~/Music 
+ncmpcpp_directory = ~/.config/ncmpcpp
+
+ audio_output {
+        type            "fifo"
+        name            "Visualizer feed"
+        path            "/tmp/mpd.fifo"
+        format          "44100:16:2"
+ }

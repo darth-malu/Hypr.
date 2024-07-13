@@ -62,13 +62,13 @@
 
     "group/perfomance": {
         "orientation": "horizontal",
-        "drawer": {"transition-duration": 400,"transition-left-to-right": true, "children-class": "drawer-child"},
+        //"drawer": {"transition-duration": 400,"transition-left-to-right": true, "children-class": "drawer-child"},
         "modules":[
             //"network",
             "cpu",
-            "temperature",
-            "idle_inhibitor",
-            "custom/weather"
+            "temperature"
+            //"idle_inhibitor",
+            //"custom/weather"
             //"memory",
             //"disk"
         ]
@@ -282,7 +282,7 @@
     "critical-threshold": 80,
     "format-critical": "{temperatureC}° {icon}",
     "interval": 8,
-    "format": "{temperatureC}°",
+    "format": "> {temperatureC}°",
     "format-icons": [" ", "", " "],
     "tooltip": false
 },
@@ -303,7 +303,8 @@
     "tooltip": true,
     "max-length": 8,
     "min-length": 8,
-    "justify": "right"
+    //"justify": "right"
+    "justify": "center"
     /*"align": 1*/
 },
 
