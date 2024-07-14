@@ -13,6 +13,7 @@ dunst_aur () {
 
 kill_kitty () {
     kitty @ close-window --match env:KITTY_WINDOW_ID=$KITTY_WINDOW_ID
+    exit 0
 }
 
 display_updates_only () 
@@ -40,15 +41,21 @@ less_pkgs ()
 
     # Iterate over each update, fetch its details and redirect output to $tempfile
     while read -r update; do
-        pacman -Qi "$update" >> "$temp_file"
+                #pacman -Qi "$update" | less -F -X -R -S -K 
+                pacman -Qi "$update" >> "${temp_file}"
+                #echo
+                #wait $!  # Wait for less to finish
     done <<< "$updates"
-    #less
-    less -F "$temp_file" && rm "$temp_file"
 
-    #alt way
-    #display_updates_only | while read -r update; do
-        #pacman -Qi "$update" >> "$temp_file"
-    #done
+    less -F "$temp_file" && rm "$temp_file"
+}
+
+sed_pkgs () 
+{
+    while read -r update; do
+        pacman -Qi "$update" | sed -n -e "1p" -e "3p" -e "8p" -e "11p" -e "12p" | nl  
+        printf "\n"
+    done <<< "$updates"
 }
 
 
@@ -62,26 +69,41 @@ display_or_not () {
     echo "${updates}"
     echo
 
-    printf "\t\tChoose update style\n"
-    printf "\t\t...................\n"
-    printf "\tQuiet\t\t~>\t*Default\n\tverbose\t\t  \t 1\n\tHALT\t\t  \t 0\n\n"
-    #quiet = 1(default), minimal =2, halt =3, verbose = 1
-    read -p "       \`~> " choice
-
     while true;do
+        printf "\t\t\tChoose update style\n"
+        printf "\t\t\t...................\n"
+
+        #quiet = 1(default), verbose = 1,  minimal =2, halt =3, verbose = 1
+        printf "\n\tquiet\t\t~>\t*Default\n\tverbose\t\t  \t 1\n\tminimal \t\t 2\n\tCLEAR\t\t  \t x\n\tHALT\t\t  \t 0\n\n"
+
+        local choice
+        read -p "       \`=> " choice
+
         case ${choice} in
 
             #verbose
             1)
-                printf "\npacman -Qi of packages (verbose)\n"
-                printf "\nLess is launching to display pacman -Qi pkgs\n"
-                sleep 1;less_pkgs ; break
+                printf "\n ~> Verbose mode\n"
+                printf "\t **Less is launching to display pacman -Qi pkgs \n\n"
+                sleep 1;less_pkgs 
+                ;;
+
+            #Minimal
+            2)
+                printf "\n ~> minimalist mode\n"
+                printf "\t\t** sed magic is working...\n\n"
+                sleep 1;sed_pkgs 
+                ;;
+            "x")
+                printf "\n\t Clearing Screen... Usafi muhimu\n"
+                clear
                 ;;
 
             #HALT
             0)
                 dunstify "QUITING"
-                exit 0
+                kill_kitty
+                #exit 0
                 ;;
 
             #Default -> quiet
