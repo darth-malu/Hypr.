@@ -62,9 +62,10 @@ sed_pkgs ()
     local updates=$(updates_getter)
 
     while read -r update; do
-        printf "%s\n" "- $update" 
+        printf "%s\n" "-- $update" 
         #pacman -Qi "$update" | sed -n -e "3p" -e "8p" -e "11p" -e "12p" | nl  
-        pacman -Qi "$update" | sed -n -e "3p" -e "8p" -e "11p" -e "12p"| sed 's/^/\t/'   
+        #pacman -Qi "$update" | sed -n -e "3p" -e "8p" -e "11p" -e "12p"| sed 's/^/\t/'   
+        pacman -Qi "$update" | awk '/^Description/ || /^URL/ || /^Provides / || /^Depends On / || /^Optional Deps/ || /^Required by/ || /^Optional For/ { print "\t" $0 }'   
         printf "\n"
     done <<< "$updates"
 }
@@ -86,7 +87,7 @@ display_or_not () {
         printf "\t\t\t...................\n"
 
         #quiet = 1(default), verbose = 1,  minimal =2, halt =3, verbose = 1
-        printf "\n\tquiet\t\t~>\t*Default\n\tverbose\t\t  \t 1\n\tminimal \t\t 2\n\tCLEAR\t\t  \t x\n\tHALT\t\t  \t 0 / q\n\n"
+        printf "\n\tquiet\t\t~>\t*Default \n\tverbose\t\t  \t 1\n\tminimal \t\t 2\n\tCLEAR\t\t  \t x\n\tHALT\t\t  \t 0 / q\n\n"
 
         local choice
         read -p "       \`=> " choice
@@ -95,20 +96,20 @@ display_or_not () {
 
             #verbose
             1)
-                printf "\n ~> Verbose mode\n"
-                printf "\t **Less is launching to display pacman -Qi pkgs \n\n"
-                sleep 1;less_pkgs 
+                printf "\n ~> Verbose mode\v"
+                printf "**Less is launching to display pacman -Qi pkgs \n\n"
+                less_pkgs 
                 ;;
 
             #Minimal
             2)
-                printf "\n=> minimalist mode\n"
+                printf "\n=> minimalist mode\v\v"
                 printf "\t\t\t** sed magic is working...\n\n"
                 sed_pkgs 
                 ;;
             "x")
-                printf "\n\t=> Clearing Screen... Usafi muhimu\n"
                 clear
+                printf "\n\t=> Cleared Screen... Usafi muhimu\n"
                 ;;
 
             #HALT

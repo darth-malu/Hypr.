@@ -160,7 +160,8 @@
 
      "custom/updates": {
         "format": "{}  ",
-        "exec": "checkupdates --nocolor | wc -l && dunstify 'Yo, you can pipe in waybar exec'",
+        //"exec": "checkupdates --nocolor | wc -l && dunstify 'Yo, you have updates'",
+        "exec": "checkupdates --nocolor | wc -l && dunstify 'Yo, you have updates'",
         "exec-if": "[[ $(checkupdates --nocolor | wc -l) != 0 ]]",
         "interval": 3600,
         "on-click": "kitty --hold sh -c '~/.local/darthfiles/kitten_updates.sh main'",

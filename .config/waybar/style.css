@@ -23,27 +23,14 @@ tooltip {
 window#waybar {
     /*this is the actual text of active window*/
     /*background: rgba(21, 18, 27, 0);*/
-    color: rgba(255 ,255 ,255, 0.728);
-    color: rgba(42 ,119 ,254, 0.69);
-    color: rgba(128 ,237 ,153, 0.69);
-    color: rgba(45 ,149 ,150, 0.98);
-    color: rgba(128 ,237 ,153, 0.58);
-    color: rgba(154 ,208 ,194, 0.82);
-    color: rgba(236 ,158 ,192, 0.82);
-    color: rgba(235 ,224 ,208, 0.82);
-    color: rgba(209 ,200 ,225, 0.89);
     color: rgba(154 ,208 ,194, 0.86);
-    /*color: rgba(2 ,40 ,85, 1);*/
-    /*color: rgba(255 ,158 ,170, 0.88);*/
     background-color: rgba(12 ,16 ,23, 1);
     background-color: rgba(23 ,39 ,41, 1);
     font-size: 13px;
 }
 
 window#waybar.solo {
-    /*background-color: rgba(19,35,36,0.88);*/
     border-bottom: 0px solid #ffffff;
-    /*background-color: rgba(40,40,40,1);*/
 }
 
 
@@ -52,9 +39,7 @@ window#waybar.hidden {
 }
 
 window#waybar.firefox {
-    /*background-color: rgba(19,35,36,0.88);*/
     background-color: rgba(0,0,0,1);
-    /*background-color: rgba(40,40,40,1);*/
 }
 
 button {
@@ -74,8 +59,6 @@ button:hover {
 
 #workspaces {
     padding:0px;
-    /*border-bottom: 1px solid rgba(255 ,158 ,170, 0.63); */
-    /*border-top: 1px solid rgba(255 ,158 ,170, 0.63); */
 }
 
 #workspaces button.urgent {
@@ -108,26 +91,14 @@ button:hover {
 }
 
 #workspaces button.active {
-    /*color: rgba(255 ,255 ,255, 0.654);*/
-    /*color: rgba(217 ,133 ,149, 0.924);*/
-    /*background: rgba(217 ,133 ,149, 0.464);*/
-    /*border: 1px solid rgba(216 ,243 ,220, 0.214);*/
-    /*border: 1px solid rgba(255 ,158 ,170, 0.216);*/
-    /*border: 1px solid rgba(209 ,200 ,225, 0.49);*/
     color: rgba(183 ,228 ,199, 0.62);
     color: rgba(230 ,144 ,155, 1);
-    background: rgba(45 ,106 ,79, 0.52);
-    background: rgba(87 ,204 ,153, 0.169);
-    background: rgba(45 ,149 ,150, 0.32);
-    background: rgba(255 ,158 ,170, 0.386);
     background: rgba(154 ,208 ,194, 0.31);
     color: rgba(154 ,208 ,194, 0.95);
 }
 
 #workspaces button.empty {
     /*color: #fc819e;*/
-    color: rgba(255, 255, 255, 0.211);
-    color: rgba(255, 255, 255, 0.192);
     color: rgba(255, 255, 255, 0.172);
 }
 /* if workspaces is the leftmost module, omit left margin */
@@ -150,12 +121,8 @@ button:hover {
     margin: 0px 4px;
     font-family: quicksand;
     font-size: 12px;
-    color: rgba(128 ,237 ,153, 0.62);
-    color: rgba(156 ,207 ,216, 0.90);
     color: rgba(154 ,208 ,194, 0.86);
     /*border-bottom: 2px solid rgba(156 ,207 ,216, 0.83);*/
-    background: rgba(255 ,255 ,255, 0.104);
-    background: rgba(87 ,204 ,153, 0.169);
     background: rgba(87 ,204 ,153, 0.149);
     /*background: rgba(0 ,0 ,0, 0.169);*/
     border: 1px solid rgba(255 ,255,255, 0.052);
@@ -269,9 +236,8 @@ button:hover {
 
 #wireplumber.muted {
     background-color: #9d0006;
-    margin: 2px 0px 2px 0px;
-    padding-right: 4px;
-    padding-left: 4px;
+    margin: 2px 3px 2px 0px;
+    padding: 0px 6px 0px 6px;
     border-radius: 2px;
 }
 
@@ -279,12 +245,6 @@ button:hover {
     margin: 0px 0px 0px 0px;
     font-size: 11px;
     font-family: quicksand;
-    color: rgba(205 ,214 ,221, 0.66);
-    color: rgba(159 ,162 ,178, 1);
-    color: rgba(255 ,158 ,170, 1);
-    color: rgba(255 ,255 ,255, 0.524);
-    color: rgba(72 ,191 ,227, 0.82);
-    color: rgba(243 ,222 ,44, 0.85);
     color: rgba(154 ,208 ,194, 0.86);
 }
 
@@ -312,10 +272,6 @@ button:hover {
     font-size: 16px;
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
-    color: rgba(255 ,158 ,170, 0.83);
-    color: rgba(32 ,125 ,231, 0.83);
-    color: rgba(23 ,147 ,209, 1);
-    color: rgba(7 ,172 ,243, 1);
     color: rgba(159 ,162 ,178, 1);
     /*color: rgba(255 ,255 ,255, 0.564);*/
     }
@@ -385,25 +341,17 @@ button:hover {
 #mpris {
     font-size: 12px;
     font-family: quicksand;
-    background: rgba(142 ,122 ,181, 0.342);
-    background: rgba(22 ,255 , 0, 0.142);
-    background: rgba(255 ,255 ,255, 0.104);
-    background: rgba(87 ,204 ,153, 0.169);
     background: rgba(87 ,204 ,153, 0.149);
     border: 1px solid rgba(255 ,255,255, 0.052);
     border-radius: 12px;
     padding: 0px 6px;
     margin: 3px 4px 3px 5px;
-    color: rgba(128 ,237 ,153, 0.69);
-    color: rgba(156 ,207 ,216, 0.76);
-    color: rgba(209 ,200 ,225, 0.96);
     color: rgba(154 ,208 ,194, 0.86);
 }
 
 #mpris.spotify{
-    /*color: #1ED760;*/
     color: rgba(22 ,255 , 0, 0.666);
-    background: rgba(22 ,255 , 0, 0.106);
+    background: rgba(22 ,255 , 0, 0.090);
 }
 
 #idle_inhibitor.activated {
