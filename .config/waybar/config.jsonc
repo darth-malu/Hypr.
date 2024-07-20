@@ -35,6 +35,8 @@
         "memory",
         "disk",
         "group/perfomance",
+        //"custom/gpu",
+        "group/gpuperf",
         //"load",
         //"pulseaudio/slider",
         //"group/media",

@@ -51,6 +51,29 @@
     "separate-outputs": true
     },
 
+    "group/gpuperf": {
+        "orientation": "horizontal",
+        "modules":[
+            "custom/gpu",
+            "custom/gpu_temp"
+        ]
+    },
+
+    "custom/gpu": {
+    "exec": "cat /sys/class/drm/card1/device/gpu_busy_percent",
+    "format": " {}%",
+    "return-type": "",
+    "interval": 1
+    },
+
+    "custom/gpu_temp": {
+    "exec": "~/.local/darthfiles/gpu_temp.sh",
+    "interval": 1,
+    "format": "> {} °C",
+    "return-type": ""
+},
+
+
     "custom/weather": {
     //"exec": "~/.local/darthfiles/get_weather.sh Nairobi+Kenya",
     "exec": "~/.local/darthfiles/weather.sh Nairobi+Kenya",
@@ -161,7 +184,7 @@
      "custom/updates": {
         "format": "{}  ",
         //"exec": "checkupdates --nocolor | wc -l && dunstify 'Yo, you have updates'",
-        "exec": "checkupdates --nocolor | wc -l && dunstify 'Yo, you have updates'",
+        "exec": "checkupdates --nocolor | wc -l",
         "exec-if": "[[ $(checkupdates --nocolor | wc -l) != 0 ]]",
         "interval": 3600,
         "on-click": "kitty --hold sh -c '~/.local/darthfiles/kitten_updates.sh main'",

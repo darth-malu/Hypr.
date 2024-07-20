@@ -112,7 +112,7 @@ mouse_list_scroll_whole_page = yes
 titles_visibility = "no"
 
 autocenter_mode = "yes"
-#follow_now_playing_lyrics = "yes"
+follow_now_playing_lyrics = "yes"
 
 # Misc
 display_bitrate = "no"
