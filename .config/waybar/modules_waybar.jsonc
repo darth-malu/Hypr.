@@ -61,15 +61,18 @@
 
     "custom/gpu": {
     "exec": "cat /sys/class/drm/card1/device/gpu_busy_percent",
-    "format": " {}%",
+    "format": "{}%   ",
     "return-type": "",
-    "interval": 1
+    "interval": 1,
+    "min-length": 6,
+    "max-length": 7,
+    "tool-tip": false
     },
 
     "custom/gpu_temp": {
     "exec": "~/.local/darthfiles/gpu_temp.sh",
     "interval": 1,
-    "format": "> {} °C",
+    "format": "{} °",
     "return-type": ""
 },
 
@@ -187,12 +190,12 @@
         "exec": "checkupdates --nocolor | wc -l",
         "exec-if": "[[ $(checkupdates --nocolor | wc -l) != 0 ]]",
         "interval": 3600,
-        "on-click": "kitty --hold sh -c '~/.local/darthfiles/kitten_updates.sh main'",
+        "on-click": "kitty --hold sh -c '~/.local/darthfiles/waybar_updates.sh main'",
         //"on-click": "kitty --session '~/.local/darthfiles/custom_update.conf'",
         //"on-click": "kitten run-shell --shell=/bin/bash ~/.local/darthfiles/updates.sh",
         //"on-click-right": "kitty -e paru -Sua && notify-send 'AUR pkgs updated ' && pkill -RTMIN+8 waybar",
         //"tooltip-format": "{}"
-        "on-click-right": "kitty --hold sh -c '~/.local/darthfiles/kitten_updates.sh aur'",
+        "on-click-right": "kitty --hold sh -c '~/.local/darthfiles/waybar_updates.sh aur'",
         "signal": 8
     }, 
 
@@ -293,7 +296,9 @@
 
 "cpu": {
     "format": "{usage}%   ",
-    "tooltip": false
+    "tooltip": false,
+    "max-length": 6,
+    "min-length": 6
 },
 
 "memory": {
@@ -306,7 +311,7 @@
     "critical-threshold": 80,
     "format-critical": "{temperatureC}° {icon}",
     "interval": 8,
-    "format": "> {temperatureC}°",
+    "format": "{temperatureC} °",
     "format-icons": [" ", "", " "],
     "tooltip": false
 },

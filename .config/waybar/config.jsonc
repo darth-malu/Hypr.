@@ -26,22 +26,22 @@
         ],
 
     "modules-right": [
-        "custom/updates",
-        "custom/weather",
         "tray",
-        "mpris",
+        "custom/updates",
         "network",
-        //"group/conglo",
+        "mpris",
+        "group/gpuperf",
         "memory",
         "disk",
         "group/perfomance",
+        //"group/conglo",
         //"custom/gpu",
-        "group/gpuperf",
         //"load",
         //"pulseaudio/slider",
         //"group/media",
         "clock",
         "wireplumber",
+        "custom/weather",
         "custom/wleave"
         ]
 }

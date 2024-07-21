@@ -141,47 +141,47 @@ button:hover {
 #cpu {
     font-family: quicksand;
     font-size:12px;
-    margin: 2px 0px 0px 3px;
-    color: rgba(253 ,164 ,3, 0.89);
-    color: rgba(246 ,193 ,119, 0.89);
-    color: rgba(159 ,162 ,178, 1);
-    color: rgba(255 ,238 ,147, 0.85);
     color: rgba(243 ,222 ,44, 0.85);
+    color: rgba(255 ,200 ,0, 0.71);
+    background: rgba(255 ,200 ,0, 0.2);
+    margin: 3px 0px 3px 0px;
+    padding: 0px 2px;
+    border-bottom-left-radius:4px;
+    border-top-left-radius:4px;
+    /*border-right: 2px solid rgba(255 ,200 ,0, 0.18);*/
+    /*border-left: 2px solid rgba(255 ,200 ,0, 0.18);*/
     /*border-bottom: 2px solid rgba(253 ,164 ,3, 0.88);*/
     /*border-bottom: 2px solid rgba(243 ,222 ,44, 0.55);*/
 }
 
 #memory {
     font-family: quicksand;
-    margin: 2px 6px 1px 6px;
-    padding: 0px 2px 0px 0px;
     font-size:12px;
-    transition: none;
-    color: rgba(219 ,213 ,110, 0.72);
-    color: rgba(205 ,214 ,221, 0.72);
-    color: rgba(201 ,173 ,167, 0.720);
-    color: rgba(76 ,205 ,153, 0.62);
-    color: rgba(255 ,217 ,206, 0.65);
-    color: rgba(207 ,255 ,229, 0.65);
-    color: rgba(92 ,128 ,188, 0.88);
-    color: rgba(255 ,255 ,255, 0.524);
-    color: rgba(204 ,213 ,255, 0.65);
-    color: rgba(72 ,191 ,227, 0.68);
-    color: rgba(188 ,235 ,203, 0.52);
-    color: rgba(107 ,255 ,122, 0.62);
-    color: rgba(159 ,162 ,178, 1);
+    margin: 3px 0px 3px 4px;
+    background: rgba(223 ,154 ,87, 0.22);
+    color: rgba(123 ,8 ,40, 1);
+    color: rgba(223 ,154 ,87, 0.8);
+    color: rgba(222 ,192 ,241, 0.62);
+    background: rgba(222 ,192 ,241, 0.15);
+    padding: 0px 0px 0px 2px;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    /*border-right: 2px solid rgba(223 ,154 ,87, 0.32);*/
+    /*border-left: 2px solid rgba(223 ,154 ,87, 0.32);*/
     /*border-bottom: 2px solid rgba(21 ,245 ,186, 0.76);*/
 }
 
 #disk {
-    margin: 2px 10px 0px 0px;
+    margin: 3px 4px 3px 0px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    padding: 0px 3px 0px 3px;
     font-size:12px;
     font-family: quicksand;
-    padding: 0px 0px 0px 0px;
-    color: rgba(205 ,214 ,221, 0.65);
-    color: rgba(255 ,158 ,170, 0.82);
-    color: rgba(72 ,191 ,227, 0.82);
-    /*border-bottom: 2px solid rgba(229, 201 ,155, 0.8);*/
+    color: rgba(72 ,191 ,227, 0.72);
+    background: rgba(72 ,191 ,227, 0.22);
+    /*border-right: 2px solid rgba(72 ,191 ,227, 0.32);*/
+    /*border-left: 2px solid rgba(72 ,191 ,227, 0.32);*/
 }
 
 #backlight {
@@ -194,7 +194,7 @@ button:hover {
     font-family: quicksand;
     font-size: 12px;
     padding:  0px 0px;
-    margin: 0px 4px 0px 4px;
+    margin: 0px 0px 0px 10px;
     border-radius: 0px;
     /*border-bottom: 2px solid rgba(255 ,158 ,170, 0.83); */
 
@@ -229,7 +229,7 @@ button:hover {
 #wireplumber {
     font-family: quicksand;
     font-size: 12px;
-    margin: 1px 4px 0px 4px;
+    margin: 1px 0px 0px 4px;
     color: rgba(255 ,158 ,170, 0.83);
     /*color: #FC819E;*/
 }
@@ -242,10 +242,19 @@ button:hover {
 }
 
 #temperature {
-    margin: 0px 0px 0px 0px;
-    font-size: 11px;
+    margin: 3px 4px 3px 0px;
+    padding: 0px 4px 0px 0px;
+    font-size: 12px;
     font-family: quicksand;
     color: rgba(154 ,208 ,194, 0.86);
+    color: rgba(255 ,158 ,170, 0.83);
+    color: rgba(159 ,162 ,178, 1);
+    /*background:rgba(159 ,162 ,178, 0.3);*/
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    font-size: 11px;
+    background:rgba(114 ,132 ,168, 0.3);
+    background: rgba(255 ,200 ,0, 0.2);
 }
 
 #temperature.critical {
@@ -253,7 +262,7 @@ button:hover {
 }
 
 #tray {
-    margin: 0px 4px 0px 4px;
+    margin: 0px 0px 0px 4px;
     background: transparent;
     padding: 0px 0px 0px 0px;
 }
@@ -290,17 +299,31 @@ button:hover {
 }
 
 #custom-gpu {
-    color: rgba(232 ,252 ,194, 0.64);
+    color: rgba(149 ,215 ,174, 0.82);
+    color: rgba(254 ,127 ,45, 0.86);
+    background:rgba(254 ,127 ,45, 0.23);
     font-family: quicksand;
-    margin: 0px 3px 0px 10px;
-    font-size: 12px;
+    border-bottom-left-radius:4px;
+    border-top-left-radius:4px;
+    font-size: 11px;
+    margin: 3px 0px 3px 3px;
+    padding: 0px 4px;
+    /*border-right: 2px solid rgba(254 ,127 ,45, 0.19);*/
+    /*border-left: 2px solid rgba(254 ,127 ,45, 0.19);*/
 }
 
 #custom-gpu_temp {
     color: rgba(232 ,252 ,194, 0.64);
+    color: rgba(255 ,158 ,170, 0.83);
+    color: rgba(159 ,162 ,178, 1);
     font-family: quicksand;
-    margin: 2px 6px 0px 0px;
+    margin: 3px 0px 3px 0px;
+    padding:0px 3px 0px 0px;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
     font-size: 11px;
+    background:rgba(114 ,132 ,168, 0.3);
+    background:rgba(254 ,127 ,45, 0.23);
 }
 
 #custom-swap_workspace {
@@ -355,11 +378,11 @@ button:hover {
 #mpris {
     font-size: 12px;
     font-family: quicksand;
-    background: rgba(87 ,204 ,153, 0.149);
+    background: rgba(87 ,204 ,153, 0.189);
     border: 1px solid rgba(255 ,255,255, 0.052);
     border-radius: 12px;
     padding: 0px 6px;
-    margin: 3px 4px 3px 5px;
+    margin: 3px 6px 3px 6px;
     color: rgba(154 ,208 ,194, 0.86);
 }
 
