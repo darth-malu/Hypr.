@@ -64,8 +64,8 @@
     "format": "{}%   ",
     "return-type": "",
     "interval": 1,
-    "min-length": 6,
-    "max-length": 7,
+    "min-length": 8,
+    "max-length": 8,
     "tool-tip": false
     },
 
@@ -227,7 +227,10 @@
 	    "player-icons": {
 		    "default": "",
             "Lollypop": " ",
-            "spotify":" ",
+            //"spotify":" ",
+            "spotify":"󰓇",
+            //"mpd":"♪",
+            "mpd":" ",
 		    "mpv": "🎵"
 	        },
 	    "status-icons": {
@@ -302,7 +305,7 @@
 },
 
 "memory": {
-    "format": "{}%   "
+    "format": "{}%     "
 },
 
 "temperature": {

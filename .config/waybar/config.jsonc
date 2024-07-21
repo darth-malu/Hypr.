@@ -16,7 +16,6 @@
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
-        //"wlr/taskbar",
         //"custom/swap_workspace",
         "hyprland/window"
         ],
@@ -26,6 +25,7 @@
         ],
 
     "modules-right": [
+        "custom/weather",
         "tray",
         "custom/updates",
         "network",
@@ -41,7 +41,6 @@
         //"group/media",
         "clock",
         "wireplumber",
-        "custom/weather",
         "custom/wleave"
         ]
 }
