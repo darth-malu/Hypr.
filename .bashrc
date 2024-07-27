@@ -321,7 +321,7 @@ alias dunstr="killall dunst; dunstify 'Bazinga'"
 alias kittyconf='v ~/.config/kitty/kitty.conf'
 alias b='bat'
 alias conf='cd ~/.config'
-alias passit='wl-copy -n < ~/Documents/git.txt && echo "Copy success :)"'
+alias passit='wl-copy -n < ~/Documents/git_fine_token.txt && echo "Copy success :)"'
 
 
 #---------------SYSTEM MANAGEMENT--------------#
