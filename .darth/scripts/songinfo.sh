@@ -7,7 +7,8 @@ generate_preview () {
     local previewname="$previewdir/$(mpc --format %album% current | base64).png"
     [ -e "$previewname" ] || ffmpeg -y -i "$filename" -an -vf scale=90:90 "$previewname" > /dev/null 2>&1
     #dunstify -r 27072 "$(mpc --format '\t%title%\t\n\n \t%artist%\t\n \t%album%\t' current)" -i "$previewname"
-    dunstify -r 27072 "$(mpc --format '\t%title%\t\n \t%artist%\t\n \t%album%\t' current)" -i "$previewname"
+    #dunstify -r 27072 "$(mpc --format '\t%title%\t\n \t%artist%\t\n \t%album%\t' current)" -i "$previewname"
+    dunstify -r 27072 "$(mpc --format '\t%title%\t\n\n \t%artist%\t\n \t%album%\t' current)" -i "$previewname"
 }
 
 
