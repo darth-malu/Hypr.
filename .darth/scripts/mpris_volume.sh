@@ -49,12 +49,13 @@ player_volume () {
                 -h string:x-dunst-stack-tag:$msgTag "Lollypop                  $volume" -h int:value:"$volume"
             ;;
         "mpd")
-            mpc_add_sub $add_minus
-            local volume=$(mpc volume | tr -dc '[:digit:]')
-            dunstify -t 1000 -a "changeVolume" -u low -i ~/.darth/iconss/lolly.png \
-                -h string:x-dunst-stack-tag:$msgTag "MPC                  $volume   " -h int:value:"$volume"
+            mpc_add_sub $add_minus && ~/.darth/scripts/songinfo.sh "ncmpcpp_volume"
+            #local volume=$(mpc volume | tr -dc '[:digit:]')
+            #dunstify -t 1000 -a "changeVolume" -u low -i ~/.darth/iconss/lolly.png \
+                #-h string:x-dunst-stack-tag:$msgTag "MPC                  $volume   " -h int:value:"$volume"
+            
             ;;
     esac
 }
 
-player_volume $1
+player_volume "$1"
