@@ -1,15 +1,48 @@
 #!/bin/bash
 
+msgTag='mpris_volume'
+
 generate_preview () {
     local music_dir="/home/malu/Music"
     local previewdir="$XDG_CONFIG_HOME/ncmpcpp/previews"
     local filename="$(mpc --format "$music_dir"/%file% current)"
     local previewname="$previewdir/$(mpc --format %album% current | base64).png"
-    [ -e "$previewname" ] || ffmpeg -y -i "$filename" -an -vf scale=90:90 "$previewname" > /dev/null 2>&1
+
+    # absolute_location/pic.ping
+    #[ -e "$previewname" ] || ffmpeg -y -i "$filename" -an -vf scale=90:90 "$previewname" > /dev/null 2>&1
     #dunstify -r 27072 "$(mpc --format '\t%title%\t\n\n \t%artist%\t\n \t%album%\t' current)" -i "$previewname"
     #dunstify -r 27072 "$(mpc --format '\t%title%\t\n \t%artist%\t\n \t%album%\t' current)" -i "$previewname"
-    dunstify -r 27072 "$(mpc --format '\t%title%\t\n\n \t%artist%\t\n \t%album%\t' current)" -i "$previewname"
+
+    [ -e "$previewname" ] || ffmpeg -y -i "$filename" -an -vf scale=128:128 "$previewname" > /dev/null 2>&1
+    echo "$previewname"
 }
+
+dunstify_preview () {
+    local album_art="$(generate_preview)"
+    dunstify -h string:x-dunst-stack-tag:$msgTag \
+        "$(mpc --format '󰎍 \t%title%\t\n\n \t%artist%\t\n \t%album%\t' current)" \
+        -i "$album_art"\
+        #hyprctl clients | awk 'BEGIN { FS="\n" ; RS=""; OFS="\n" ; ORS = "\n\n"} /^Window.*nc.*/ { print $14, $NF }'| sed -n 1p| tr -d '[:blank:]'
+        -t 1600
+}
+
+mode () {
+    case $1 in
+        "ncmpcpp_volume")
+            local title_artist=$(mpc --format '󰎍\t%title%\t\n\n \tncmpcpp\t' current)
+            local album_art="$(generate_preview)"
+            #local volume=$(mpc volume | tr -dc '[:digit:]')
+            local volume=$(mpc volume | cut -d " " -f2 | tr -d '%')
+            dunstify -t 1000 -a "changeVolume" -u low -i "$album_art" \
+                -h string:x-dunst-stack-tag:$msgTag "$title_artist   $volume " -h int:value:"$volume"
+            ;;
+        *)
+            dunstify_preview
+            ;;
+    esac
+}
+
+mode "$1"
 
 
 #[ -e "$previewname" ] || ffmpeg -y -i "$filename" -an -vf scale=128:128 "$previewname" > /dev/null 2>&1
@@ -28,4 +61,4 @@ generate_preview () {
         #;;
 #esac
 
-generate_preview
+#generate_preview

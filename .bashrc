@@ -87,7 +87,7 @@ rightprompt()
 }
 
 EXITT="\[\$(exitstatus)\]"
-CARET="$DARK_GREEN "
+CARET=" "
 RIGHT_PROMPT="$DIM$BOLD\[\$(relative_pwd)\]"
 LEFT_PROMPT="\n$DIM$BOLD\[\w\] $RESET"
 
@@ -95,13 +95,13 @@ clearr () {
     local col="${COLUMNS}"
 
     #PS1="$CLEAR$RIGHT_PROMPT$GITT\n$EXITT$CARET$RESET"
-    PS1="$CLEAR$DARK_GREEN$LEFT_PROMPT$RESET$GITT$EXITT\n$CARET$RESET"
+    PS1="$CLEAR$DARK_GREEN$LEFT_PROMPT$RESET$GITT$EXITT\n$DARK_GREEN$CARET$RESET"
 }
 #cl=$(clearr)
 #bind -x '"\C-l": $cl'
 
 PROMPT_COMMAND="clearr"
-PS2="..."
+PS2="***"
 
 #search repos for uninstalled command
 #source /usr/share/doc/pkgfile/command-not-found.bash
@@ -179,60 +179,60 @@ alias yt="yt-dlp"
 #█▀▀ ▀█ █▀▀
 #█▀░ █▄ █▀░
 
-function lsf() {
-    ls -lah | fzf --scroll-off=5 --height=100% --layout=reverse-list --border=rounded \
-        --preview '
-            if [ -d "{}" ]; then
-                ls -lah "{}"
-            else
-                file_type=$(file -b --mime-type "{}")
-                case "$file_type" in
-                    text/*)
-                        nvim "{}"
-                        ;;
-                    *)
-                        xdg-open "{}"
-                        ;;
-                esac
-            fi
-        '
-}
-
-lsfz() {
-    local selected_file
-    selected_file=$(ls -lah | fzf --scroll-off=5 --height=100% --layout=reverse-list --border=rounded \
-        --preview '
-            if [ -d "{}" ]; then
-                ls -lah "{}"
-            else
-                file_type=$(file -b --mime-type "{}")
-                case "$file_type" in
-                    text/*)
-                        echo "Previewing file: {}"
-                        ;;
-                    *)
-                        echo "Opening file: {}"
-                        ;;
-                esac
-            fi
-        ' | awk '{print $9}')  # Extract the filename from ls -lah output
-    
-    if [ -n "$selected_file" ]; then
-        if [ -d "$selected_file" ]; then
-            ls -lah "$selected_file"
-        else
-            file_type=$(file -b --mime-type "$selected_file")
-            case "$file_type" in
-                text/*)
-                    nvim "$selected_file"
-                    ;;
-                *)
-                    xdg-open "$selected_file"
-                    ;;
-            esac
-        fi
-    fi
-}
+#function lsf() {
+    #ls -lah | fzf --scroll-off=5 --height=100% --layout=reverse-list --border=rounded \
+        #--preview '
+            #if [ -d "{}" ]; then
+                #ls -lah "{}"
+            #else
+                #file_type=$(file -b --mime-type "{}")
+                #case "$file_type" in
+                    #text/*)
+                        #nvim "{}"
+                        #;;
+                    #*)
+                        #xdg-open "{}"
+                        #;;
+                #esac
+            #fi
+        #'
+#}
+#
+#lsfz() {
+    #local selected_file
+    #selected_file=$(ls -lah | fzf --wrap --scroll-off=5 --height=100% --layout=reverse-list --border=rounded \
+        #--preview '
+            #if [ -d "{}" ]; then
+                #ls -lah "{}"
+            #else
+                #file_type=$(file -b --mime-type "{}")
+                #case "$file_type" in
+                    #text/*)
+                        #echo "Previewing file: {}"
+                        #;;
+                    #*)
+                        #echo "Opening file: {}"
+                        #;;
+                #esac
+            #fi
+        #' | awk '{print $9}')  # Extract the filename from ls -lah output
+    #
+    #if [ -n "$selected_file" ]; then
+        #if [ -d "$selected_file" ]; then
+            #ls -lah "$selected_file"
+        #else
+            #file_type=$(file -b --mime-type "$selected_file")
+            #case "$file_type" in
+                #text/*)
+                    #nvim "$selected_file"
+                    #;;
+                #*)
+                    #xdg-open "$selected_file"
+                    #;;
+            #esac
+        #fi
+    #fi
+#}
 
 #
 #█▀█ ▄▀█ █▀▀ █▀▄▀█ ▄▀█ █▄░█
@@ -301,7 +301,8 @@ alias nc="ncmpcpp"
 #---------------FILE NAVIGATIONS-------------#
 alias dir.name='wl-copy -n <<< $(pwd)'
 alias lx='exa -lah'
-alias ls='ls -ah --color=auto'
+alias lss='ls -lah --color=auto'
+alias ls='ls -a --color=auto'
 alias ..="cd .."
 #alias -="cd $OLDPWD"
 alias _="cd -"
@@ -477,9 +478,58 @@ tput_colors ()
     tput sgr0
 }
 
+hyprl () {
+    hyprctl clients | less
+}
+
+sys () {
+    case $1 in
+        "user")
+            case $2 in
+                "start")
+                    systemctl --user start $3
+                    ;;
+                "stop")
+                    systemctl --user stop $3
+                    ;;
+                "status")
+                    systemctl --user status $3
+                    ;;
+                "restart")
+                    systemctl --user restart $3
+                    ;;
+            esac
+            ;;
+        "start")
+            systemctl start $2
+            ;;
+        "stop")
+            systemctl stop $2
+            ;;
+        "status")
+            systemctl status $2
+            ;;
+        "restart")
+            systemctl restart $2
+            ;;
+    esac
+}
+
 math ()
 {
     echo "scale=2;$1" | bc
+}
+
+arch () {
+    #$(kitty @ close-window --match env:KITTY_WINDOW_ID=$KITTY_WINDOW_ID)
+    for i in {1..10}
+    do
+        echo 'Using Arch btw'
+        sleep 0.2
+    done
+    fastfetch
+    sleep 2
+    kitty @ close-window --match env:KITTY_WINDOW_ID=$KITTY_WINDOW_ID
 }
 
 # Set up fzf key bindings and fuzzy completion
