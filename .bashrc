@@ -35,15 +35,6 @@ parse_git_branch() {
     # git rev-parse --abbrev-ref HEAD 2> /dev/null | sed -e 's/.*\/\(.*\)/\1/'
 }
 
-exitstatus() {
-    local status=$?
-    if [[ $status != 0 ]]; then
-        tput setaf 161
-        echo -n " $status "
-        tput sgr0
-    fi
-}
-
 
 #217 -pink
 CLEAR="\[$(tput el1)\]"
@@ -59,31 +50,45 @@ BOLD="\[$(tput bold)\]"
 DIM="\[$(tput dim)\]"
 GITT="$GIT_COLOR\[\$(parse_git_branch)\$(parse_git_dirty)\]"
 
-function relative_pwd () {
-    # Get the current directory
-    current_dir=$(pwd)
+#function relative_pwd () {
+    ## Get the current directory
+    #current_dir=$(pwd)
+#
+    ## Get the home directory
+    #home_dir=$HOME
+#
+    ## Check if the current directory is within the home directory
+    ##parameter expansion feature
+    #if [[ $current_dir == $home_dir* ]]; then
+        ## Replace the home directory part of the path with "~"
+        #relative_dir="~${current_dir#$home_dir}"
+    #else
+        ## If not within the home directory, display the absolute path
+        #relative_dir="$current_dir"
+    #fi
+#
+    ## Display the relative directory
+    #printf "%*s" $COLUMNS "$relative_dir"
+#
+#}
 
-    # Get the home directory
-    home_dir=$HOME
+#rightprompt()
+#{
+    #printf "%*s" $COLUMNS "$PWD"
+#}
 
-    # Check if the current directory is within the home directory
-    #parameter expansion feature
-    if [[ $current_dir == $home_dir* ]]; then
-        # Replace the home directory part of the path with "~"
-        relative_dir="~${current_dir#$home_dir}"
-    else
-        # If not within the home directory, display the absolute path
-        relative_dir="$current_dir"
+exitstatus() {
+    local status=$?
+    if [[ $status != 0 ]]; then
+        tput setaf 161 ; echo -n " $status " ; tput sgr0
     fi
-
-    # Display the relative directory
-    printf "%*s" $COLUMNS "$relative_dir"
-
 }
 
-rightprompt()
-{
-    printf "%*s" $COLUMNS "$PWD"
+clearr () {
+    #local col="${COLUMNS}"
+
+    ##PS1="$CLEAR$RIGHT_PROMPT$GITT\n$EXITT$CARET$RESET"
+    PS1="$CLEAR$DARK_GREEN$LEFT_PROMPT$RESET$GITT$EXITT\n$DARK_GREEN$CARET$RESET"
 }
 
 EXITT="\[\$(exitstatus)\]"
@@ -91,50 +96,18 @@ CARET=" "
 RIGHT_PROMPT="$DIM$BOLD\[\$(relative_pwd)\]"
 LEFT_PROMPT="\n$DIM$BOLD\[\w\] $RESET"
 
-clearr () {
-    local col="${COLUMNS}"
-
-    #PS1="$CLEAR$RIGHT_PROMPT$GITT\n$EXITT$CARET$RESET"
-    PS1="$CLEAR$DARK_GREEN$LEFT_PROMPT$RESET$GITT$EXITT\n$DARK_GREEN$CARET$RESET"
-}
+#PS1="$CLEAR$DARK_GREEN$LEFT_PROMPT$RESET$GITT$EXITT\n$DARK_GREEN$CARET$RESET"
+PROMPT_COMMAND="clearr"
+PS2="***"
 #cl=$(clearr)
 #bind -x '"\C-l": $cl'
 
-PROMPT_COMMAND="clearr"
-PS2="***"
 
 #search repos for uninstalled command
 #source /usr/share/doc/pkgfile/command-not-found.bash
 
 #make aliases work with sudo
-alias sudo='sudo '
-
-function R () {
-	local r="shutdown -r"
-	
-	case "$1" in
-		"")
-			$r now
-			;;
-		"shut")
-			case "$2" in
-				#default
-				"")
-					shutdown
-					;;
-				*)
-					shutdown +${2}
-					;;
-			esac
-			;;
-		"c")
-			shutdown -c
-			;;
-		*)
-			${r} +${1}
-			;;
-	esac
-}
+#alias sudo='sudo '
 
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
@@ -152,10 +125,8 @@ alias v="nvim"
 alias sv="sudo nvim"
 alias hypr="cd ~/.config/hypr/hypr-configs"
 alias customway_json='nvim ~/.config/waybar/modules_waybar.jsonc'
-alias mpdconf="nvim $HOME/.config/mpd/mpd.conf"
 alias cssway='nvim ~/.config/waybar/style.css'
 alias jway='nvim ~/.config/waybar/config.jsonc'
-alias cdlua="cd ~/.config/nvim/lua" 
 alias pluglua="cd ~/.config/nvim/lua/plugins"
 alias mime="nvim ~/.config/mimeapps.list"
 alias bashv="nvim ~/.bashrc"
@@ -164,7 +135,7 @@ alias bashv="nvim ~/.bashrc"
 #---------------system----------------#
 
 #---------------user------------------#
-alias disk="ncdu"
+#alias disk="ncdu"
 
 
 #▄▀█ █▀█ █▀▀ █░█ ▄▄ █░█░█ █ █▄▀ █
@@ -239,33 +210,54 @@ alias yt="yt-dlp"
 #█▀▀ █▀█ █▄▄ █░▀░█ █▀█ █░▀█
 
 #---------------PACMAN--------------#
-alias p="pacman"
-alias pS="sudo pacman -S"
-alias pSs="pacman -Ss"
-alias pRns="sudo pacman -Rns"
-alias pQm="pacman -Qm"  
-alias pQn="pacman -Qn"  
-alias pQi="pacman -Qi"  
-alias pQs="pacman -Qs"
-alias pQe="pacman -Qe"  
-alias pSyyu="sudo pacman -Syyu"
-alias pSyu="sudo pacman -Syu"
+
+function p () {
+    case $1 in
+        "S")
+            sudo pacman -S "$2"
+            ;;
+        "Ss")
+            pacman -Ss "$2"
+            ;;
+        "Rns")
+            sudo pacman -Rns "$2"
+            ;;
+        "Qm")
+            #foreign pkg/aur
+            pacman -Qm "$2"
+            ;;
+        "Qn")
+            #native pkg in sync db
+            pacman -Qn "$2"
+            ;;
+        "Qi")
+            pacman -Qi "$2"
+            ;;
+        "Qs")
+            pacman -Qs "$2"
+            ;;
+        "Qe")
+            #explicit packages
+            pacman -Qe "$2"
+            ;;
+        "Qd")
+            # filter packages , show deps only
+            pacman -Qd "$2"
+            ;;
+        "Syyu")
+            sudo pacman -Syyu "$2"
+            ;;
+        "Syu")
+            sudo pacman -Syu "$2"
+            ;;
+        *)
+            pacman $1
+            ;;
+    esac
+}
 
 alias pac_cache_dir="cd /var/cache/pacman/pkg/"
 alias last50="expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 50"
-
-installedpkg () {
-    LC_ALL=C.UTF-8 pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | LC_ALL=C.UTF-8 sort -h
-}
-
-installedpkgless () {
-    LC_ALL=C.UTF-8 pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | LC_ALL=C.UTF-8 sort -h | less 
-}
-
-pkg_explicit_dep () {
-    LC_ALL=C.UTF-8 pacman -Qei | sed '/^[^NO ]/d;/None$/d' | awk 'BEGIN{RS=ORS="\n\n";FS=OFS="\n\\S"} /Optional Deps/ {print $1"\nO"$2}' 
-}
-
 pacfzf () {
     pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)' 
 }
@@ -289,13 +281,25 @@ show_deps () {
 update_pkg_size () {
     expac -S -H M '%k\t%n' $(pacman -Qqu) | sort -sh
 }
+#installedpkg () {
+    #LC_ALL=C.UTF-8 pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | LC_ALL=C.UTF-8 sort -h
+#}
+
+#installedpkgless () {
+    #LC_ALL=C.UTF-8 pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | LC_ALL=C.UTF-8 sort -h | less 
+#}
+
+#pkg_explicit_dep () {
+    #LC_ALL=C.UTF-8 pacman -Qei | sed '/^[^NO ]/d;/None$/d' | awk 'BEGIN{RS=ORS="\n\n";FS=OFS="\n\\S"} /Optional Deps/ {print $1"\nO"$2}' 
+#}
+
 
 
 #█▀▀ █ ▀█▀
 #█▄█ █ ░█░
 alias .file="/usr/bin/git --git-dir=$HOME/GitLab --work-tree=$HOME"
-alias tl="tldr"
-alias nc="ncmpcpp"
+#alias tl="tldr"
+#alias nc="ncmpcpp"
 #alias mpdocs='v /usr/share/doc/mpd/mpdconf.example'
 
 #---------------FILE NAVIGATIONS-------------#
@@ -309,20 +313,17 @@ alias _="cd -"
 #alias cp="cp -riv"
 #alias mv="mv -iv"
 
-
-#---------------CODING STUFFS--------------#
-alias practise='cd $HOME/pywrld/CODING_/pup/practise_py/practise-folder2'
-alias scratch='cd $HOME/pywrld/CODING_/pup/practise_py/practise-folder2/scratch/'
-alias wev_sym="wev | grep 'sym'"
+#alias wev_sym="wev | grep 'sym'"
 
 alias dunstconf='nvim ~/.config/dunst/dunstrc'
 alias dunstr="killall dunst; dunstify 'Bazinga'"
 
 #---------------CONFIGURATION FILES--------------#
 alias kittyconf='v ~/.config/kitty/kitty.conf'
-alias b='bat'
-alias conf='cd ~/.config'
-alias passit='wl-copy -n < ~/Documents/git_fine_token.txt && echo "Copy success :)"'
+
+passit () {
+    wl-copy -n < ~/Documents/git_fine_token.txt && echo "Copy success :)"
+}
 
 
 #---------------SYSTEM MANAGEMENT--------------#
@@ -520,16 +521,31 @@ math ()
     echo "scale=2;$1" | bc
 }
 
-arch () {
-    #$(kitty @ close-window --match env:KITTY_WINDOW_ID=$KITTY_WINDOW_ID)
-    for i in {1..10}
-    do
-        echo 'Using Arch btw'
-        sleep 0.2
-    done
-    fastfetch
-    sleep 2
-    kitty @ close-window --match env:KITTY_WINDOW_ID=$KITTY_WINDOW_ID
+function R () {
+	local r="shutdown -r"
+	
+	case "$1" in
+		"")
+			$r now
+			;;
+		"shut")
+			case "$2" in
+				#default
+				"")
+					shutdown
+					;;
+				*)
+					shutdown +${2}
+					;;
+			esac
+			;;
+		"c")
+			shutdown -c
+			;;
+		*)
+			${r} +${1}
+			;;
+	esac
 }
 
 # Set up fzf key bindings and fuzzy completion
