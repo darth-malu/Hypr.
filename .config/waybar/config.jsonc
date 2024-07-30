@@ -1,0 +1,41 @@
+{
+    "layer": "top", // Waybar at top layer
+    "reload_style_on_change": true,
+    "fixed-center": true,
+    //"passthrough": true,
+    //"spacing": 4,
+    //"name": "main_bar", //nice for css sytling different bars
+    //"margin": "2",
+    //"margin-top": 4,
+
+    "include": ["~/.config/waybar/modules_waybar.jsonc"],
+
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/window"
+        ],
+
+    "modules-center": [
+        "hyprland/submap",
+        "mpris"
+        ],
+
+    "modules-right": [
+        "custom/updates",
+        "custom/weather",
+        "group/gpuperf",
+        "custom/gpu_temp",
+        "group/disk_block",
+        "custom/disk",
+        "group/cpu_block",
+        "temperature",
+        //"memory",
+        "network",
+        "clock",
+        "wireplumber",
+        "tray",
+        "idle_inhibitor"
+        //"custom/wleave"
+        ]
+}
+
