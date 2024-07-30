@@ -23,6 +23,7 @@
     "modules-right": [
         "custom/updates",
         "custom/weather",
+        "network",
         "group/gpuperf",
         "custom/gpu_temp",
         "group/disk_block",
@@ -30,7 +31,6 @@
         "group/cpu_block",
         "temperature",
         //"memory",
-        "network",
         "clock",
         "wireplumber",
         "tray",

@@ -30,25 +30,25 @@ function parse_git_dirty {
 
 parse_git_branch() {
     # Long form
-    git rev-parse --abbrev-ref HEAD 2> /dev/null
+    #local b="$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
     # Short form
     # git rev-parse --abbrev-ref HEAD 2> /dev/null | sed -e 's/.*\/\(.*\)/\1/'
+    #echo " $b"
+
+    # Try to get the current branch name
+    local branch
+    branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
+
+    # Check if we're in a Git repository and if a branch name was found
+    if [ $? -eq 0 ]; then
+        # If there is a branch name, print it
+        echo " $branch"
+    elif [ "$branch" = "HEAD" ]; then
+        # Detached HEAD state
+        echo "  detached HEAD"
+    fi
 }
 
-
-#217 -pink
-CLEAR="\[$(tput el1)\]"
-RESET="\[$(tput sgr0)\]"
-GREEN="\[$(tput setaf 2)\]"
-DARK_GREEN="\[$(tput setaf 43 bold)\]"
-BRIGHTER_GREEN="\[$(tput setaf 23)\]"
-HOT_PINK="\[$(tput setaf 204)\]"
-TEXT_GREEN="\[$(tput setaf 36)\]"
-GIT_COLOR="\[$(tput setaf 183)\]"
-NICE_RED="\[$(tput setaf 161)\]"
-BOLD="\[$(tput bold)\]"
-DIM="\[$(tput dim)\]"
-GITT="$GIT_COLOR\[\$(parse_git_branch)\$(parse_git_dirty)\]"
 
 #function relative_pwd () {
     ## Get the current directory
@@ -77,28 +77,56 @@ GITT="$GIT_COLOR\[\$(parse_git_branch)\$(parse_git_dirty)\]"
     #printf "%*s" $COLUMNS "$PWD"
 #}
 
+#exitstatus() {
+    #local status=$?
+    #if [[ $status != 0 ]]; then
+        #tput setaf 161 ; echo -n " $status " ; tput sgr0
+    #fi
+#}
+
 exitstatus() {
+    # Capture the exit status of the last command
     local status=$?
-    if [[ $status != 0 ]]; then
-        tput setaf 161 ; echo -n " $status " ; tput sgr0
+
+    # Check if the status is non-zero
+    if [[ $status -ne 0 ]]; then
+        # Set color to red and display the status
+        tput setaf 161
+        echo -n " $status "
+        tput sgr0
+        # Reset color
     fi
 }
+#217 -pink
+CLEAR="\[$(tput el1)\]"
+RESET="\[$(tput sgr0)\]"
+GREEN="\[$(tput setaf 2)\]"
+DARK_GREEN="\[$(tput setaf 43 bold)\]"
+BRIGHTER_GREEN="\[$(tput setaf 23)\]"
+HOT_PINK="\[$(tput setaf 204)\]"
+TEXT_GREEN="\[$(tput setaf 36)\]"
+GIT_COLOR="\[$(tput setaf 183)\]"
+NICE_RED="\[$(tput setaf 161)\]"
+BOLD="\[$(tput bold)\]"
+DIM="\[$(tput dim)\]"
+GITT="$GIT_COLOR\[\$(parse_git_branch)\$(parse_git_dirty)\]"
+
+EXITT="\[\$(exitstatus)\]"
+CARET=" "
+LEFT_PROMPT="\n$DIM$BOLD\[\w\] $RESET$EXITT$RESET"
 
 clearr () {
     #local col="${COLUMNS}"
-
     ##PS1="$CLEAR$RIGHT_PROMPT$GITT\n$EXITT$CARET$RESET"
     PS1="$CLEAR$DARK_GREEN$LEFT_PROMPT$RESET$GITT$EXITT\n$DARK_GREEN$CARET$RESET"
 }
 
-EXITT="\[\$(exitstatus)\]"
-CARET=" "
-RIGHT_PROMPT="$DIM$BOLD\[\$(relative_pwd)\]"
-LEFT_PROMPT="\n$DIM$BOLD\[\w\] $RESET"
-
-#PS1="$CLEAR$DARK_GREEN$LEFT_PROMPT$RESET$GITT$EXITT\n$DARK_GREEN$CARET$RESET"
 PROMPT_COMMAND="clearr"
 PS2="***"
+
+#RIGHT_PROMPT="$DIM$BOLD\[\$(relative_pwd)\]"
+
+#PS1="$CLEAR$DARK_GREEN$LEFT_PROMPT$RESET$GITT$EXITT\n$DARK_GREEN$CARET$RESET"
 #cl=$(clearr)
 #bind -x '"\C-l": $cl'
 
@@ -256,8 +284,8 @@ function p () {
     esac
 }
 
-alias pac_cache_dir="cd /var/cache/pacman/pkg/"
-alias last50="expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 50"
+#alias pac_cache_dir="cd /var/cache/pacman/pkg/"
+#alias last50="expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 50"
 pacfzf () {
     pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)' 
 }
@@ -281,19 +309,6 @@ show_deps () {
 update_pkg_size () {
     expac -S -H M '%k\t%n' $(pacman -Qqu) | sort -sh
 }
-#installedpkg () {
-    #LC_ALL=C.UTF-8 pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | LC_ALL=C.UTF-8 sort -h
-#}
-
-#installedpkgless () {
-    #LC_ALL=C.UTF-8 pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | LC_ALL=C.UTF-8 sort -h | less 
-#}
-
-#pkg_explicit_dep () {
-    #LC_ALL=C.UTF-8 pacman -Qei | sed '/^[^NO ]/d;/None$/d' | awk 'BEGIN{RS=ORS="\n\n";FS=OFS="\n\\S"} /Optional Deps/ {print $1"\nO"$2}' 
-#}
-
-
 
 #█▀▀ █ ▀█▀
 #█▄█ █ ░█░

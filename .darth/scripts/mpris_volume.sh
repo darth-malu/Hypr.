@@ -40,7 +40,7 @@ player_volume () {
             playerctl_add_sub $current_player $add_minus 
             local volume=$(current_volume $current_player)
             dunstify -t 1000 -a "changeVolume" -u low -i ~/.darth/iconss/spotify.png \
-                -h string:x-dunst-stack-tag:$msgTag "Spotify                  $volume" -h int:value:"$volume"
+                -h string:x-dunst-stack-tag:$msgTag "Spotify                  $volume   " -h int:value:"$volume"
             ;;
         "Lollypop")
             playerctl_add_sub $current_player $add_minus 

@@ -41,12 +41,13 @@
     "icon-size": 14,
     //"max-length": 50,
     "rewrite": {
-        "(.*) — Mozilla Firefox": "$1",
-        //dsd🌎ddd
+        "(.*) — Mozilla Firefox": "\t>$1",
         "(.*) - fish": " [$1]",
-        "(.*) - kitty": " [$1]",
-        "(.*) - Spotify": "molog",
-        "(.*) - Lollypop": "molog"
+        "(.*)~": "\t $1"
+        //"(.*) - kitty": " [$1]",
+        //"(.*)~": " $1",
+        //"(.*) - Spotify": "molog",
+        //"(.*) - Lollypop": "molog"
         },
     "separate-outputs": true
     },
@@ -239,8 +240,8 @@
         "max-volume": 100,
         "on-scroll-down": "~/.darth/scripts/volume_sink_ctrl.sh -",
         "on-scroll-up": "~/.darth/scripts/volume_sink_ctrl.sh +",
-        "min-length": 6,
-        "max-length": 6,
+        "min-length": 5,
+        "max-length": 5,
         "scroll-step": 2,
         "tooltip":false
     },
