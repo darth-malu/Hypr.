@@ -112,13 +112,13 @@ DIM="\[$(tput dim)\]"
 GITT="$GIT_COLOR\[\$(parse_git_branch)\$(parse_git_dirty)\]"
 
 EXITT="\[\$(exitstatus)\]"
-CARET=" "
+#CARET=" "
 LEFT_PROMPT="\n$DIM$BOLD\[\w\] $RESET$EXITT$RESET"
 
 clearr () {
     #local col="${COLUMNS}"
     ##PS1="$CLEAR$RIGHT_PROMPT$GITT\n$EXITT$CARET$RESET"
-    PS1="$CLEAR$DARK_GREEN$LEFT_PROMPT$RESET$GITT$EXITT\n$DARK_GREEN$CARET$RESET"
+    PS1="$CLEAR$DARK_GREEN$LEFT_PROMPT$RESET$GITT$EXITT\n$DARK_GREEN-> $RESET"
 }
 
 PROMPT_COMMAND="clearr"
