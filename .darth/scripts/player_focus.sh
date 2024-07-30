@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/usr/bin/env bash
 
 function active_player() {
     playerctl metadata --format '{{ playerName }}'
@@ -13,20 +12,7 @@ grab_spotify_pid () {
 
 
 ncmpcpp_pid () {
-    #returns pid:####
-    #hyprctl clients | grep -i -A4 ncmpcpp|sed /^$/q | grep pid | tr -d "[:blank:]"
-    #hyprctl clients | grep -E -A3 "title.*nc.*[p]*$" | grep -v kitty | sed /--/q | grep pid | tr -d '[:blank:]'
-    #exists=$(hyprctl clients |grep -A1 "kitty" | grep -E -A3 "title:.*nc.*[p]*$" | grep -v kitty | sed /--/q | grep pid | tr -d "[:blank:]")
-    #exists=$(hyprctl clients |grep -A1 "kitty" | grep -E -A3 "title:\s.nc|ncmpcpp$" | grep -v kitty | sed /--/q | grep pid | tr -d "[:blank:]")
-
-    #hyprctl clients |grep -A1 "kitty" | grep -E -A3 "title:\s.nc|ncmpcpp$" | tail -n 1 | tr -d "[:blank:]"
-    #local pid=$(hyprctl clients |grep -A1 "kitty" | grep -E -A3 "title:\s.nc|ncmpcpp$" | tail -n 1 | tr -d '[:blank:]')
-
-    # clean pids
-    #hyprctl clients |grep -A1 "kitty" | grep -E -A3 "title:\s.nc|ncmpcpp$" | tail -n 1 | tr -d "[:blank:]"
     hyprctl clients | awk 'BEGIN { FS="\n" ; RS=""; OFS="\n" ; ORS = "\n\n"} /^Window.*nc.*/ { print $14, $NF }'| sed -n 1p| tr -d '[:blank:]'
-    #investigate if can use $1 and $2 directly instead of sed and tr
-    #outputs pid payload
 }
 
 launch_focus_if_nc_running () {
