@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 function active_player() {
     playerctl metadata --format '{{ playerName }}'
 }
@@ -54,6 +55,7 @@ launch_focus_if_nc_running () {
 function focus_current_player () {
     local displaying_player=$(active_player)
     local spotify=$(grab_spotify_pid)
+    hyprctl reload
 
     case $displaying_player in
         *"spotify"*)
@@ -71,7 +73,8 @@ function focus_current_player () {
                     hyprctl dispatch exec "[workspace special:nc] kitty -e ncmpcpp"
                     ;;
                 "")
-                    launch_focus_if_nc_running
+                    #launch_focus_if_nc_running
+                    hyprctl dispatch togglespecialworkspace nc
                     ;;
             esac
             ;;

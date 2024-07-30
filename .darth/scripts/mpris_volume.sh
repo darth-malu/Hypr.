@@ -58,4 +58,5 @@ player_volume () {
     esac
 }
 
+
 player_volume "$1"

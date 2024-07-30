@@ -4,16 +4,19 @@ msgTag="Waybareload"
 
 reload_hide ()
 {
-    tog="toggle_hide"
-    r="reload"
+    local tog="toggle_hide"
+    local r="reload"
 
-    if [[ $1 == $tog ]];then
-        dunstify -t 1000 -a "changegaps" -u low -i ~/.darth/iconss/toggle_way.png -h string:x-dunst-stack-tag:$msgTag "Waybar Toggle" 
-        pkill -SIGUSR1 waybar
-    elif [[ $1 == $r ]];then
-        bash ~/.darth/scripts/launch_waybar.sh &
-        dunstify -t 1000 -a "changegaps" -u low -i ~/.darth/iconss/rreload.png -h string:x-dunst-stack-tag:$msgTag "Waybar Reloaded" 
-    fi
+    case "$1" in
+        "$tog")
+            dunstify -t 1000 -a "changegaps" -u low -i ~/.darth/iconss/toggle_way.png -h string:x-dunst-stack-tag:$msgTag "Waybar Toggle" 
+            pkill -SIGUSR1 waybar
+            ;;
+        "$r")
+            ~/.darth/scripts/launch_waybar.sh &
+            dunstify -t 1000 -a "changegaps" -u low -i ~/.darth/iconss/rreload.png -h string:x-dunst-stack-tag:$msgTag "Waybar Reloaded   " 
+            ;;
+    esac
 }
 
-reload_hide $1
+reload_hide "$1"

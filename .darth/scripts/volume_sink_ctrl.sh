@@ -46,7 +46,7 @@ function sink_switcher (){
     if [[ $1 == "speaker" ]];then
         wpctl set-default $speaker_ID
         dunstify -t 1000 -a "changeVolume" -u low -i  "$speaker_pic"\
-            -h string:x-dunst-stack-tag:$msg "         Speakers  " 
+            -h string:x-dunst-stack-tag:$msg "         Speakers " 
     elif [[ $1 == "earphones" ]];then
         wpctl set-default $earphones_ID
         dunstify -t 1000 -a "changeVolume" -u low -i  "$ear_pic"\
@@ -83,15 +83,15 @@ function dunst_func() {
                 case $output_medium in
                     $speaker_ID)
                         dunstify -t 1000 -a "changeVolume" -u low -i ~/.darth/iconss/speaker_40blue.png \
-                            -h string:x-dunst-stack-tag:$msgTag -h int:value:"$int_volume" "             ${int_volume}"
+                            -h string:x-dunst-stack-tag:$msgTag -h int:value:"$int_volume" "                 ${int_volume}    "
                         ;;
                     $earphones_ID)
                         dunstify -t 1000 -a "changeVolume" -u low -i ~/.darth/iconss/ear_blue_40.png \
-                            -h string:x-dunst-stack-tag:$msgTag -h int:value:"$int_volume" "             ${int_volume}"
+                            -h string:x-dunst-stack-tag:$msgTag -h int:value:"$int_volume" "                 ${int_volume}"
                         ;;
                     $easy_sink_ID)
                         dunstify -t 1000 -a "changeVolume" -u low -i ~/.darth/iconss/ez.png \
-                            -h string:x-dunst-stack-tag:$msgTag -h int:value:"$int_volume" "             ${int_volume}"
+                            -h string:x-dunst-stack-tag:$msgTag -h int:value:"$int_volume" "                 ${int_volume}"
                         ;;
                 esac
             fi
@@ -135,7 +135,8 @@ function set_volume () {
 
 set_volume $1
 
-canberra-gtk-play -i audio-volume-change -d "changeVolume" --volume=0.2
+#canberra-gtk-play -i audio-volume-change -d "changeVolume" --volume=0.2
+
 #d - description
 #-i -  predefined event
 

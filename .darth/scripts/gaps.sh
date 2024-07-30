@@ -59,7 +59,7 @@ function gap_incrementer () {
     local max_gap_out_size=50
     local min_gaps_out_size=0
     local counter_gaps_out=2
-    local custom_gap_out=8
+    local custom_gap_out=3
     #Gaps in
     local current_gap_in=$(gaps_in_size)
     local max_gap_in_size=50
@@ -115,6 +115,7 @@ function gap_incrementer () {
             dunstify -t 1000 -a "changegaps" -u low -i icons/volume-off-solid -h string:x-dunst-stack-tag:$msgTag "Gaps reset to: $min_gaps_out_size" 
             ;;
         "custom")
+            #hyprctl keyword general:gaps_out $custom_gap_out
             hyprctl keyword general:gaps_out $custom_gap_out
             dunstify -t 1000 -a "changegaps" -u low -i icons/volume-off-solid -h string:x-dunst-stack-tag:$msgTag "Gaps set to custom size : $custom_gap_out" 
             ;;
