@@ -39,7 +39,7 @@
     "format": "\t{}",
     "icon": false,
     "icon-size": 14,
-    //"max-length": 50,
+    "max-length": 68,
     "rewrite": {
         "(.*) — Mozilla Firefox": "\t>$1",
         "v — (.*)": "\t$1",
@@ -251,8 +251,10 @@
     "mpris": {
 	    //"format-paused": "{status_icon} <i>{dynamic}</i>",
 	    "format": "{player_icon} {dynamic}",
-        "format-playing": "{player_icon}\t{dynamic}",
-	    "format-paused": "{status_icon}\t{dynamic}",
+        //"format-playing": "{player_icon}\t{dynamic}",
+        //"format-paused": "{status_icon}\t{dynamic}",
+        "format-paused": "{status_icon}  {dynamic}",
+        "format-playing": "{player_icon}  {dynamic}",
         "on-click-middle":"~/.darth/scripts/player_focus.sh", 
         //"on-scroll-down": "playerctl -p spotify,lollypop volume 0.1-",
         "on-scroll-down": "~/.darth/scripts/mpris_volume.sh -",

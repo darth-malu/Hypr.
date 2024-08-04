@@ -2,12 +2,20 @@
 
 dunst_after () {
     local msgTag="pacman"
-    dunstify -t 3000 -a "pacman_update" -u critical -i "~/.darth/iconss/pacman.png" -h string:x-dunst-stack-tag:$msgTag "Pacman updated packages"
+    dunstify -t 3000 \
+        -a "pacman_update" \
+        -u critical \
+        -i "/home/malu/Downloads/ICONS/icons8-pacman-cloud/icons8-pacman-100.png" \
+        -h string:x-dunst-stack-tag:$msgTag "Pacman updated packages"
 }
 
 dunst_aur () {
     local msgTag="pacman"
-    dunstify -t 3000 -a "aur_update" -u critical -i "~/.darth/iconss/pacman.png" -h string:x-dunst-stack-tag:$msgTag "AUR updated packages"
+    dunstify -t 3000 \
+        -a "aur_update" \
+        -u critical \
+        -i "~/.darth/iconss/pacman.png" \
+        -h string:x-dunst-stack-tag:$msgTag "AUR updated packages"
 }
 
 kill_kitty () {
@@ -122,10 +130,83 @@ main () {
         sudo pacman -Syu \
             && dunst_after
     }
+
     pacsyu
 }
 
+function create_lvm_snapshot() {
+    local VG_NAME="ARCH"
+    local LV_NAME="root_lv"
+    local SNAPSHOT_NAME="darth_snapshot_$(date +'%Y%m%d%H%M%S')"
+    local SNAPSHOT_SIZE="1G" # Adjust as needed
+
+
+    # Create a snapshot in the background
+    sudo lvcreate --size $SNAPSHOT_SIZE --snapshot --name $SNAPSHOT_NAME /dev/$VG_NAME/$LV_NAME &
+    local SNAPSHOT_PID=$!
+
+    # Optionally, wait for snapshot creation to complete
+    wait $SNAPSHOT_PID
+
+    # Check if snapshot creation was successful
+    if [ $? -eq 0 ]; then
+        dunstify "Snapshot $SNAPSHOT_NAME created successfully."\
+            -i "/home/malu/Downloads/ICONS/icons8-check-mark-windows-11-color/icons8-check-mark-96.png"\
+            -r 11\
+            -t 2000
+    else
+        dunstify "Snapshot creation failed."\
+            -i "/home/malu/Downloads/ICONS/icons8-cancel-blue-field/icons8-cancel-100.png"\
+            -r 11\
+            -t 2000
+        exit 1
+    fi
+}
+
+remove_old_snapshots () {
+
+    local VG_NAME="ARCH"
+    local VG_PATH="/dev/$VG_NAME"
+    local SNAPSHOT_NAME_PREFIX="darth"
+
+    # Find the current snapshot (if any)
+    #local CURRENT_SNAPSHOT=$(sudo lvdisplay | grep "Snapshot" | awk -F': ' '/Name/ {print $2}' | grep "^${SNAPSHOT_NAME_PREFIX}")
+    #local CURRENT_SNAPSHOT=$(sudo lvs | awk '/darth.*/ {print $0}' | awk '{$1=$1; print}')
+    #local SNAPSHOTS_PRESENT=$(sudo lvs --noheadings -o lv_name,vg_name | grep "^${SNAPSHOT_NAME_PREFIX}")
+
+    local SNAPSHOTS_PRESENT=$(sudo lvs --noheadings -o lv_name | tr -d "[:blank:]" | grep "^${SNAPSHOT_NAME_PREFIX}")
+
+
+    if [ ! -z "$SNAPSHOTS_PRESENT" ]; then
+        dunstify "Removing old snapshot: $SNAPSHOTS_PRESENT"\
+            -i "/home/malu/Downloads/ICONS/icons8-trash-color/icons8-trash-96.png"\
+            -t 3200\
+            -r 11
+
+        # Remove snaps one by one
+        for SNAP in ${SNAPSHOTS_PRESENT}; do
+            local LV_PATH="$VG_PATH/${SNAP}"
+            echo "Removing snapshot: $LV_PATH"
+            sudo lvremove -f $LV_PATH 2>&1 | tee -a /tmp/lvremove.log
+            #LV_PATH="/dev/$(echo $SNAP | awk '{print $2"/"$1}')"
+        done
+
+        #no confirm with -f
+        if [ $? -ne 0 ]; then
+            dunstify -t 3200 "Failed to remove old snapshot. Exiting." \
+                -i "/home/malu/Downloads/ICONS/icons8-unavailable-color-hand-drawn"\
+                -r 11
+            exit 1
+        else
+            # On success of deletion
+            create_lvm_snapshot
+        fi
+    fi
+}
+
+
 launcher () {
+    remove_old_snapshots
     case "$1" in
         "main")
             main
@@ -134,7 +215,10 @@ launcher () {
             paru -Sua && sleep 1 && dunst_aur
             ;;
         *)
-            dunstify "Invalid option: $1"
+            dunstify "Invalid option: $1" \
+                -i "/home/malu/Downloads/ICONS/icons8-cancel-3d-plastilina/icons8-cancel-69.png" \
+                -t 3200 \
+                -r 11
             ;;
     esac
     kill_kitty

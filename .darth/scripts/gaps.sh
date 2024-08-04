@@ -54,18 +54,22 @@ function gaps_in_size () {
 
 function gap_incrementer () {
     #toggle gaps on/off or increase/decrease by 1
+
     #gaps_out
     local current_gap_out=$(current_gaps_out_size)
     local max_gap_out_size=50
     local min_gaps_out_size=0
-    local counter_gaps_out=2
-    local custom_gap_out=3
+    local counter_gaps_out=1
+    #local custom_gap_out=3
+    local config_gap=$(grep 'gaps_out' ~/.config/hypr/hypr-configs/ux_ui.conf | tr -cd "[:digit:]")
+
     #Gaps in
     local current_gap_in=$(gaps_in_size)
     local max_gap_in_size=50
     local min_gap_in_size=2
     local default_gaps_in=4
     local counter_gaps_in=2
+
     #toggle
     local tog="toggle_gaps_out"
     #no_gaps="-"
@@ -116,7 +120,7 @@ function gap_incrementer () {
             ;;
         "custom")
             #hyprctl keyword general:gaps_out $custom_gap_out
-            hyprctl keyword general:gaps_out $custom_gap_out
+            hyprctl keyword general:gaps_out $config_gap
             dunstify -t 1000 -a "changegaps" -u low -i icons/volume-off-solid -h string:x-dunst-stack-tag:$msgTag "Gaps set to custom size : $custom_gap_out" 
             ;;
         *)

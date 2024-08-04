@@ -112,13 +112,14 @@ DIM="\[$(tput dim)\]"
 GITT="$GIT_COLOR\[\$(parse_git_branch)\$(parse_git_dirty)\]"
 
 EXITT="\[\$(exitstatus)\]"
-#CARET=" "
+CARET=" "
 LEFT_PROMPT="\n$DIM$BOLD\[\w\] $RESET$EXITT$RESET"
 
 clearr () {
     #local col="${COLUMNS}"
     ##PS1="$CLEAR$RIGHT_PROMPT$GITT\n$EXITT$CARET$RESET"
-    PS1="$CLEAR$DARK_GREEN$LEFT_PROMPT$RESET$GITT$EXITT\n$DARK_GREEN-> $RESET"
+    #PS1="$CLEAR$DARK_GREEN$LEFT_PROMPT$RESET$GITT$EXITT\n$DARK_GREEN-> $RESET"
+    PS1="$CLEAR$DARK_GREEN$LEFT_PROMPT$RESET$GITT$EXITT\n$DARK_GREEN$CARET$RESET"
 }
 
 PROMPT_COMMAND="clearr"
@@ -273,13 +274,13 @@ function p () {
             pacman -Qd "$2"
             ;;
         "Syyu")
-            sudo pacman -Syyu "$2"
+            sudo pacman -Syyu
             ;;
         "Syu")
-            sudo pacman -Syu "$2"
+            sudo pacman -Syu 
             ;;
         *)
-            pacman $1
+            pacman "$1"
             ;;
     esac
 }
@@ -547,7 +548,7 @@ function R () {
 			case "$2" in
 				#default
 				"")
-					shutdown
+					shutdown now
 					;;
 				*)
 					shutdown +${2}

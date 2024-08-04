@@ -20,7 +20,7 @@ playerctl_add_sub () {
 
 mpc_add_sub () 
 {
-    mpc volume ${1}2
+    mpc volume ${1}1
 }
 
 query_playerctl () {

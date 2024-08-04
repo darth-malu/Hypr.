@@ -1,8 +1,5 @@
-
 [Default Applications]
 image/jpeg=viewnior.desktop
-
-#firefox / browser
 text/html=firefox.desktop
 x-scheme-handler/http=firefox.desktop
 x-scheme-handler/https=firefox.desktop
@@ -11,3 +8,7 @@ x-scheme-handler/unknown=firefox.desktop
 inode/directory=yazi.desktop
 text/plain=nvim.desktop
 image/png=viewnior.desktop
+x-scheme-handler/tonsite=org.telegram.desktop.desktop
+
+[Added Associations]
+x-scheme-handler/tonsite=org.telegram.desktop.desktop;
