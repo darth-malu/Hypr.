@@ -38,7 +38,6 @@ less_pkgs ()
     while read -r update; do
         pacman -Qi "$update"
     done <<< "$updates" | less -F
-
 }
 
 minimal_update_display () {
@@ -52,12 +51,12 @@ minimal_update_display () {
     #outputs updates one by one to STDOUT
 }
 
-less_pkgss () {
-    local updates="$(raw_updates)"
-
-    # Each line of output becomes an element in the array
-    IFS=$'\n' read -d '' -r -a updates_array <<< "$updates"
-}
+#less_pkgss () {
+    #local updates="$(raw_updates)"
+#
+    ## Each line of output becomes an element in the array
+    #IFS=$'\n' read -d '' -r -a updates_array <<< "$updates"
+#}
 
 main () {
     local tabs='\t\t\t'
@@ -110,9 +109,13 @@ main () {
                 ;;
             #HALT
             0|"q")
-                dunstify "QUITING"
+                dunstify "QUITING"\
+                    -i "/home/malu/Downloads/ICONS/icons8-cross-lineal-color/icons8-cross-64.png"
                 kill_kitty
                 #exit 0
+                ;;
+            "b"|"B")
+                remove_old_snapshots
                 ;;
             #Default -> quiet
             "")
@@ -153,12 +156,12 @@ function create_lvm_snapshot() {
         dunstify "Snapshot $SNAPSHOT_NAME created successfully."\
             -i "/home/malu/Downloads/ICONS/icons8-check-mark-windows-11-color/icons8-check-mark-96.png"\
             -r 11\
-            -t 2000
+            -t 4000
     else
         dunstify "Snapshot creation failed."\
             -i "/home/malu/Downloads/ICONS/icons8-cancel-blue-field/icons8-cancel-100.png"\
             -r 11\
-            -t 2000
+            -t 4000
         exit 1
     fi
 }
@@ -197,16 +200,15 @@ remove_old_snapshots () {
                 -i "/home/malu/Downloads/ICONS/icons8-unavailable-color-hand-drawn"\
                 -r 11
             exit 1
-        else
-            # On success of deletion
-            create_lvm_snapshot
         fi
+
+        # On success of deletion
+        create_lvm_snapshot
     fi
 }
 
 
 launcher () {
-    remove_old_snapshots
     case "$1" in
         "main")
             main

@@ -19,6 +19,8 @@ dunstify_preview () {
         -t 1600\
         "$(mpc --format '󰎍\t%title%\t\n\n \t%artist%\t\n \t%album%\t' current)" \
         -i "$album_art"
+            #"$(mpc --format '󰎍\t%title%\t' current)" \
+            #"$(mpc --format ' \t%artist%\t\n \t%album%\t' current)" \
             #"$(mpc --format '\t%title%\t\n\n \t%artist%\t\n \t%album%\t' current)" \
             #"$(mpc --format '󰎍 \t%title%\t\n \t%artist%\t\n \t%album%\t' current)" \
         #hyprctl clients | awk 'BEGIN { FS="\n" ; RS=""; OFS="\n" ; ORS = "\n\n"} /^Window.*nc.*/ { print $14, $NF }'| sed -n 1p| tr -d '[:blank:]'

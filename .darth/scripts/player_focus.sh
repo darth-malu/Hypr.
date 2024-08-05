@@ -12,29 +12,35 @@ grab_spotify_pid () {
 
 
 ncmpcpp_pid () {
-    hyprctl clients | awk 'BEGIN { FS="\n" ; RS=""; OFS="\n" ; ORS = "\n\n"} /^Window.*nc.*/ { print $14, $NF }'| sed -n 1p| tr -d '[:blank:]'
+    hyprctl clients | awk 'BEGIN { FS="\n" ; RS=""; OFS="\n" ; ORS = "\n\n"} /^Window.*ncmpcpp.*/ { print $14, $NF }'| sed -n 1p| tr -d '[:blank:]'
 }
 
 launch_focus_if_nc_running () {
     #check if nc process is up && a window  exists under class:kitty , title: nc*
-    local nc="$(pgrep ncmpcpp)"
+    local nc=$(pgrep ncmpcpp)
 
     # if process exists look for pid else launch it
-    # True if string length != 0
-    if [[ -n $nc ]]
-    then
-        local nc_state="$(ncmpcpp_pid)"
-        if [[ -n $nc_state ]]
-        then
+    # True if string length != 0; ie there is a value(nc pid) in the var (nc)
+
+    if [[ -n $nc ]];then
+        local nc_pid=$(ncmpcpp_pid)
+        if [[ -n $nc_pid ]];then
             # focus running instance of ncmpcpp
-            hyprctl dispatch togglespecialworkspace nc
-            #hyprctl dispatch focuswindow "$(ncmpcpp_pid)"
+            #hyprctl dispatch togglespecialworkspace nc
+            hyprctl dispatch focuswindow "$nc_pid"
         else
-            # launch if not running
-            hyprctl dispatch exec "[workspace special:nc] kitty -e ncmpcpp"
+            # launch ncmpcpp if not running
+            #hyprctl dispatch exec "[workspace special:nc] kitty -e ncmpcpp"
+
+            # workspace rule oncreate empty hehe
+            hyprctl dispatch togglespecialworkspace nc
         fi
+
         #outputs count eg 1
         #hyprctl clients | grep -A3 "class: kitty" | grep -cE "title:\s*nc"
+    # if ncmpcpp is not running
+    else
+        hyprctl dispatch togglespecialworkspace nc
     fi
 }
 
@@ -43,7 +49,7 @@ function focus_current_player () {
     local spotify=$(grab_spotify_pid)
     hyprctl reload
 
-    case $displaying_player in
+    case ${displaying_player} in
         *"spotify"*)
             hyprctl dispatch focuswindow ${spotify} > /dev/null
             ;;
@@ -54,15 +60,9 @@ function focus_current_player () {
             hyprctl dispatch focuswindow firefox > /dev/null
             ;;
         *"mpd"*)
-            case "$1" in
-                "kitty_nc_launch")
-                    hyprctl dispatch exec "[workspace special:nc] kitty -e ncmpcpp"
-                    ;;
-                "")
-                    #launch_focus_if_nc_running
-                    hyprctl dispatch togglespecialworkspace nc
-                    ;;
-            esac
+            #create special:nc or toggle nc with ncmpcpp   
+            launch_focus_if_nc_running
+            #hyprctl dispatch togglespecialworkspace nc
             ;;
     esac
 }

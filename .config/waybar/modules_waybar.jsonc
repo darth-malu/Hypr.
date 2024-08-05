@@ -39,12 +39,10 @@
     "format": "\t{}",
     "icon": false,
     "icon-size": 14,
-    "max-length": 68,
+    "max-length": 65,
     "rewrite": {
         "(.*) — Mozilla Firefox": "\t>$1",
-        "v — (.*)": "\t$1",
-
-        "(.*) - fish": " [$1]",
+        "v (.*)": "\t$1",
         "(.*)~": "\t $1"
         //"(.*) - kitty": " [$1]",
         //"(.*)~": " $1",
@@ -104,7 +102,8 @@
     "return-type": "json",
     "format": "{}",
     "tooltip": false,
-    "interval": 60
+    "interval": 60,
+    "cursor":true
     },
 
     "group/cpu_block": {
@@ -142,11 +141,12 @@
 
 
     "group/conglo": {
-        "drawer": {"transition-duration": 400,"transition-left-to-right": true, "children-class": "drawer-child", "click-to-reveal": true},
+        "drawer": {"transition-duration": 500,"transition-left-to-right": true, "children-class": "drawer-child", "click-to-reveal": true},
         "orientation": "horizontal",
         "modules":[
-            "network",
-            "idle_inhibitor"
+            "custom/weather",
+            "network"
+            //"idle_inhibitor"
             //"temperature"
         ]
     },
@@ -235,15 +235,15 @@
     "wireplumber": {
         //"format": "{volume}  ",
         //"format": "{volume}%  ",
-        "format": "{volume} ",
+        "format": "{volume}\t",
         "format-muted": "",
         "on-click": "killall pavucontrol || pavucontrol",
         "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "max-volume": 100,
-        "on-scroll-down": "~/.darth/scripts/volume_sink_ctrl.sh -",
-        "on-scroll-up": "~/.darth/scripts/volume_sink_ctrl.sh +",
-        "min-length": 5,
-        "max-length": 5,
+        //"on-scroll-down": "~/.darth/scripts/volume_sink_ctrl.sh -",
+        //"on-scroll-up": "~/.darth/scripts/volume_sink_ctrl.sh +",
+        //"min-length": 5,
+        //"max-length": 5,
         "scroll-step": 2,
         "tooltip":false
     },
@@ -389,17 +389,18 @@
     //"format-wifi": " {essid} {bandwidthDownBytes}",
     //"format-ethernet": "{bandwidthDownBytes} ",
     "format-wifi": " {essid} {bandwidthDownBytes}",
-    "format-ethernet": "{bandwidthDownBytes}",
+    //"format-ethernet": "{bandwidthDownBytes}\t{bandwidthUpBytes}",
+    "format-ethernet": "   {bandwidthDownBytes}\t   {bandwidthUpBytes}",
     "interval": 2,
-    "tooltip-format-ethernet": "{gwaddr} ",
-    "tooltip-format-wifi": "{signalStrength}% signal",
+    //"tooltip-format-ethernet": "{gwaddr} ",
+    //"tooltip-format-wifi": "{signalStrength}% signal",
     "format-linked": "{ifname} (No IP) ",
     //"format-disconnected": "Disconnected ⚠",
     "format-disconnected": "⚠  No net",
-    "format-alt": "{ipaddr}/{cidr} ",
-    "tooltip": true,
-    "max-length": 9,
-    "min-length": 9
+    //"format-alt": "{ipaddr}/{cidr} ",
+    "tooltip": false,
+    "max-length": 20,
+    "min-length": 20
     //"justify": "right"
     //"justify": "left"
     /*"align": 1*/

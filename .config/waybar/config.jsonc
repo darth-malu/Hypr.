@@ -22,8 +22,9 @@
 
     "modules-right": [
         "custom/updates",
-        "custom/weather",
-        "network",
+        //"custom/weather",
+        "group/conglo",
+        //"network",
         "group/gpuperf",
         "custom/gpu_temp",
         "group/disk_block",

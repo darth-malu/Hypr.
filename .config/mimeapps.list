@@ -7,6 +7,7 @@ x-scheme-handler/about=firefox.desktop
 x-scheme-handler/unknown=firefox.desktop
 inode/directory=yazi.desktop
 text/plain=nvim.desktop
+application/pdf=org.pwmt.zathura.desktop
 image/png=viewnior.desktop
 x-scheme-handler/tonsite=org.telegram.desktop.desktop
 
