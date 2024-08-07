@@ -7,7 +7,7 @@
 1. [Introduction](#introduction)
 2. [Screenshots](#Screenshots)
 3. [Tui](#Tui)
-4. [config](#Config directions)
+4. [config](#Config\ directions)
 
 ### 📝 Introduction
 **This is my daily driver build, min-maxed to the max**
