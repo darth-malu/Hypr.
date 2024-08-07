@@ -14,7 +14,7 @@
 ***
 
 ### Screenshots
-![Empty Workspace](/home/malu/Pictures/Screenshots/2024-08-06T15:52:49,354189538+03:00.png)
+![Empty Workspace](2024-08-06T15:52:49,354189538+03:00.png)
 ***
 
 ### Tui
