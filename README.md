@@ -14,12 +14,12 @@
 ***
 
 ### 🖼️ Screenshots
-![Empty Workspace](.darth/git_screenshots/empty_workspace.png)
-![Empty Workspace2](.darth/git_screenshots/empty2.png)
+![Empty Workspace](~/.darth/git_screenshots/empty_workspace.png)
+![Empty Workspace2](~/.darth/git_screenshots/empty2.png)
 ***
 
 ### 💻Tui
-![NCMPCPP](.darth/git_screenshots/ncmpcpp.png)
+![NCMPCPP](~/.darth/git_screenshots/ncmpcpp.png)
 ***
 
 ### ⚡  Config directions
