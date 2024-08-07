@@ -254,7 +254,7 @@ case $- in
                 local yazi_tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
                 yazi "$@" --cwd-file="$yazi_tmp"
                 if cwd="$(cat -- "$yazi_tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-                    cd -- "$cwd"
+                    builtin cd -- "$cwd"
                 fi
                 rm -f -- "$yazi_tmp"
             }

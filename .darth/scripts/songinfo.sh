@@ -17,8 +17,9 @@ dunstify_preview () {
     local album_art="$(generate_preview)"
     dunstify -h string:x-dunst-stack-tag:$msgTag \
         -t 1600\
-        "$(mpc --format '󰎍\t%title%\t\n\n \t%artist%\t\n \t%album%\t' current)" \
+        "$(mpc --format '[[󰎍\t%title%\t\n][\t%audioformat%]\n \t%artist%\t\n \t%album%\t]] | [%file%]' current)" \
         -i "$album_art"
+    #sampler‐ate:bits:channels -> %audioformat%
             #"$(mpc --format '󰎍\t%title%\t' current)" \
             #"$(mpc --format ' \t%artist%\t\n \t%album%\t' current)" \
             #"$(mpc --format '\t%title%\t\n\n \t%artist%\t\n \t%album%\t' current)" \

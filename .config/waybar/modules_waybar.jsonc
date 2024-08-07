@@ -77,7 +77,7 @@
     "custom/gpu_fans": 
     {
     "exec": "~/.darth/scripts/temp.sh gpu_fans",
-    "interval": 20,
+    "interval": 10,
     "format": "{} rpm",
     "return-type": "",
     "min-length": 8,
@@ -102,7 +102,7 @@
     "return-type": "json",
     "format": "{}",
     "tooltip": false,
-    "interval": 60,
+    "interval": 360,
     "cursor":true
     },
 
@@ -177,8 +177,8 @@
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "timezone": "Africa/Nairobi",
         "format-alt": "{:%Y-%m-%d}",
-        "min-length": 15,
-        "max-length": 15,
+        "min-length": 17,
+        "max-length": 17,
         "format": "{:%a %d,  %I:%M %p }",
         "tooltip": true,
         "calendar": {
@@ -343,6 +343,7 @@
 
 "idle_inhibitor": {
     "format": "{icon}",
+    "on-click-right": "kitty sh -c 'sudo systemctl hybrid-sleep'",
     "format-icons": {
         //"activated": "",
         //"activated": "  ",
@@ -390,7 +391,7 @@
     //"format-ethernet": "{bandwidthDownBytes} ",
     "format-wifi": " {essid} {bandwidthDownBytes}",
     //"format-ethernet": "{bandwidthDownBytes}\t{bandwidthUpBytes}",
-    "format-ethernet": "   {bandwidthDownBytes}\t   {bandwidthUpBytes}",
+    "format-ethernet": "   {bandwidthDownBytes}       {bandwidthUpBytes}",
     "interval": 2,
     //"tooltip-format-ethernet": "{gwaddr} ",
     //"tooltip-format-wifi": "{signalStrength}% signal",
@@ -399,10 +400,10 @@
     "format-disconnected": "⚠  No net",
     //"format-alt": "{ipaddr}/{cidr} ",
     "tooltip": false,
-    "max-length": 20,
-    "min-length": 20
+    "max-length": 22,
+    "min-length": 22,
     //"justify": "right"
-    //"justify": "left"
+    "justify": "left"
     /*"align": 1*/
 },
 
