@@ -1,11 +1,12 @@
+## 🌌 Hyprland + Waybar
 
 ### 📜 Table of Contents
-
 1. [Introduction](#introduction)
 2. [Screenshots](#Screenshots)
+4. [Musci](#Music)
 3. [features](#Features)
 4. [Tui](#Tui)
-4. [kb](#Keyboard Shortcuts)
+4. [kb](#KeyboardShortcuts)
 5. [config](#Config)
 
 ### 📝 Introduction
@@ -14,23 +15,29 @@
 ### Features 
 
 
-### 🖼️ Screenshots
+***
+### 📷 Screenshots
 **pacman + fzf | FastFetch**
 ![pacfzf](.darth/git_screenshots/pacf_fast.png)
 
 **Empty Workspace + my perf_mon capsules**
 ![maxi empty](https://github.com/darth-malu/Hypr./raw/hyprmax/.darth/git_screenshots/maxi_empty.png)
 
-
+***
 ### 💻 Tui
-**NCMPCPP**
-![ncmpcpp](.darth/git_screenshots/ncmpcpp_1.png)
-
 **Yazi**
 ![Yazi](.darth/git_screenshots/yazi.png)
 
+### 🎶 Music
+**NCMPCPP**
+![ncmpcpp](.darth/git_screenshots/ncmpcpp_1.png)
 
-### ⌨️ Keyboard Shortcuts
+**Easy effects**
+![easy](.darth/git_screenshots/easy.png)
+
+
+
+### ⌨️  KeyboardShortcuts
 ```
     #LEGEND
     $sl - SHIFT_L
