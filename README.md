@@ -35,8 +35,8 @@
     * gpu fan rpm
     * gpu temp
 * CPU
-    * temp, frequency, %use
-* memory % use and disk % free + temp
+    * temp, frequency, % use
+* memory % use and disk % free + nvme temp.
 * network(up/down speed) + weather (wttr.in)
 </details>
 
@@ -53,6 +53,7 @@
 **Empty Workspace + my perf_mon capsules**
 ![maxi empty](https://github.com/darth-malu/Hypr./raw/hyprmax/.darth/git_screenshots/maxi_empty.png)
 </details>
+
 ***
 ### 💻 Tui
 **Neovim**
@@ -97,6 +98,7 @@
 ## Keyboard Shortcuts
 <details>
     <summary><strong> ⌨️  KeyBindings</strong></summary>
+
         $sl = SHIFT_L
         $cl = CONTROL_L
         $mod = SUPER
