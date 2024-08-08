@@ -71,7 +71,7 @@
 <details>
     <summary><strong>Workspaces</strong></summary>
 
-**Empty Workspace + my perf_mon capsules - max**
+**Empty Workspace + my perf_mon capsules**
 ![maxi empty](https://github.com/darth-malu/Hypr./raw/hyprmax/.darth/git_screenshots/maxi_empty.png)
 
 **Empty Capsules off**
@@ -88,6 +88,8 @@
 
 **Neovim**
 ![nvim](.darth/git_screenshots/v.png)
+
+**nvim + kitty_windows**
 ![nvim + Kitty windows](https://github.com/darth-malu/Hypr./raw/hyprmax/.darth/git_screenshots/kitty_v.png)
 
 <!-- Files -->
