@@ -1,13 +1,13 @@
 ## 🌌 Hyprland + Waybar
 
 ### Table of Contents
-1. [Intro](#introduction)
-2. [Screenshots 📷](#Screenshots)
-4. [Music.](#Music)
-3. [features](#Features)
-4. [Terminal Apps](#Tui)
-4. [Keyboard Shortcusts](#Keyboard-Shortcuts)
-5. [config](#Config)
+1. [Introduction](#introduction)
+2. [Screenshots 📷](#screenshots)
+3. [Music 🎶](#music)
+4. [Features](#features)
+5. [Terminal Apps](#tui)
+6. [Keyboard Shortcuts](#keyboard-shortcuts)
+7. [Config ⚡](#config)
 
 ### 📝 Introduction
 **This is my daily driver Arch build, min-maxed to the max 👻**
@@ -22,7 +22,6 @@
         - Indicators for current volume sink eg, speaker, earphones, easysink
         - Systemwide Volume progressbar with current sink icon
         - Per app (mpd, spotify etc) Volume + progressbar with waybar mpris interaction.
-
 </details>
 
 <details>
@@ -38,7 +37,6 @@
           - temp, frequency, %use
     - memory % use and disk % free + temp
           - network(up/down speed) + weather (wttr.in)
-
 </details>
 
 ***
@@ -72,61 +70,58 @@
 
     *playlist-editor view*
     ![ncmpcpp](.darth/git_screenshots/ncmpcpp_1.png)
-
 </details>
 
 <details>
-    <summary>**Easy effects**</summary>
+    <summary><strong>Easy Effects<strong></summary>
 
     ![easy](.darth/git_screenshots/easy.png)
-
 </details>
 
 
 
 <details>
-
     <summary><strong> ⌨️  Keyboard Shortcuts</strong></summary>
-### Keyboard Shortcuts
-```
-    #LEGEND
-    $sl = SHIFT_L
-    $cl = CONTROL_L
-    $mod = SUPER
-    $al = Alt_L
-    $ar = Alt_R
-    $sl = SHIFT_L
 
-    PrtSc: Taking Screentshot - entire scrn
-        * + $al - current window
-        * + $sl - copy area
+    ### Keyboard Shortcuts
+    ```
+        #LEGEND
+        $sl = SHIFT_L
+        $cl = CONTROL_L
+        $mod = SUPER
+        $al = Alt_L
+        $ar = Alt_R
+        $sl = SHIFT_L
 
-    $mod + Enter: Open kitty current workspace
-    $mod + $sl + Enter: Open Terminal emptym
+        PrtSc: Taking Screentshot - entire scrn
+            * + $al - current window
+            * + $sl - copy area
 
-    $mod + I: launch special:nc, launch ncmpcpp if empty
+        $mod + Enter: Open kitty current workspace
+        $mod + $sl + Enter: Open Terminal emptym
 
-    $mod + +: Inc. Gaps out
-    $mod + -: Dec. Gaps out
+        $mod + I: launch special:nc, launch ncmpcpp if empty
 
-    $mod + $al + +: Inc. Gaps in
-    $mod + $al + -: Dec. Gaps in
+        $mod + +: Inc. Gaps out
+        $mod + -: Dec. Gaps out
 
-    $mod + vim-motions (h,k,l,j) / mouse-down/up -> navigate open workspaces
-    $sl, $sl -> focuscurrentlast - backandforth active
+        $mod + $al + +: Inc. Gaps in
+        $mod + $al + -: Dec. Gaps in
 
-
-    $mod + Space/mouse:275 killactive / close focused window
-    $mod + O -> Move to emptym
-
-    $mod + {}: Launch app 
-        {} = B - Brave, F - Firefox, N - Nautilus, $sl + O - obsidian
+        $mod + vim-motions (h,k,l,j) / mouse-down/up -> navigate open workspaces
+        $sl, $sl -> focuscurrentlast - backandforth active
 
 
-    #see also .config/hypr/workspacerules, keybindings
+        $mod + Space/mouse:275 killactive / close focused window
+        $mod + O -> Move to emptym
 
-```
+        $mod + {}: Launch app 
+            {} = B - Brave, F - Firefox, N - Nautilus, $sl + O - obsidian
 
+
+        #see also .config/hypr/workspacerules, keybindings
+
+    ```
 </details>
 ### ⚡ Config
 
