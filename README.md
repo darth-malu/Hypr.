@@ -2,7 +2,7 @@
 
 ### 📜 Table of Contents
 1. [Intro](#introduction)
-2. [Screenshots](#Screenshots)
+2. [Screenshots 📷](#Screenshots)
 4. [Music.](#Music)
 3. [features](#Features)
 4. [Terminal Apps](#Tui)
@@ -10,7 +10,7 @@
 5. [config](#Config)
 
 ### 📝 Introduction
-**This is my daily driver build, min-maxed to the max**
+**This is my daily driver Arch build, min-maxed to the max 👻**
 
 ### Features 
 
