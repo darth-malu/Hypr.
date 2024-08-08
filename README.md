@@ -30,7 +30,7 @@
 
 ### 🎶 Music
 **NCMPCPP**
-![ncmpcpp](.darth/git_screenshots/ncmpcpp_1.png)
+![ncmpcpp](.darth/git_screenshots/volume_nc.png)
 
 **Easy effects**
 ![easy](.darth/git_screenshots/easy.png)
@@ -71,7 +71,7 @@
         {} = B - Brave, F - Firefox, N - Nautilus, $sl + O - obsidian
 
 
-    #see also ./workspacerules, keybindings
+    #see also .config/hypr/workspacerules, keybindings
 
 ```
 ### ⚡ Config
