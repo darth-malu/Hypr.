@@ -72,9 +72,13 @@
 *playlist-editor view*
 ![ncmpcpp](.darth/git_screenshots/ncmpcpp_1.png)
 
-**Easy Effects**
+<details>
+    <summary><strong>Easy Effects</strong></summary>
 
 ![easy](.darth/git_screenshots/easy.png)
+</details>
+
+
 
 ***
 
