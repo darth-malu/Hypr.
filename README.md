@@ -40,7 +40,7 @@
 <details>
     <summary><strong>Quality Of life scripts</strong></summary>
     
-    see [My scripts](.darth/scripts/)
+[My scripts](.darth/scripts/)
 </details>
 
 <details>
