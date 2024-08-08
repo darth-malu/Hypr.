@@ -3,7 +3,7 @@
 ### Table of Contents
 1. [Introduction](#introduction)
 2. [Screenshots 📷](#screenshots)
-3. [Music 🎶](#Music)
+3. [Music 🎶](# 🎶 Music)
 4. [Features](#Features)
 5. [Terminal Apps](#Tui)
 6. [Keyboard Shortcuts](#Keyboard-Shortcuts)
@@ -13,7 +13,7 @@
 **This is my daily driver Arch build, min-maxed to the max 👻**
 
 ### Features 
-- Theme: catppuccin-mocha-red
+- Theme: catppuccin-mocha-red, gruvbox -nvim
 
 <details>
     <summary>Quality of life mods:</summary>
@@ -58,9 +58,10 @@
 **Yazi**
 ![Yazi](.darth/git_screenshots/yazi.png)
 
+***
 ### 🎶 Music
 
-#### NCMPCPP
+**NCMPCPP**
 *visualizer view + dunst volume progress*
 ![ncmpcpp](.darth/git_screenshots/volume_nc.png)
 
@@ -70,11 +71,11 @@
 *playlist-editor view*
 ![ncmpcpp](.darth/git_screenshots/ncmpcpp_1.png)
 
-#### Easy Effects
+**Easy Effects**
 
 ![easy](.darth/git_screenshots/easy.png)
 
-
+***
 
 <details>
     <summary><strong> ⌨️  Keyboard Shortcuts</strong></summary>
