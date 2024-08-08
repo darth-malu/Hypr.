@@ -19,7 +19,7 @@
 <details>
     <summary>Quality of life mods:</summary>
 
-* Adjust gaps_in and gaps_out on the fly.(see #keyboard-shortcuts))
+* Adjust gaps_in and gaps_out on the fly.(see [#keyboard-shortcuts](#keyboard-shortcuts))
 * Indicators for current volume sink eg, speaker, earphones, easysink
 * Systemwide Volume progressbar with current sink icon
 * Per app (mpd, spotify etc) Volume + progressbar with waybar mpris interaction.
