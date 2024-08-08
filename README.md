@@ -18,25 +18,25 @@
 <details>
     <summary>Quality of life mods:</summary>
 
-    - Adjust gaps_in and gaps_out on the fly.(see #keyboard-shortcuts))
-        - Indicators for current volume sink eg, speaker, earphones, easysink
-        - Systemwide Volume progressbar with current sink icon
-        - Per app (mpd, spotify etc) Volume + progressbar with waybar mpris interaction.
+    * Adjust gaps_in and gaps_out on the fly.(see #keyboard-shortcuts))
+        * Indicators for current volume sink eg, speaker, earphones, easysink
+        * Systemwide Volume progressbar with current sink icon
+        * Per app (mpd, spotify etc) Volume + progressbar with waybar mpris interaction.
 </details>
 
 <details>
     <summary>Perfomance monitoring:</summary>
 
-    - custom waybar capsules(click to open drawer):
-        - Gpu (amd)
-          - gpu frequency mhz
-          - gpu % use
-          - gpu fan rpm
-          - gpu temp
-          - CPU
-          - temp, frequency, %use
-    - memory % use and disk % free + temp
-          - network(up/down speed) + weather (wttr.in)
+    * custom waybar capsules(click to open drawer):
+        * Gpu (amd)
+          * gpu frequency mhz
+          * gpu % use
+          * gpu fan rpm
+          * gpu temp
+          * CPU
+          * temp, frequency, %use
+    * memory % use and disk % free + temp
+          * network(up/down speed) + weather (wttr.in)
 </details>
 
 ***
@@ -81,8 +81,6 @@
     <summary><strong> ⌨️  Keyboard Shortcuts</strong></summary>
 
 ### Keyboard Shortcuts
-    ```
-        #LEGEND
         $sl = SHIFT_L
         $cl = CONTROL_L
         $mod = SUPER
@@ -117,8 +115,6 @@
 
 
         #see also .config/hypr/workspacerules, keybindings
-
-    ```
 </details>
 ### ⚡ Config
 
