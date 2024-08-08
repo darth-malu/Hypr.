@@ -4,11 +4,10 @@
 1. [Introduction](#introduction)
 2. [Screenshots 📷](#-Screenshots)
 3. [Music 🎶](#music-)
-4. [Features ❄️](#Features-)
-5. [Terminal Apps💻](#-Tui)
-6. [Keyboard Shortcuts ⌨️ ](#Keyboard-Shortcuts)
-7. [Config 🧙](#Config-)
-8. [Previous rice 🍚](#Previous-Rice-)
+4. [Terminal Apps💻](#-Tui)
+5. [Keyboard Shortcuts ⌨️ ](#Keyboard-Shortcuts)
+6. [Config 🧙](#Config-)
+7. [Previous rice 🍚](#Previous-Rice-)
 
 ## 📝 Introduction
 **This is my daily driver Arch build, min-maxed to the max 👻**
@@ -32,7 +31,7 @@
         * script to: 
             * checkupdates 
             * see pacman -Qil of pending updates in verbose less format, or minimal format (awk)
-            * backup lvm if needed before updating 
+            * backup lvm if needed before updating (Messes with grub-mkconfig, delete snapshot beforegrub update)
             * silent update (default option)
     * Per app (mpd, spotify etc) Volume + progressbar with waybar mpris interaction.
 </details>
