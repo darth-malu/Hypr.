@@ -388,7 +388,7 @@ button:hover {
     border-bottom-right-radius: 12px;
     border-top-right-radius: 12px;
     font-size: 11px;
-    background: rgba(255 ,107 ,107, 0.28);
+    background: rgba(255 ,107 ,107, 0.23);
 }
 
 #custom-swap_workspace {
