@@ -1,6 +1,6 @@
 ## 🌌 Hyprland + Waybar
 
-### 📜 Table of Contents
+### Table of Contents
 1. [Intro](#introduction)
 2. [Screenshots 📷](#Screenshots)
 4. [Music.](#Music)
@@ -13,15 +13,21 @@
 **This is my daily driver Arch build, min-maxed to the max 👻**
 
 ### Features 
-
+- Theme: catppuccin-mocha-red
 
 ***
 ### 📷 Screenshots
+**Neovim**
+![nvim](.darth/git_screenshots/v.png)
+
 **pacman + fzf | FastFetch**
 ![pacfzf](.darth/git_screenshots/pacf_fast.png)
 
 **Empty Workspace + my perf_mon capsules**
 ![maxi empty](https://github.com/darth-malu/Hypr./raw/hyprmax/.darth/git_screenshots/maxi_empty.png)
+
+**Nautilus**
+![nauti](.darth/git_screenshots/nautilus.png)
 
 ***
 ### 💻 Tui
@@ -30,7 +36,15 @@
 
 ### 🎶 Music
 **NCMPCPP**
+
+*visualizer -8 + dunst volume progress*
 ![ncmpcpp](.darth/git_screenshots/volume_nc.png)
+
+*main playlist view*
+![ncmpcpp](.darth/git_screenshots/ncmpcpp.png)
+
+*playlist-editor view*
+![ncmpcpp](.darth/git_screenshots/ncmpcpp1.png)
 
 **Easy effects**
 ![easy](.darth/git_screenshots/easy.png)
