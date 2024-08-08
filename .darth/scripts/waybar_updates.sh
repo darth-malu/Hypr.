@@ -80,12 +80,12 @@ main () {
         printf "${tabs}...................."
 
         printf "
-        ${newline_tab}minimal${atab}2\
-            ${newline_tab}less${atab}1\
+            ${newline_tab}Snapshot${tab}->${tab}B\
+            ${newline_tab}Less${atab}1\
+            ${newline_tab}Minimal${atab}2\
             ${newline_tab}CLEAR${atab}x\
             ${newline_tab}HALT${atab}0\
-            ${newline_tab}Snapshot LVM${atab}->${tab}B\
-            ${newline_tab}quiet${dtab}->${tab}Default\
+            ${newline_tab}Quiet${dtab}->${tab}Default\
             \n\n"
 
         local choice
@@ -116,7 +116,7 @@ main () {
                 #exit 0
                 ;;
             "b"|"B")
-                #create / delete old snaps
+                # create new snapshots / delete old snaps
                 remove_old_snapshots
                 ;;
             #Default -> quiet
@@ -146,16 +146,9 @@ function create_lvm_snapshot() {
     local SNAPSHOT_NAME="darth_snapshot_$(date +'%Y%m%d%H%M%S')"
     local SNAPSHOT_SIZE="1G" # Adjust as needed
 
-
-    # Create a snapshot in the background
-    sudo lvcreate --size $SNAPSHOT_SIZE --snapshot --name $SNAPSHOT_NAME /dev/$VG_NAME/$LV_NAME &
-    local SNAPSHOT_PID=$!
-
-    # Optionally, wait for snapshot creation to complete
-    wait $SNAPSHOT_PID
-
-    # Check if snapshot creation was successful
-    if [ $? -eq 0 ]; then
+    # Create a snapshot & Check if snapshot creation was successful
+    if sudo lvcreate --size $SNAPSHOT_SIZE --snapshot --name $SNAPSHOT_NAME /dev/$VG_NAME/$LV_NAME 2> /tmp/lvcreate_error.log; then
+        echo
         dunstify "Snapshot $SNAPSHOT_NAME created successfully."\
             -i "/home/malu/Downloads/ICONS/icons8-check-mark-windows-11-color/icons8-check-mark-96.png"\
             -r 11\
@@ -170,46 +163,41 @@ function create_lvm_snapshot() {
 }
 
 remove_old_snapshots () {
-
     local VG_NAME="ARCH"
     local VG_PATH="/dev/$VG_NAME"
     local SNAPSHOT_NAME_PREFIX="darth"
 
-    # Find the current snapshot (if any)
-    #local CURRENT_SNAPSHOT=$(sudo lvdisplay | grep "Snapshot" | awk -F': ' '/Name/ {print $2}' | grep "^${SNAPSHOT_NAME_PREFIX}")
-    #local CURRENT_SNAPSHOT=$(sudo lvs | awk '/darth.*/ {print $0}' | awk '{$1=$1; print}')
-    #local SNAPSHOTS_PRESENT=$(sudo lvs --noheadings -o lv_name,vg_name | grep "^${SNAPSHOT_NAME_PREFIX}")
-
+    # Find existing snapshots
     local SNAPSHOTS_PRESENT=$(sudo lvs --noheadings -o lv_name | tr -d "[:blank:]" | grep "^${SNAPSHOT_NAME_PREFIX}")
 
-
-    if [ ! -z "$SNAPSHOTS_PRESENT" ]; then
+    # remove snapshots if exists
+    if [ -n "$SNAPSHOTS_PRESENT" ]; then
         dunstify "Removing old snapshot: $SNAPSHOTS_PRESENT"\
             -i "/home/malu/Downloads/ICONS/icons8-trash-color/icons8-trash-96.png"\
             -t 3200\
             -r 11
+        sleep 1
 
         # Remove snaps one by one
         for SNAP in ${SNAPSHOTS_PRESENT}; do
             local LV_PATH="$VG_PATH/${SNAP}"
-            echo "Removing snapshot: $LV_PATH"
-            sudo lvremove -f $LV_PATH 2>&1 | tee -a /tmp/lvremove.log
-            #LV_PATH="/dev/$(echo $SNAP | awk '{print $2"/"$1}')"
+            printf "\t%s\n\n" "Removing snapshot: $LV_PATH"
+            #echo -e "Removing snapshot: $LV_PATH \n"
+
+            if ! sudo lvremove -f $LV_PATH 2>&1 | tee -a /tmp/lvremove.log; then
+                dunstify "Failed to remove old snapshot. Exiting." \
+                    -i "/home/malu/Downloads/ICONS/icons8-unavailable-color-hand-drawn" \
+                    -r 11 \
+                    -t 3200 
+                exit 1
+            fi
         done
 
-        #no confirm with -f
-        if [ $? -ne 0 ]; then
-            dunstify -t 3200 "Failed to remove old snapshot. Exiting." \
-                -i "/home/malu/Downloads/ICONS/icons8-unavailable-color-hand-drawn"\
-                -r 11
-            exit 1
-        fi
-
-        # On success of deletion
-        create_lvm_snapshot
     fi
-}
 
+    # create a new Snapshot after delete operation
+    create_lvm_snapshot
+}
 
 launcher () {
     case "$1" in
