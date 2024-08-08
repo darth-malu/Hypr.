@@ -8,6 +8,7 @@ return {
     {
         "williamboman/mason-lspconfig.nvim",
         config = function()
+            --require("mason-lspconfig").setup({ ensure_installed = { "lua_ls", "pyright", "cssls", "jsonls", "sqls", "bashls", "jedi_language_server", "pylsp", "taplo", "yamlls", "markdownlint-cli2", "markdown-toc"} })
             require("mason-lspconfig").setup({ ensure_installed = { "lua_ls", "pyright", "cssls", "jsonls", "sqls", "bashls", "jedi_language_server", "pylsp", "taplo", "yamlls"} })
         end
     },

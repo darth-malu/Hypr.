@@ -16,15 +16,18 @@
 - Theme: catppuccin-mocha-red
 
 <details>
-    <summary>- Quality of life mods:</summary>
+    <summary>Quality of life mods:</summary>
+
     - Adjust gaps_in and gaps_out on the fly.(see [Keyboard Shortcuts](#keyboard-shortcuts))
         - Indicators for current volume sink eg, speaker, earphones, easysink
         - Systemwide Volume progressbar with current sink icon
         - Per app (mpd, spotify etc) Volume + progressbar with waybar mpris interaction.
+
 </details>
 
 <details>
-    <summary>- Perfomance monitoring:</summary>
+    <summary>Perfomance monitoring:</summary>
+
     - custom waybar capsules(click to open drawer):
         - Gpu (amd)
           - gpu frequency mhz
@@ -35,6 +38,7 @@
           - temp, frequency, %use
     - memory % use and disk % free + temp
           - network(up/down speed) + weather (wttr.in)
+
 </details>
 
 ***
@@ -57,35 +61,40 @@
 ![Yazi](.darth/git_screenshots/yazi.png)
 
 ### 🎶 Music
-**NCMPCPP**
+<details>
+    <summary>**NCMPCPP**</summary>
 
-*visualizer -8 + dunst volume progress*
-![ncmpcpp](.darth/git_screenshots/volume_nc.png)
+    *visualizer view + dunst volume progress*
+    ![ncmpcpp](.darth/git_screenshots/volume_nc.png)
 
-*main playlist view*
-![ncmpcpp](.darth/git_screenshots/ncmpcpp.png)
+    *main playlist view*
+    ![ncmpcpp](.darth/git_screenshots/ncmpcpp.png)
 
-*playlist-editor view*
-![ncmpcpp](.darth/git_screenshots/ncmpcpp_1.png)
+    *playlist-editor view*
+    ![ncmpcpp](.darth/git_screenshots/ncmpcpp_1.png)
 
-**Easy effects**
-![easy](.darth/git_screenshots/easy.png)
+</details>
+
+<details>
+    <summary>**Easy effects**</summary>
+
+    ![easy](.darth/git_screenshots/easy.png)
+
+</details>
 
 
-### ⌨️  Keyboard Shortcuts
+
+<details>
+
+    <summary>### ⌨️  Keyboard Shortcuts</summary>
 ```
     #LEGEND
-    $sl - SHIFT_L
-    $cl - CONTROL_L
+    $sl = SHIFT_L
+    $cl = CONTROL_L
     $mod = SUPER
-    $cl = Control_L
     $al = Alt_L
     $ar = Alt_R
-    $cr = Control_R
     $sl = SHIFT_L
-    $sr = SHIFT_R
-    $s = space
-
 
     PrtSc: Taking Screentshot - entire scrn
         * + $al - current window
@@ -116,6 +125,8 @@
     #see also .config/hypr/workspacerules, keybindings
 
 ```
+
+</details>
 ### ⚡ Config
 
 
