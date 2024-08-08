@@ -80,10 +80,11 @@ main () {
         printf "${tabs}...................."
 
         printf "
-        ${newline_tab}minimal${atab}1\
-            ${newline_tab}less${atab}2\
+        ${newline_tab}minimal${atab}2\
+            ${newline_tab}less${atab}1\
             ${newline_tab}CLEAR${atab}x\
             ${newline_tab}HALT${atab}0\
+            ${newline_tab}Snapshot LVM${atab}->${tab}B\
             ${newline_tab}quiet${dtab}->${tab}Default\
             \n\n"
 
@@ -92,18 +93,18 @@ main () {
 
         case "$choice" in
             #MINIMA
-            "1")
+            "2")
                 printf "\n=> minimalist mode\v\v"
                 printf "\t\t\t** sed magic is working...\n\n"
                 minimal_update_display
                 ;;
             #verbose/less -lol
-            "2")
+            "1")
                 printf "\n ~> Verbose mode\n"
                 less_pkgs
                 ;;
             #clear
-            "x")
+            "x"|"X")
                 clear
                 printf "\n\t=> Cleared Screen... Usafi muhimu\n"
                 ;;
@@ -115,9 +116,11 @@ main () {
                 #exit 0
                 ;;
             "b"|"B")
+                #create / delete old snaps
                 remove_old_snapshots
                 ;;
             #Default -> quiet
+            # exit loop and update
             "")
                 break
                 ;;

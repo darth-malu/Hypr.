@@ -28,7 +28,12 @@
         * Max volume , volume zero & mute notification.
 * Waybar:
     * Toggle waybar On/Off
-    * updates - checkupdates
+    * updates 
+        * script to: 
+            * checkupdates 
+            * see pacman -Qil of pending updates in verbose less format, or minimal format (awk)
+            * backup lvm if needed before updating 
+            * silent update (default option)
     * Per app (mpd, spotify etc) Volume + progressbar with waybar mpris interaction.
 </details>
 
