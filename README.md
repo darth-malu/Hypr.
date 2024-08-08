@@ -15,9 +15,9 @@
 
 ### Features ❄️ 
 - Theme: 
-    - catppuccin-mocha-red -> gtk
-    - gruvbox -> neovim
-- Font: quicksand -> waybar, JetBrainsMono Nerd Font -> ~waybar
+    - catppuccin-mocha-red - gtk
+    - gruvbox - neovim
+- Font: quicksand - waybar, JetBrainsMono Nerd Font - ~waybar
 - Cursor: Bibata
 
 <details>
@@ -35,6 +35,12 @@
     * Toggle waybar On/Off
     * updates - checkupdates
     * Per app (mpd, spotify etc) Volume + progressbar with waybar mpris interaction.
+</details>
+
+<details>
+    <summary><strong>Quality Of life scripts</strong></summary>
+
+    see [My scripts](.darth/scripts/)
 </details>
 
 <details>
@@ -107,7 +113,7 @@
 
 ## Keyboard Shortcuts
 <details>
-    <summary><strong> ⌨️  KeyBindings</strong></summary>
+    <summary><strong> ⌨️ </strong></summary>
 
         $sl = SHIFT_L
         $cl = CONTROL_L
@@ -116,34 +122,41 @@
         $ar = Alt_R
         $sl = SHIFT_L
 
+        # grimblast scrnshot
         PrtSc: Taking Screentshot - entire scrn
             * + $al - current window
             * + $sl - copy area
 
+        # Terminal
         $mod + Enter: Open kitty current workspace
         $mod + $sl + Enter: Open Terminal emptym
 
-        $mod + I: launch special:nc, launch ncmpcpp if empty
-
+        # Hyprland
         $mod + +: Inc. Gaps out
         $mod + -: Dec. Gaps out
 
         $mod + $al + +: Inc. Gaps in
         $mod + $al + -: Dec. Gaps in
 
-        $mod + Home: Waybar Reload
-        $mod + End: Waybar toggle
-
         $mod + vim-motions (h,k,l,j) / mouse-down/up -> navigate open workspaces
         $sl, $sl -> focuscurrentlast - backandforth active
-
-
-        $mod + Space/mouse:275 killactive / close focused window
         $mod + O -> Move to emptym
+        $mod + Space/mouse:275 killactive / close focused window
 
-        $mod + {}: Launch app 
-            {} = B - Brave, F - Firefox, N - Nautilus, $sl + O - obsidian
+        # Launch app
+        $mod + {}:  
+            {} = B - Brave
+                 F - Firefox 
+                 N - Nautilus, 
+                 $sl + O - obsidian
+                 F1 - Spotify
+                 F2 - NCMPCPP
+                 I: launch special:nc, launch ncmpcpp if empty
+                 E: launch special:Easy, auto-launches Easy Effects on startup
 
+        # Waybar
+        $mod + Home: Waybar Reload
+        $mod + End: Waybar toggle
 
         #see also .config/hypr/workspacerules, keybindings
 </details>
