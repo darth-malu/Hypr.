@@ -1,6 +1,6 @@
-## 🌌 Hyprland + Waybar
+# 🌌 Hyprland + Waybar
 
-### Table of Contents
+## Table of Contents
 1. [Introduction](#introduction)
 2. [Screenshots 📷](#-Screenshots)
 3. [Music 🎶](#music-)
@@ -9,7 +9,7 @@
 6. [Keyboard Shortcuts⌨️](#Keyboard-Shortcuts)
 7. [Config ⚡](#-Config)
 
-### 📝 Introduction
+## 📝 Introduction
 **This is my daily driver Arch build, min-maxed to the max 👻**
 
 ### Features 
@@ -41,28 +41,40 @@
 </details>
 
 ***
-### 📷 Screenshots
-**Neovim**
-![nvim](.darth/git_screenshots/v.png)
+## 📷 Screenshots
 
 **pacman + fzf | FastFetch**
 ![pacfzf](.darth/git_screenshots/pacf_fast.png)
 
+<!-- workspaces -->
+<details>
+    <summary><strong>Workspaces</strong></summary>
+
 **Empty Workspace + my perf_mon capsules**
 ![maxi empty](https://github.com/darth-malu/Hypr./raw/hyprmax/.darth/git_screenshots/maxi_empty.png)
+</details>
+***
+### 💻 Tui
+**Neovim**
+![nvim](.darth/git_screenshots/v.png)
+
+<!-- Files -->
+<details>
+    <summary><strong>File Manager</strong></summary>
 
 **Nautilus**
 ![nauti](.darth/git_screenshots/nautilus.png)
 
-***
-### 💻 Tui
 **Yazi**
 ![Yazi](.darth/git_screenshots/yazi.png)
+</details>
 
 ***
 ### Music 🎶 
 
-**NCMPCPP**
+<details>
+    <summary><strong>NCMPCPP</strong></summary>
+
 *visualizer view + dunst volume progress*
 ![ncmpcpp](.darth/git_screenshots/volume_nc.png)
 
@@ -71,6 +83,7 @@
 
 *playlist-editor view*
 ![ncmpcpp](.darth/git_screenshots/ncmpcpp_1.png)
+</details>
 
 <details>
     <summary><strong>Easy Effects</strong></summary>
@@ -79,13 +92,11 @@
 </details>
 
 
-
 ***
 
+## Keyboard Shortcuts
 <details>
     <summary><strong> ⌨️  KeyBindings</strong></summary>
-
-### Keyboard Shortcuts
         $sl = SHIFT_L
         $cl = CONTROL_L
         $mod = SUPER
@@ -123,7 +134,8 @@
 </details>
 
 ***
-### ⚡ Config
+## ⚡ Config
+...
 
 
 
