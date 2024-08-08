@@ -15,7 +15,8 @@ generate_preview () {
 
 dunstify_preview () {
     local album_art="$(generate_preview)"
-    dunstify -h string:x-dunst-stack-tag:$msgTag \
+    local current_bitrate="$(mpc status %kbitrate%) kbps"
+    notify-send -h string:x-dunst-stack-tag:$msgTag \
         -t 1600\
         "$(mpc --format '[[󰎍\t%title%\t\n][\t%audioformat%]\n \t%artist%\t\n \t%album%\t]] | [%file%]' current)" \
         -i "$album_art"
