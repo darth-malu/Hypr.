@@ -88,7 +88,7 @@
 
 **Neovim**
 ![nvim](.darth/git_screenshots/v.png)
-![nvim + Kitty windows](https://github.com/darth-malu/Hypr./raw/hyprmax/.darth/git_screenshots/kitty_read.png)
+![nvim + Kitty windows](https://github.com/darth-malu/Hypr./raw/hyprmax/.darth/git_screenshots/kitty_v.png)
 
 <!-- Files -->
 <details>
