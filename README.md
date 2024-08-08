@@ -13,21 +13,21 @@
 **This is my daily driver Arch build, min-maxed to the max 👻**
 
 ### Features 
-- Theme: catppuccin-mocha-red, gruvbox -nvim
+Theme: catppuccin-mocha-red, gruvbox -nvim
 
 <details>
     <summary>Quality of life mods:</summary>
 
-    * Adjust gaps_in and gaps_out on the fly.(see #keyboard-shortcuts))
-        * Indicators for current volume sink eg, speaker, earphones, easysink
-        * Systemwide Volume progressbar with current sink icon
-        * Per app (mpd, spotify etc) Volume + progressbar with waybar mpris interaction.
+ * Adjust gaps_in and gaps_out on the fly.(see #keyboard-shortcuts))
+    * Indicators for current volume sink eg, speaker, earphones, easysink
+    * Systemwide Volume progressbar with current sink icon
+    * Per app (mpd, spotify etc) Volume + progressbar with waybar mpris interaction.
 </details>
 
 <details>
     <summary>Perfomance monitoring:</summary>
 
-    * custom waybar capsules(click to open drawer):
+* custom waybar capsules(click to open drawer):
         * Gpu (amd)
           * gpu frequency mhz
           * gpu % use
