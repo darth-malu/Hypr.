@@ -3,7 +3,7 @@
 ### Table of Contents
 1. [Introduction](#introduction)
 2. [Screenshots 📷](#screenshots)
-3. [Music 🎶](# 🎶 Music)
+3. [Music 🎶](#Music)
 4. [Features](#Features)
 5. [Terminal Apps](#Tui)
 6. [Keyboard Shortcuts](#Keyboard-Shortcuts)
@@ -59,7 +59,7 @@
 ![Yazi](.darth/git_screenshots/yazi.png)
 
 ***
-### 🎶 Music
+### Music 🎶 
 
 **NCMPCPP**
 *visualizer view + dunst volume progress*
