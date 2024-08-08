@@ -6,7 +6,7 @@
 4. [Music.](#Music)
 3. [features](#Features)
 4. [Terminal Apps](#Tui)
-4. [Keyboard Shortcusts](#KeyboardShortcuts)
+4. [Keyboard Shortcusts](#Keyboard-Shortcuts)
 5. [config](#Config)
 
 ### 📝 Introduction
@@ -14,6 +14,28 @@
 
 ### Features 
 - Theme: catppuccin-mocha-red
+
+<details>
+    <summary>- Quality of life mods:</summary>
+    - Adjust gaps_in and gaps_out on the fly.(see [Keyboard Shortcuts](#keyboard-shortcuts))
+        - Indicators for current volume sink eg, speaker, earphones, easysink
+        - Systemwide Volume progressbar with current sink icon
+        - Per app (mpd, spotify etc) Volume + progressbar with waybar mpris interaction.
+</details>
+
+<details>
+    <summary>- Perfomance monitoring:</summary>
+    - custom waybar capsules(click to open drawer):
+        - Gpu (amd)
+          - gpu frequency mhz
+          - gpu % use
+          - gpu fan rpm
+          - gpu temp
+          - CPU
+          - temp, frequency, %use
+    - memory % use and disk % free + temp
+          - network(up/down speed) + weather (wttr.in)
+</details>
 
 ***
 ### 📷 Screenshots
@@ -44,13 +66,13 @@
 ![ncmpcpp](.darth/git_screenshots/ncmpcpp.png)
 
 *playlist-editor view*
-![ncmpcpp](.darth/git_screenshots/ncmpcpp1.png)
+![ncmpcpp](.darth/git_screenshots/ncmpcpp_1.png)
 
 **Easy effects**
 ![easy](.darth/git_screenshots/easy.png)
 
 
-### ⌨️  KeyboardShortcuts
+### ⌨️  Keyboard Shortcuts
 ```
     #LEGEND
     $sl - SHIFT_L
@@ -73,6 +95,12 @@
     $mod + $sl + Enter: Open Terminal emptym
 
     $mod + I: launch special:nc, launch ncmpcpp if empty
+
+    $mod + +: Inc. Gaps out
+    $mod + -: Dec. Gaps out
+
+    $mod + $al + +: Inc. Gaps in
+    $mod + $al + -: Dec. Gaps in
 
     $mod + vim-motions (h,k,l,j) / mouse-down/up -> navigate open workspaces
     $sl, $sl -> focuscurrentlast - backandforth active
