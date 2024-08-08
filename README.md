@@ -61,9 +61,6 @@
 ***
 ## 📷 Screenshots
 
-**pacman + fzf | FastFetch**
-![pacfzf](.darth/git_screenshots/pacf_fast.png)
-
 <!-- workspaces -->
 <details>
     <summary><strong>Workspaces</strong></summary>
@@ -73,6 +70,9 @@
 </details>
 
 ### 💻 Tui
+**pacman + fzf | FastFetch**
+![pacfzf](.darth/git_screenshots/pacf_fast.png)
+
 **Neovim**
 ![nvim](.darth/git_screenshots/v.png)
 
@@ -107,7 +107,6 @@
 
 ![easy](.darth/git_screenshots/easy.png)
 </details>
-
 
 ***
 
