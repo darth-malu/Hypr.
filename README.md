@@ -1,6 +1,6 @@
 # 🌌 Hyprland + Waybar
 
-## Table of Contents
+### Table of Contents
 1. [Introduction](#introduction)
 2. [Screenshots 📷](#-Screenshots)
 3. [Music 🎶](#music-)
@@ -84,10 +84,10 @@
 ![mini_empty](https://github.com/darth-malu/Hypr./raw/hyprmax/.darth/git_screenshots/term_empt.png)
 
 **pacman + fzf | FastFetch**
-![pacfzf](.darth/git_screenshots/pacf_fast.png)
+![pacfzf](https://github.com/darth-malu/Hypr./raw/hyprmax/.darth/git_screenshots/pacf_fast.png)
 
 **Neovim**
-![nvim](.darth/git_screenshots/v.png)
+![nvim](https://github.com/darth-malu/Hypr./raw/hyprmax/.darth/git_screenshots/v.png)
 
 **nvim + kitty_windows**
 ![nvim + Kitty windows](https://github.com/darth-malu/Hypr./raw/hyprmax/.darth/git_screenshots/kitty_v.png)
@@ -97,10 +97,10 @@
     <summary><strong>File Manager</strong></summary>
 
 **Nautilus**
-![nauti](.darth/git_screenshots/nautilus.png)
+![nauti](https://github.com/darth-malu/Hypr./raw/hyprmax/.darth/git_screenshots/nautilus.png)
 
 **Yazi**
-![Yazi](.darth/git_screenshots/yazi.png)
+![Yazi](https://github.com/darth-malu/Hypr./raw/hyprmax/.darth/git_screenshots/yazi.png)
 </details>
 
 ### Music 🎶 
@@ -109,19 +109,19 @@
     <summary><strong>NCMPCPP</strong></summary>
 
 *visualizer view + dunst volume progress*
-![ncmpcpp](.darth/git_screenshots/volume_nc.png)
+![ncmpcpp](https://github.com/darth-malu/Hypr./raw/hyprmax/.darth/git_screenshots/volume_nc.png)
 
 *main playlist view*
-![ncmpcpp](.darth/git_screenshots/ncmpcpp.png)
+![ncmpcpp](https://github.com/darth-malu/Hypr./raw/hyprmax/.darth/git_screenshots/ncmpcpp.png)
 
 *playlist-editor view*
-![ncmpcpp](.darth/git_screenshots/ncmpcpp_1.png)
+![ncmpcpp](https://github.com/darth-malu/Hypr./raw/hyprmax/.darth/git_screenshots/ncmpcpp_1.png)
 </details>
 
 <details>
     <summary><strong>Easy Effects</strong></summary>
 
-![easy](.darth/git_screenshots/easy.png)
+![easy](https://github.com/darth-malu/Hypr./raw/hyprmax/.darth/git_screenshots/easy.png)
 </details>
 
 ***
