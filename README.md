@@ -2,12 +2,12 @@
 
 ### Table of Contents
 1. [Introduction](#introduction)
-2. [Screenshots 📷](#screenshots)
+2. [Screenshots 📷](#-Screenshots)
 3. [Music 🎶](#music-)
 4. [Features](#Features)
 5. [Terminal Apps](#-Tui)
 6. [Keyboard Shortcuts](#Keyboard-Shortcuts)
-7. [Config ⚡](#config)
+7. [Config ⚡](#-Config)
 
 ### 📝 Introduction
 **This is my daily driver Arch build, min-maxed to the max 👻**
