@@ -5,15 +5,16 @@
 2. [Screenshots 📷](#-Screenshots)
 3. [Music 🎶](#music-)
 4. [Features](#Features)
-5. [Terminal Apps](#-Tui)
-6. [Keyboard Shortcuts](#Keyboard-Shortcuts)
+5. [Terminal Apps💻](#-Tui)
+6. [Keyboard Shortcuts⌨️](#Keyboard-Shortcuts)
 7. [Config ⚡](#-Config)
 
 ### 📝 Introduction
 **This is my daily driver Arch build, min-maxed to the max 👻**
 
 ### Features 
-Theme: catppuccin-mocha-red, gruvbox -nvim
+- Theme: catppuccin-mocha-red - gtk, gruvbox -nvim
+- Font: quicksand, JetBrainsMono Nerd Font
 
 <details>
     <summary>Quality of life mods:</summary>
