@@ -6,7 +6,7 @@
 3. [Music 🎶](#music-)
 4. [Features ❄️](#Features-)
 5. [Terminal Apps💻](#-Tui)
-6. [Keyboard Shortcuts⌨️⌨️ ](#Keyboard-Shortcuts)
+6. [Keyboard Shortcuts ⌨️ ](#Keyboard-Shortcuts)
 7. [Config 🧙](#Config-)
 8. [Previous rice 🍚](#Previous-Rice-)
 
@@ -16,7 +16,7 @@
 ### Features ❄️ 
 
 <details>
-    <summary>Quality of life mods:</summary>
+    <summary><strong>Quality of life mods:</strong></summary>
 
 * Hyprland
     * Adjust gaps_in and gaps_out on the fly.(see [#keyboard-shortcuts](#keyboard-shortcuts))
@@ -44,7 +44,7 @@
 </details>
 
 <details>
-    <summary>Perfomance monitoring:</summary>
+    <summary><strong>Perfomance monitoring:</strong></summary>
 
 * custom waybar capsules(click to open drawer):
 * Gpu (amd)
@@ -81,6 +81,7 @@
 
 **Neovim**
 ![nvim](.darth/git_screenshots/v.png)
+![nvim + Kitty windows](https://github.com/darth-malu/Hypr./raw/hyprmax/.darth/git_screenshots/kitty_read.png)
 
 <!-- Files -->
 <details>
