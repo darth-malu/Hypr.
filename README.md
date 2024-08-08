@@ -28,15 +28,15 @@ Theme: catppuccin-mocha-red, gruvbox -nvim
     <summary>Perfomance monitoring:</summary>
 
 * custom waybar capsules(click to open drawer):
-        * Gpu (amd)
-          * gpu frequency mhz
-          * gpu % use
-          * gpu fan rpm
-          * gpu temp
-          * CPU
-          * temp, frequency, %use
-    * memory % use and disk % free + temp
-          * network(up/down speed) + weather (wttr.in)
+* Gpu (amd)
+    * gpu frequency mhz
+    * gpu % use
+    * gpu fan rpm
+    * gpu temp
+* CPU
+    * temp, frequency, %use
+* memory % use and disk % free + temp
+* network(up/down speed) + weather (wttr.in)
 </details>
 
 ***
@@ -116,6 +116,8 @@ Theme: catppuccin-mocha-red, gruvbox -nvim
 
         #see also .config/hypr/workspacerules, keybindings
 </details>
+
+***
 ### ⚡ Config
 
 
