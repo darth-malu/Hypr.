@@ -3,10 +3,10 @@
 ### Table of Contents
 1. [Introduction](#introduction)
 2. [Screenshots 📷](#screenshots)
-3. [Music 🎶](#music)
-4. [Features](#features)
-5. [Terminal Apps](#tui)
-6. [Keyboard Shortcuts](#keyboard-shortcuts)
+3. [Music 🎶](#Music)
+4. [Features](#Features)
+5. [Terminal Apps](#Tui)
+6. [Keyboard Shortcuts](#Keyboard-Shortcuts)
 7. [Config ⚡](#config)
 
 ### 📝 Introduction
@@ -18,7 +18,7 @@
 <details>
     <summary>Quality of life mods:</summary>
 
-    - Adjust gaps_in and gaps_out on the fly.(see [Keyboard Shortcuts](#keyboard-shortcuts))
+    - Adjust gaps_in and gaps_out on the fly.(see #keyboard-shortcuts))
         - Indicators for current volume sink eg, speaker, earphones, easysink
         - Systemwide Volume progressbar with current sink icon
         - Per app (mpd, spotify etc) Volume + progressbar with waybar mpris interaction.
@@ -59,31 +59,27 @@
 ![Yazi](.darth/git_screenshots/yazi.png)
 
 ### 🎶 Music
-<details>
-    <summary><strong>NCMPCPP<strong></summary>
 
-    *visualizer view + dunst volume progress*
-    ![ncmpcpp](.darth/git_screenshots/volume_nc.png)
+#### NCMPCPP
+*visualizer view + dunst volume progress*
+![ncmpcpp](.darth/git_screenshots/volume_nc.png)
 
-    *main playlist view*
-    ![ncmpcpp](.darth/git_screenshots/ncmpcpp.png)
+*main playlist view*
+![ncmpcpp](.darth/git_screenshots/ncmpcpp.png)
 
-    *playlist-editor view*
-    ![ncmpcpp](.darth/git_screenshots/ncmpcpp_1.png)
-</details>
+*playlist-editor view*
+![ncmpcpp](.darth/git_screenshots/ncmpcpp_1.png)
 
-<details>
-    <summary><strong>Easy Effects<strong></summary>
+#### Easy Effects
 
-    ![easy](.darth/git_screenshots/easy.png)
-</details>
+![easy](.darth/git_screenshots/easy.png)
 
 
 
 <details>
     <summary><strong> ⌨️  Keyboard Shortcuts</strong></summary>
 
-    ### Keyboard Shortcuts
+### Keyboard Shortcuts
     ```
         #LEGEND
         $sl = SHIFT_L
