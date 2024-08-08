@@ -158,7 +158,10 @@
         $mod + Home: Waybar Reload
         $mod + End: Waybar toggle
 
-        #see also .config/hypr/workspacerules, keybindings
+see also:
+- [workspaces](.config/hypr/hypr-configs/workspaces.conf)
+- [Window & App Rules](.config/hypr/hypr-configs/WindowAppRules.conf)
+- [keybindings](.config/hypr/hypr-configs/keybindings.conf)
 </details>
 
 ***
