@@ -3,9 +3,9 @@
 ### Table of Contents
 1. [Introduction](#introduction)
 2. [Screenshots 📷](#screenshots)
-3. [Music 🎶](#Music)
+3. [Music 🎶](#music-)
 4. [Features](#Features)
-5. [Terminal Apps](#Tui)
+5. [Terminal Apps](#-Tui)
 6. [Keyboard Shortcuts](#Keyboard-Shortcuts)
 7. [Config ⚡](#config)
 
@@ -18,10 +18,10 @@ Theme: catppuccin-mocha-red, gruvbox -nvim
 <details>
     <summary>Quality of life mods:</summary>
 
- * Adjust gaps_in and gaps_out on the fly.(see #keyboard-shortcuts))
-    * Indicators for current volume sink eg, speaker, earphones, easysink
-    * Systemwide Volume progressbar with current sink icon
-    * Per app (mpd, spotify etc) Volume + progressbar with waybar mpris interaction.
+* Adjust gaps_in and gaps_out on the fly.(see #keyboard-shortcuts))
+* Indicators for current volume sink eg, speaker, earphones, easysink
+* Systemwide Volume progressbar with current sink icon
+* Per app (mpd, spotify etc) Volume + progressbar with waybar mpris interaction.
 </details>
 
 <details>
@@ -78,7 +78,7 @@ Theme: catppuccin-mocha-red, gruvbox -nvim
 ***
 
 <details>
-    <summary><strong> ⌨️  Keyboard Shortcuts</strong></summary>
+    <summary><strong> ⌨️  KeyBindings</strong></summary>
 
 ### Keyboard Shortcuts
         $sl = SHIFT_L
