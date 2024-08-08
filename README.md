@@ -62,7 +62,7 @@
 
 ### 🎶 Music
 <details>
-    <summary>**NCMPCPP**</summary>
+    <summary><strong>NCMPCPP<strong></summary>
 
     *visualizer view + dunst volume progress*
     ![ncmpcpp](.darth/git_screenshots/volume_nc.png)
@@ -86,7 +86,8 @@
 
 <details>
 
-    <summary>### ⌨️  Keyboard Shortcuts</summary>
+    <summary><strong> ⌨️  Keyboard Shortcuts</strong></summary>
+### Keyboard Shortcuts
 ```
     #LEGEND
     $sl = SHIFT_L
