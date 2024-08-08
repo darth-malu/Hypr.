@@ -145,12 +145,13 @@
         $mod + Enter: Open kitty current workspace
         $mod + $sl + Enter: Open Terminal emptym
 
-        # Hyprland
-        $mod + +: Inc. Gaps out
-        $mod + -: Dec. Gaps out
+        # Hyprland (Numpad)
+        
+        $mod + KP_ADD(+): Inc. Gaps out
+        $mod + KP_Subtract(-): Dec. Gaps out
 
-        $mod + $al + +: Inc. Gaps in
-        $mod + $al + -: Dec. Gaps in
+        $mod + $al + KP_ADD: Inc. Gaps in
+        $mod + $al + KP_Subtract: Dec. Gaps in
 
         $mod + vim-motions (h,k,l,j) / mouse-down/up -> navigate open workspaces
         $sl, $sl -> focuscurrentlast - backandforth active
