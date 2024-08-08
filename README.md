@@ -71,11 +71,18 @@
 <details>
     <summary><strong>Workspaces</strong></summary>
 
-**Empty Workspace + my perf_mon capsules**
+**Empty Workspace + my perf_mon capsules - max**
 ![maxi empty](https://github.com/darth-malu/Hypr./raw/hyprmax/.darth/git_screenshots/maxi_empty.png)
+
+**Empty Capsules off**
+![mini_empty](https://github.com/darth-malu/Hypr./raw/hyprmax/.darth/git_screenshots/emptyy.png)
+
 </details>
 
 ### 💻 Tui
+**kitty emptym**
+![mini_empty](https://github.com/darth-malu/Hypr./raw/hyprmax/.darth/git_screenshots/term_empt.png)
+
 **pacman + fzf | FastFetch**
 ![pacfzf](.darth/git_screenshots/pacf_fast.png)
 
