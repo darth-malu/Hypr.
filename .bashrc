@@ -84,9 +84,11 @@ case $- in
             LEFT_PROMPT="\n$DIM$BOLD\[\w\] $RESET$EXITT$RESET"
 
             PS1="$CLEAR$DARK_GREEN$LEFT_PROMPT$RESET$GITT$EXITT\n$DARK_GREEN$CARET$RESET"
+            #PS1="$CLEAR$DARK_GREEN$LEFT_PROMPT$RESET$GITT$EXITT\n$DARK_GREEN$(if [[ $- =~ i ]]; then echo "$CARET"; else echo "→"; fi)$RESET"
+            #PS1='\u@\h:\w $(if [[ $- =~ i ]]; then echo "⎈"; else echo "→"; fi) \$ '
         }
         #PROMPT_COMMAND=ps1_def
-        PS2="****"
+        PS2="-->"
 
         function aliaser() {
             #---------------FILE NAVIGATIONS-------------#
