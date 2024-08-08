@@ -14,11 +14,6 @@
 **This is my daily driver Arch build, min-maxed to the max 👻**
 
 ### Features ❄️ 
-- Theme: 
-    - catppuccin-mocha-red - gtk
-    - gruvbox - neovim
-- Font: quicksand - waybar, JetBrainsMono Nerd Font - ~waybar
-- Cursor: Bibata
 
 <details>
     <summary>Quality of life mods:</summary>
@@ -57,6 +52,12 @@
 * memory % use and disk % free + nvme temp.
 * network(up/down speed) + weather (wttr.in)
 </details>
+
+- Theme: 
+    - catppuccin-mocha-red - gtk
+    - gruvbox - neovim
+- Font: quicksand - waybar, JetBrainsMono Nerd Font - ~waybar
+- Cursor: Bibata
 
 ***
 ## 📷 Screenshots
