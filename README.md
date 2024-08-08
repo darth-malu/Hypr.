@@ -12,19 +12,19 @@
 
 ### 🖼️ Screenshots
 **Empty Workspace**
-![Minima Empty](hyprmax/.darth/git_screenshots/minima_empty.png)
+![Minima Empty](.darth/git_screenshots/minima_empty.png)
 
 **Empty Workspace + my perf_mon capsules**
-![maxi_empty](hyprmax/.darth/git_screenshots/maxi_empty.png)
+![maxi empty](https://github.com/darth-malu/Hypr./raw/hyprmax/.darth/git_screenshots/maxi_empty.png)
 
 **Fastfetch**
 ![Fastfetch](https://github.com/darth-malu/Hypr./raw/hyprmax/.darth/git_screenshots/fastfetch.png)
 
-**NCMPCPP**
-![ncmpcpp](https://github.com/darth-malu/Hypr./raw/hyprmax/.darth/git_screenshots/fastfetch.png)
 
 ### 💻 Tui
-![NCMPCPP](~/.darth/git_screenshots/ncmpcpp.png)
+![NCMPCPP](hyprmax/.darth/git_screenshots/ncmpcpp.png)
+**NCMPCPP**
+![ncmpcpp](https://github.com/darth-malu/Hypr./raw/hyprmax/.darth/git_screenshots/ncmpcpp_1.png)
 
 ### ⌨️ Keyboard Shortcuts
 ```
