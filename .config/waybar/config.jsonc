@@ -18,9 +18,10 @@
     "modules-center": [
         "hyprland/submap",
         //"mpris",
-        //"group/mpd_block",
+        //"group/mpd_block"
         "mpris",
         "mpd"
+        //"mpd"
         //"mpd"
         ],
 

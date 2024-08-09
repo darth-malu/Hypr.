@@ -1,4 +1,4 @@
-# Apply settings only if interactive shell
+# Apply settings only if inteactive shell
 case $- in
     *i*) 
         # Enable bash completion
@@ -321,7 +321,7 @@ case $- in
                         task project:nvim add "$2"
                         ;;
                     "-d")
-                        task done "${1}"
+                        task done $1
                         ;;
                     "-l")
                         task list

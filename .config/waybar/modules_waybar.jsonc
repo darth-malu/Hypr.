@@ -107,7 +107,7 @@
     },
 
     "group/cpu_block": {
-        "drawer": {"transition-duration": 400,"transition-left-to-right": true, "children-class": "drawer-child", "click-to-reveal": true},
+        "drawer": {"transition-duration": 680,"transition-left-to-right": true, "children-class": "drawer-child", "click-to-reveal": true},
         //"orientation": "horizontal",
         "orientation": "inherit",
         "cursor": true,
@@ -141,7 +141,7 @@
 
 
     "group/conglo": {
-        "drawer": {"transition-duration": 500,"transition-left-to-right": true, "children-class": "drawer-child", "click-to-reveal": true},
+        "drawer": {"transition-duration": 680,"transition-left-to-right": true, "children-class": "drawer-child", "click-to-reveal": true},
         "orientation": "horizontal",
         "modules":[
             "custom/weather",
@@ -313,7 +313,7 @@
     },
 
     "random-icons": {
-      "off": "<span color=\"#f53c3c\"></span> ",
+      //"off": "<span color=\"#f53c3c\"></span> ",
       "on": " "
     },
 
@@ -343,7 +343,7 @@
 "group/mpd_block": {
     "orientation": "horizontal",
     "cursor": true,
-    //"drawer": {"transition-duration": 400,"transition-left-to-right": true, "children-class": "mpd", "click-to-reveal": false},
+    "drawer": {"transition-duration": 680,"transition-left-to-right": true, "children-class": "mpd", "click-to-reveal": false},
     "modules":[
         "mpris",
         "mpd"
@@ -389,7 +389,7 @@
 "group/disk_block": {
     "orientation": "horizontal",
     "cursor": true,
-    "drawer": {"transition-duration": 400,"transition-left-to-right": true, "children-class": "gpuperf", "click-to-reveal": true},
+    "drawer": {"transition-duration": 680,"transition-left-to-right": true, "children-class": "gpuperf", "click-to-reveal": true},
     "modules":[
         "disk",
         "memory"
@@ -486,7 +486,7 @@
 
     "group/gpuperf": {
         "orientation": "horizontal",
-        "drawer": {"transition-duration": 400,"transition-left-to-right": true, "children-class": "gpuperf", "click-to-reveal": true},
+        "drawer": {"transition-duration": 600,"transition-left-to-right": true, "children-class": "gpuperf", "click-to-reveal": true},
         "cursor": true,
         "modules":[
             "custom/gpu",
