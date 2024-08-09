@@ -177,8 +177,8 @@
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "timezone": "Africa/Nairobi",
         "format-alt": "{:%Y-%m-%d}",
-        "min-length": 17,
-        "max-length": 17,
+        "min-length": 15,
+        "max-length": 16,
         "format": "{:%a %d,  %I:%M %p }",
         "tooltip": true,
         "calendar": {
@@ -250,13 +250,13 @@
 
     "mpris": {
 	    //"format-paused": "{status_icon} <i>{dynamic}</i>",
-	    "format": "{player_icon} {dynamic}",
         //"format-playing": "{player_icon}\t{dynamic}",
         //"format-paused": "{status_icon}\t{dynamic}",
+        //"on-scroll-down": "playerctl -p spotify,lollypop volume 0.1-",
+        "format": "{player_icon} {dynamic}",
         "format-paused": "{status_icon}  {dynamic}",
         "format-playing": "{player_icon}  {dynamic}",
         "on-click-middle":"~/.darth/scripts/player_focus.sh", 
-        //"on-scroll-down": "playerctl -p spotify,lollypop volume 0.1-",
         "on-scroll-down": "~/.darth/scripts/mpris_volume.sh -",
         "on-scroll-up": "~/.darth/scripts/mpris_volume.sh +",
         "tooltip":false,
@@ -268,23 +268,87 @@
             "Lollypop": " ",
             //"spotify":" ",
             "spotify":"󰓇",
-            //"mpd":"♪",
-            "mpd":" ",
-		    "mpv": "🎵"
+            "mpd":"♪"
+            //"mpv":" ",
+		    //"mpd": "🎵"
+		    //"mpd": "󰝚"
+		    //"mpd": " "
+		    //"mpd": ""
+		    //"mpd": ""
+		    //"mpd": ""
+		    //"mpd": "󰎆 "
 	        },
 	    "status-icons": {
 		    "paused": "⏸",
             "playing": "",
             "stopped": ""
 	        },
-	    //"ignored-players": ["firefox", "smplayer"],
         "dynamic-importance-order": ["title", "artist", "album", "position", "length"],
+        "dynamic-len": 30,
+        "dynamic-order":["title", "artist", "album"]
+	    //"ignored-players": ["firefox", "smplayer"],
         //"dynamic-len": 24,
         //"dynamic-len": 40,
-        "dynamic-len": 30,
         //"dynamic-separator": "-",
-        "dynamic-order":["title", "artist", "album"]
     },
+
+  "mpd": {
+    //"format": "{consumeIcon} {randomIcon} {repeatIcon} {singleIcon} ( {elapsedTime:%M:%S}/{totalTime:%M:%S} ) ( {songPosition}|{queueLength} ) {volume}%",
+    //"format": " {volume}%  {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}    ( {songPosition}|{queueLength} ) {elapsedTime:%M:%S}/{totalTime:%M:%S} ",
+    "format": "  {songPosition}|{queueLength}   {consumeIcon}{randomIcon}{repeatIcon}{singleIcon} ",
+    "format-disconnected": "Disconnected ",
+    "format-paused": "",
+    "format-stopped": "{consumeIcon} {randomIcon} {repeatIcon} {singleIcon} Stopped ",
+    //"unknown-tag": "N/A",
+    //"on-click-middle":"~/.darth/scripts/player_focus.sh", 
+    //"on-scroll-down": "~/.darth/scripts/mpris_volume.sh -",
+    //"on-scroll-up": "~/.darth/scripts/mpris_volume.sh +",
+    //"on-click-right": "mpc next &> /dev/null",
+    //"on-click": "mpc toggle &> /dev/null",
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)",
+    "interval": 2,
+    "consume-icons": {
+      "on": " "
+    },
+
+    "random-icons": {
+      "off": "<span color=\"#f53c3c\"></span> ",
+      "on": " "
+    },
+
+    "repeat-icons": {
+      "on": ""
+    },
+
+    "single-icons": {
+      "on": "1 "
+    },
+
+    "state-icons": {
+      "paused": "⏸",
+      //"stopped": "",
+      "playing": "♪"
+    }
+  },
+
+  "systemd-failed-units": {
+	"hide-on-ok": true, // Do not hide if there is zero failed units.
+	"format": "✗ {nr_failed}",
+	"format-ok": "✓",
+	"system": true, // Monitor failed systemwide units.
+	"user": true // Ignore failed user units.
+},
+
+"group/mpd_block": {
+    "orientation": "horizontal",
+    "cursor": true,
+    //"drawer": {"transition-duration": 400,"transition-left-to-right": true, "children-class": "mpd", "click-to-reveal": false},
+    "modules":[
+        "mpris",
+        "mpd"
+    ]
+},
 
 "wlr/taskbar": {
     "format": "{icon}",
@@ -357,7 +421,8 @@
 
 "tray": {
     "icon-size": 12,
-    "spacing": 8
+    "spacing": 8,
+    "hide-empty-text": true
 },
 
 "cpu": {
@@ -389,21 +454,21 @@
     //"format-wifi": "{essid} ({signalStrength}%) -- {bandwidthDownBytes}  ",
     //"format-wifi": " {essid} {bandwidthDownBytes}",
     //"format-ethernet": "{bandwidthDownBytes} ",
-    "format-wifi": " {essid} {bandwidthDownBytes}",
     //"format-ethernet": "{bandwidthDownBytes}\t{bandwidthUpBytes}",
-    "format-ethernet": "   {bandwidthDownBytes}       {bandwidthUpBytes}",
-    "interval": 2,
     //"tooltip-format-ethernet": "{gwaddr} ",
     //"tooltip-format-wifi": "{signalStrength}% signal",
-    "format-linked": "{ifname} (No IP) ",
     //"format-disconnected": "Disconnected ⚠",
-    "format-disconnected": "⚠  No net",
     //"format-alt": "{ipaddr}/{cidr} ",
+    "format-wifi": " {essid} {bandwidthDownBytes}",
+    "format-ethernet": "   {bandwidthDownBytes}       {bandwidthUpBytes}",
+    "interval": 2,
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "⚠  No net",
     "tooltip": false,
-    "max-length": 22,
-    "min-length": 22,
+    "max-length": 22
+    //"min-length": 22,
     //"justify": "right"
-    "justify": "left"
+    //"justify": "left"
     /*"align": 1*/
 },
 

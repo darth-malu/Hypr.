@@ -26,8 +26,11 @@ launch_focus_if_nc_running () {
         local nc_pid=$(ncmpcpp_pid)
         if [[ -n $nc_pid ]];then
             # focus running instance of ncmpcpp
-            #hyprctl dispatch togglespecialworkspace nc
-            hyprctl dispatch focuswindow "$nc_pid"
+
+            # both work because:windowapprules
+            # not sure which is more efficient togglespecial seems more efficient
+            #hyprctl dispatch focuswindow "$nc_pid"
+            hyprctl dispatch togglespecialworkspace nc
         else
             # launch ncmpcpp if not running
             #hyprctl dispatch exec "[workspace special:nc] kitty -e ncmpcpp"

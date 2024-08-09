@@ -17,10 +17,15 @@
 
     "modules-center": [
         "hyprland/submap",
-        "mpris"
+        //"mpris",
+        //"group/mpd_block",
+        "mpris",
+        "mpd"
+        //"mpd"
         ],
 
     "modules-right": [
+        "systemd-failed-units",
         "custom/updates",
         //"custom/weather",
         "group/conglo",
