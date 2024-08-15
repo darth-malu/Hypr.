@@ -15,7 +15,8 @@ convert_to_percentage() {
 }
 
 playerctl_add_sub () {
-    playerctl -p $1 volume 0.1$2
+    #playerctl -p $1 volume 0.1$2
+    playerctl -p $1 volume 0.02$2
 }
 
 mpc_add_sub () 

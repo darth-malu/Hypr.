@@ -486,7 +486,7 @@
 
     "group/gpuperf": {
         "orientation": "horizontal",
-        "drawer": {"transition-duration": 600,"transition-left-to-right": true, "children-class": "gpuperf", "click-to-reveal": true},
+        "drawer": {"transition-duration": 690,"transition-left-to-right": true, "children-class": "gpuperf", "click-to-reveal": true},
         "cursor": true,
         "modules":[
             "custom/gpu",

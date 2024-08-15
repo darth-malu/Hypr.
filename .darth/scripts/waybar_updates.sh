@@ -58,95 +58,13 @@ minimal_update_display () {
     #IFS=$'\n' read -d '' -r -a updates_array <<< "$updates"
 #}
 
-main () {
-    local tabs='\t\t\t'
-    printf "${tabs}Packages to be updated are:\n"
-    printf "${tabs}...........................\n"
-
-    #Formate updates
-    while read -r update;do
-        printf "\t%s\n" "${update}"
-        #echo "$update"
-    done <<< "$(raw_updates)"
-    echo
-
-    while true;do
-        local newline_tab='\n\t'
-        local tab='\t'
-        local dtab='\t\t'
-        local atab='\t\t \t'
-
-        printf "${tabs}Choose update style:\n"
-        printf "${tabs}...................."
-
-        printf "
-            ${newline_tab}Snapshot${tab}->${tab}B\
-            ${newline_tab}Less${atab}1\
-            ${newline_tab}Minimal${atab}2\
-            ${newline_tab}CLEAR${atab}x\
-            ${newline_tab}HALT${atab}0\
-            ${newline_tab}Quiet${dtab}->${tab}Default\
-            \n\n"
-
-        local choice
-        read -p "       => " choice
-
-        case "$choice" in
-            #MINIMA
-            "2")
-                printf "\n=> minimalist mode\v\v"
-                printf "\t\t\t** sed magic is working...\n\n"
-                minimal_update_display
-                ;;
-            #verbose/less -lol
-            "1")
-                printf "\n ~> Verbose mode\n"
-                less_pkgs
-                ;;
-            #clear
-            "x"|"X")
-                clear
-                printf "\n\t=> Cleared Screen... Usafi muhimu\n"
-                ;;
-            #HALT
-            0|"q")
-                dunstify "QUITING"\
-                    -i "/home/malu/Downloads/ICONS/icons8-cross-lineal-color/icons8-cross-64.png"
-                kill_kitty
-                #exit 0
-                ;;
-            "b"|"B")
-                # create new snapshots / delete old snaps
-                remove_old_snapshots
-                ;;
-            #Default -> quiet
-            # exit loop and update
-            "")
-                break
-                ;;
-
-            *)
-                echo "Invalid Choice 1,2,3,blank";continue
-                ;;
-        esac
-
-    done
-
-    pacsyu () {
-        sudo pacman -Syu \
-            && dunst_after
-    }
-
-    pacsyu
-}
-
-function create_lvm_snapshot() {
+create_lvm_snapshot() {
     local VG_NAME="ARCH"
     local LV_NAME="root_lv"
     local SNAPSHOT_NAME="darth_snapshot_$(date +'%Y%m%d%H%M%S')"
     local SNAPSHOT_SIZE="1G" # Adjust as needed
 
-    # Create a snapshot & Check if snapshot creation was successful
+    # Create a snapshot & Check if snapshot creation was successful then dunstify
     if sudo lvcreate --size $SNAPSHOT_SIZE --snapshot --name $SNAPSHOT_NAME /dev/$VG_NAME/$LV_NAME 2> /tmp/lvcreate_error.log; then
         echo
         dunstify "Snapshot $SNAPSHOT_NAME created successfully."\
@@ -196,8 +114,97 @@ remove_old_snapshots () {
     fi
 
     # create a new Snapshot after delete operation
-    create_lvm_snapshot
+    #create_lvm_snapshot
 }
+
+main () {
+    local tabs='\t\t\t'
+    printf "${tabs}Packages to be updated are:\n"
+    printf "${tabs}...........................\n"
+
+    #Formate updates
+    while read -r update;do
+        printf "\t%s\n" "${update}"
+        #echo "$update"
+    done <<< "$(raw_updates)"
+    echo
+
+    while true;do
+        local newline_tab='\n\t'
+        local tab='\t'
+        local dtab='\t\t'
+        local atab='\t\t \t'
+
+        printf "${tabs}Choose update style:\n"
+        printf "${tabs}...................."
+
+        printf "
+            ${newline_tab}Snapshot${tab}->${tab}B\
+            ${newline_tab}Del. Snapshot${tab}->${tab}D\
+            ${newline_tab}Less${atab}1\
+            ${newline_tab}Minimal${atab}2\
+            ${newline_tab}CLEAR${atab}x\
+            ${newline_tab}HALT${atab}0\
+            ${newline_tab}Quiet${dtab}->${tab}Default\
+            \n\n"
+
+        local choice
+        read -p "       => " choice
+
+        case "$choice" in
+            #MINIMA
+            "2")
+                printf "\n=> minimalist mode\v\v"
+                printf "\t\t\t** sed magic is working...\n\n"
+                minimal_update_display
+                ;;
+            #verbose/less -lol
+            "1")
+                printf "\n ~> Verbose mode\n"
+                less_pkgs
+                ;;
+            #clear
+            "x"|"X")
+                clear
+                printf "\n\t=> Cleared Screen... Usafi muhimu\n"
+                ;;
+            #HALT
+            0|"q")
+                dunstify "QUITING"\
+                    -i "/home/malu/Downloads/ICONS/icons8-cross-lineal-color/icons8-cross-64.png"
+                kill_kitty
+                #exit 0
+                ;;
+            "b"|"B")
+                # create new snapshots after removing old ones with a recency of 1
+                remove_old_snapshots
+                create_lvm_snapshot
+                ;;
+            "d"|"D")
+                # Delete snapshots (incase of breaking updates)
+                remove_old_snapshots
+                ;;
+            #Default -> quiet
+            # exit loop and update
+            "")
+                break
+                ;;
+
+            *)
+                echo "Invalid Choice 1,2,3,blank";continue
+                ;;
+        esac
+
+    done
+
+    pacsyu () {
+        sudo pacman -Syu \
+            && dunst_after
+    }
+
+    pacsyu
+}
+
 
 launcher () {
     case "$1" in

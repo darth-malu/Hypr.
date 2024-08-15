@@ -5,11 +5,11 @@ function active_player() {
 }
 
 
-grab_spotify_pid () {
-    #extracts as pid: xxxx 
-    hyprctl clients | grep -i -A3 Spotify | grep pid | tr -d '[:blank:]' 
-}
-
+#legacy - unused ... Spotify focus working now
+#grab_spotify_pid () {
+    ##extracts as pid: xxxx 
+    #hyprctl clients | grep -i -A3 Spotify | grep pid | tr -d '[:blank:]' 
+#}
 
 ncmpcpp_pid () {
     hyprctl clients | awk 'BEGIN { FS="\n" ; RS=""; OFS="\n" ; ORS = "\n\n"} /^Window.*ncmpcpp.*/ { print $14, $NF }'| sed -n 1p| tr -d '[:blank:]'
@@ -49,12 +49,14 @@ launch_focus_if_nc_running () {
 
 function focus_current_player () {
     local displaying_player=$(active_player)
-    local spotify=$(grab_spotify_pid)
+    #local spotify=$(grab_spotify_pid)
     hyprctl reload
 
     case ${displaying_player} in
         *"spotify"*)
-            hyprctl dispatch focuswindow ${spotify} > /dev/null
+            #hyprctl dispatch focuswindow ${spotify} > /dev/null
+            # dispatch no stderr always ok stdout
+            hyprctl dispatch focuswindow Spotify > /dev/null
             ;;
         *"Lollypop"*)
             hyprctl dispatch focuswindow lollypop > /dev/null
