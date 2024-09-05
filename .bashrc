@@ -399,6 +399,15 @@ case $- in
                     "restart")
                         systemctl restart $2
                         ;;
+                    "enable")
+                        systemctl enable $2
+                        ;;
+                    "disable")
+                        systemctl disable $2
+                        ;;
+                    *)
+                        echo "Sys function failed...check bashv"
+                        ;;
                 esac
             }
 

@@ -136,7 +136,7 @@ button:hover {
     /*background: rgba(0 ,0 ,0, 0.169);*/
     /*border: 1px solid rgba(255 ,255,255, 0.112);*/
     border-radius: 16px;
-    padding: 0px 0px;
+    padding: 0px 3px;
     margin: 3px 2px 3px 0px;
     /*background: rgba(0 ,0 ,0, 0.569);*/
     background: rgba(0 ,0 ,0, 0.169);
@@ -162,7 +162,7 @@ button:hover {
     color: rgba(255 ,200 ,0, 0.78);
     background: rgba(255 ,200 ,0, 0.14);
     margin: 3px 0px 3px 6px;
-    padding: 0px 0px;
+    padding: 0px 0px 0px 2px;
     border: 1px solid rgba(255 ,200 ,0, 0.23); 
     border-bottom-left-radius: 12px;
     border-top-left-radius: 12px;
@@ -242,7 +242,7 @@ button:hover {
     /*border-left:1px solid rgba(255 ,158 ,170, 0.83);*/
     background: rgba(0 ,0 ,0, 0.869);
     background: rgba(0 ,0 ,0, 0.569);
-    border-radius: 12px;
+    /*border-radius: 12px;*/
 }
 
 /*#network.disconnected {*/
@@ -330,7 +330,7 @@ button:hover {
 
 #custom-updates {
     color: rgba(76 ,205 ,153, 0.76);
-    margin: 0px 0px 0px 11px;
+    margin: 0px 4px 0px 11px;
     font-size: 12px;
     border-top: 1px solid rgba(255 ,255,255, 0.732);
 }
@@ -388,7 +388,7 @@ button:hover {
     color: rgba(159 ,162 ,178, 1);
     font-family: quicksand;
     margin: 3px 0px 3px 0px;
-    padding:0px 3px 0px 0px;
+    padding:0px 3px 0px 2px;
     border-bottom-right-radius: 12px;
     border-top-right-radius: 12px;
     font-size: 11px;
