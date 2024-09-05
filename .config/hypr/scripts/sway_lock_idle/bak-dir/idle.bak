@@ -1,0 +1,32 @@
+#!/bin/bash
+
+swayidle -w \
+	timeout 200 '~/.config/hypr/scripts/sway_lock_idle/lock.sh' \
+	timeout 300 '
+		hyprctl monitors | grep eDP-1
+		ret=$?
+        
+        if [ $ret -eq 0 ]	
+		then
+			hyprctl dispatch dpms off DP-1
+		else
+			hyprctl dispatch dpms off HDMI
+		fi
+
+        hyprctl dispatch dpms off
+        systemctl suspend' \
+	resume '
+		hyprctl monitors | grep eDP-1
+		ret=$?
+
+		if [ $ret -eq 0 ]	
+		then
+			hyprctl dispatch dpms on DP-1
+		else
+			hyprctl dispatch dpms on HDMI
+		fi
+        
+        hyprctl dispatch dpms on
+		' \
+	before-sleep '~/.config/hypr/scripts/sway_lock_idle/lock.sh' \
+	lock '~/.config/hypr/scripts/sway_lock_idle/lock.sh'
