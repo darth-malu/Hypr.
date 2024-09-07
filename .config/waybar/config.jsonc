@@ -1,8 +1,8 @@
 {
     "layer": "top", // Waybar at top layer
-    //"output": ["HDMI-A-1", "DP-3"], 
-    "output": "HDMI-A-1", 
-    //"reload_style_on_change": true,
+    "output": ["HDMI-A-1", "DP-3"], 
+    //"output": "HDMI-A-1", 
+    "reload_style_on_change": true,
     //"fixed-center": false,
     //"passthrough": true,
     //"spacing": 4,
@@ -16,14 +16,15 @@
     "include": [
         "~/.config/waybar/custom_waybar_modules.jsonc",
         "~/.config/waybar/capsules.jsonc",
-        "~/.config/waybar/hyprland_workspace.jsonc",
-        "~/.config/waybar/hyprland_window.jsonc",
+        "~/.config/waybar/workspaces_hyprland.jsonc",
+        "~/.config/waybar/window_hyprland.jsonc",
         "~/.config/waybar/groups.jsonc",
         "~/.config/waybar/default_modules.jsonc"
     ],
 
     "modules-left": [
         "hyprland/workspaces",
+        "wlr/taskbar",
         "hyprland/window"
         ],
 
@@ -52,6 +53,7 @@
         "temperature",
         //"memory",
         "clock",
+        //"pulseaudio/slider",
         "wireplumber",
         "tray",
         "idle_inhibitor"

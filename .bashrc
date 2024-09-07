@@ -143,7 +143,8 @@ case $- in
 
         function functioner() {
             fuego () {
-                wl-copy -n < ~/Documents/rupurupu.txt && echo "Copy success :)"
+                #wl-copy -n < ~/Documents/rupurupu.txt && echo "Copy success :)"
+                wl-copy -n < ~/Documents/fragger.txt && echo "Copy success :)"
             }
 
             lusb () {
@@ -386,8 +387,14 @@ case $- in
                             "status")
                                 systemctl --user status $3
                                 ;;
+                            "enable")
+                                systemctl --user enable $3
+                                ;;
                             "restart")
                                 systemctl --user restart $3
+                                ;;
+                            "daemon")
+                                systemctl --user daemon-reload
                                 ;;
                         esac
                         ;;
@@ -409,6 +416,9 @@ case $- in
                     "disable")
                         systemctl disable $2
                         ;;
+                    "daemon")
+                        systemctl daemon-reload
+                        ;;
                     *)
                         echo "Sys function failed...check bashv"
                         ;;
@@ -422,6 +432,7 @@ case $- in
 
             function R () {
                 local r="shutdown -r"
+                killall waybar
 
                 case "$1" in
                     "")
