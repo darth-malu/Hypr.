@@ -1,14 +1,26 @@
 {
     "layer": "top", // Waybar at top layer
-    "reload_style_on_change": true,
-    "fixed-center": true,
+    //"output": ["HDMI-A-1", "DP-3"], 
+    "output": "HDMI-A-1", 
+    //"reload_style_on_change": true,
+    //"fixed-center": false,
     //"passthrough": true,
     //"spacing": 4,
     //"name": "main_bar", //nice for css sytling different bars
     //"margin": "2",
     //"margin-top": 4,
+    //"mode": "dock",
+    //"start-hidden": true,
+    //"exclusive": false,
 
-    "include": ["~/.config/waybar/modules_waybar.jsonc"],
+    "include": [
+        "~/.config/waybar/custom_waybar_modules.jsonc",
+        "~/.config/waybar/capsules.jsonc",
+        "~/.config/waybar/hyprland_workspace.jsonc",
+        "~/.config/waybar/hyprland_window.jsonc",
+        "~/.config/waybar/groups.jsonc",
+        "~/.config/waybar/default_modules.jsonc"
+    ],
 
     "modules-left": [
         "hyprland/workspaces",

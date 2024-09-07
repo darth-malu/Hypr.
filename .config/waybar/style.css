@@ -84,15 +84,14 @@ button:hover {
 #workspaces button {
     /*removing padding causes issues*/
     font-family: quicksand;
-    font-size: 12px;
+    font-size: 13px;
     margin: 2px 2px 2px 0px;
-    padding: 0px 0px;
+    padding: 1px 0px;
     /*border: 1px solid rgba(0 ,196 ,255,0);*/
     min-width: 20.5px;
     border-radius: 12px;
     color: rgba(154 ,208 ,194, 0.60);
 }
-
 
 #workspaces button:hover {
     box-shadow: none;
@@ -104,9 +103,25 @@ button:hover {
     color: rgba(154 ,208 ,194, 0.95);
 }
 
+#workspaces button.special {
+    /*removing padding causes issues*/
+    background: rgba(154 ,208 ,194, 0);
+}
+
+#workspaces button.special:hover {
+    /*removing padding causes issues*/
+    background: rgba(154 ,208 ,194, 0);
+}
+
+
+/*#workspaces button.hosting-monitor {*/
+    /*background: rgba(238 ,216 ,169, 0.36);*/
+    /*color: rgba(154 ,208 ,194, 0.95);*/
+/*}*/
+
 #workspaces button.empty {
     /*color: #fc819e;*/
-    color: rgba(255, 255, 255, 0.172);
+    color: rgba(255, 255, 255, 0.182);
 }
 
 /* if workspaces is the leftmost module, omit left margin */
@@ -236,7 +251,7 @@ button:hover {
     color: rgba(255 ,158 ,170, 0.73);
     font-family: quicksand;
     font-size: 12px;
-    padding:  0px 8px;
+    /*padding:  0px 8px;*/
     margin: 3px 0px 3px 0px;
     /*border-left:1px solid rgba(154 ,208 ,194, 0.74);*/
     /*border-left:1px solid rgba(255 ,158 ,170, 0.83);*/

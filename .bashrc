@@ -120,7 +120,7 @@ case $- in
             alias v="nvim"
             alias sv="sudo nvim"
             alias hypr="cd ~/.config/hypr/hypr-configs"
-            alias customway_json='nvim ~/.config/waybar/modules_waybar.jsonc'
+            alias customway_json='nvim ~/.config/waybar/custom_waybar_modules.jsonc'
             alias cssway='nvim ~/.config/waybar/style.css'
             alias jway='nvim ~/.config/waybar/config.jsonc'
             alias pluglua="cd ~/.config/nvim/lua/plugins"
@@ -144,6 +144,10 @@ case $- in
         function functioner() {
             fuego () {
                 wl-copy -n < ~/Documents/rupurupu.txt && echo "Copy success :)"
+            }
+
+            lusb () {
+                lsusb | grep -v Linux
             }
 
             #█▀█ ▄▀█ █▀▀ █▀▄▀█ ▄▀█ █▄░█
