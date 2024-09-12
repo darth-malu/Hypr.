@@ -10,6 +10,11 @@ text/plain=nvim.desktop
 application/pdf=org.pwmt.zathura.desktop
 image/png=viewnior.desktop
 x-scheme-handler/tonsite=org.telegram.desktop.desktop
+application/x-bittorrent=tixati.desktop
 
 [Added Associations]
 x-scheme-handler/tonsite=org.telegram.desktop.desktop;
+
+[Removed Associations]
+video/H264=baz.desktop
+application/x-bittorrent=firefox.desktop

@@ -3,6 +3,7 @@
     /*font-family: quicksand,JetBrainsMono Nerd Font,monospace,ubuntu,fontawesome;*/
     font-family: quicksand,JetBrainsMono Nerd Font,ubuntu,fontawesome;
     min-height: 0;
+    min-width: 0px;
     /*padding-top: 0px;*/
     /*padding-bottom: 0px;*/
     font-weight: bold;
@@ -145,24 +146,25 @@ button:hover {
     font-family: quicksand;
     font-size: 12px;
     color: rgba(154 ,208 ,194, 0.96);
-    border: 1px solid rgba(156 ,207 ,216, 0.23);
+    /*border: 1px solid rgba(156 ,207 ,216, 0.23);*/
     /*border-top: 1px solid rgba(156 ,207 ,216, 0.83);*/
     /*border-bottom: 2px solid rgba(156 ,207 ,216, 0.83);*/
     /*background: rgba(87 ,204 ,153, 0.152);*/
     /*background: rgba(0 ,0 ,0, 0.169);*/
     /*border: 1px solid rgba(255 ,255,255, 0.112);*/
     border-radius: 16px;
-    padding: 0px 3px;
+    padding: 0px 4px;
     margin: 3px 2px 3px 0px;
     /*background: rgba(0 ,0 ,0, 0.569);*/
     background: rgba(0 ,0 ,0, 0.169);
+    background: rgba(154 ,208 ,194, 0.12);
 }
 
-#clock:hover {
-    background: rgba(0 ,0 ,0, 0.569);
-    background: rgba(255 ,255 ,255, 0.13);
-    background: #183D3D;
-}
+/*#clock:hover {*/
+    /*background: rgba(0 ,0 ,0, 0.569);*/
+    /*background: rgba(255 ,255 ,255, 0.13);*/
+    /*background: #183D3D;*/
+/*}*/
 
 #keyboard-state{
     color: #fab387;
@@ -230,7 +232,31 @@ button:hover {
     background: rgba(72 ,191 ,227, 0.24);
 }
 
-#custom-disk {
+#disk.home, #disk.linux_hdd,#disk.ExtraHDD {
+    padding:0px;
+    margin: 3px 0px 3px 0px;
+    border-radius: 0px;
+}
+
+/*#disk.home {*/
+    /*padding:0px;*/
+    /*margin: 3px 0px 3px 0px;*/
+    /*border-radius: 0px;*/
+/*}*/
+/**/
+/*#disk.linux_hdd {*/
+    /*padding:0px;*/
+    /*margin: 3px 0px 3px 0px;*/
+    /*border-radius: 0px;*/
+/*}*/
+
+/*#disk.ExtraHDD {*/
+    /*padding:0px;*/
+    /*margin: 3px 0px 3px 0px;*/
+    /*border-radius: 0px;*/
+/*}*/
+
+#custom-nvme_temp {
     margin: 3px 0px 3px 0px;
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
@@ -329,6 +355,7 @@ button:hover {
     background: rgba(154 ,208 ,194, 0.12);
     padding: 0px 0px 0px 0px;
     padding:0px 8px;
+    min-width: 0px;
 }
 
 #tray > .passive {
@@ -356,7 +383,7 @@ button:hover {
     color: rgba(76 ,205 ,153, 0.76);
     margin: 0px 4px 0px 11px;
     font-size: 12px;
-    border-top: 1px solid rgba(255 ,255,255, 0.732);
+    /*border-top: 1px solid rgba(255 ,255,255, 0.732);*/
 }
 
 #custom-weather {
@@ -448,23 +475,24 @@ button:hover {
     /*background: rgba(255, 255, 255, 0.105);*/
     /*background: rgba(0, 0, 0, 0.505);*/
     /*background: rgba(0, 0, 0, 0.505);*/
-    background: rgba(154 ,208 ,194, 0.18);
-    margin: 2px 2px 2px 8px;
-    opacity: 0.67;
+    /*background: rgba(154 ,208 ,194, 0.18);*/
+    margin: 3px 2px 3px 8px;
+    opacity: 0.70;
     padding:0px 2px;
     border-radius: 4px;
+    /*border-radius: 12px;*/
     /*font-weight: normal;*/
     /*font-style: normal;*/
     /*border: 1px solid rgba(255, 255, 255, 0.2);*/
     /*border: 1px solid rgba(154 ,208 ,194, 0.176);*/
-    /*border-right: 1px solid rgba(154 ,208 ,194, 0.486);*/
-    /*border-left: 1px solid rgba(154 ,208 ,194, 0.486);*/
+    border-right: 1px solid rgba(154 ,208 ,194, 0.286);
+    border-left: 1px solid rgba(154 ,208 ,194, 0.286);
 }
 
 #taskbar button {
     margin:0;
     border-radius: 15px;
-    padding: 0px 5px 0px 5px;
+    padding: 2px 5px 2px 5px;
 }
 
 #taskbar.empty {

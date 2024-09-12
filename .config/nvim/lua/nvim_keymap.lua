@@ -1,7 +1,6 @@
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 --local term_opts = { silent = true }
-local defaults = { noremap = true, silent = true }
 local set = vim.opt
 
 set.termguicolors = true
@@ -38,13 +37,25 @@ vim.g.mapleader=' '
 --map('n', '<Leader>sv', ':luafile $MYVIMRC<CR>', opts)
 map('n', "<C-;>", ':w <CR>', opts)
 
+-- Set clipboard to use system clipboard
+vim.o.clipboard = 'unnamedplus'
+
+-- Tabs
+vim.api.nvim_set_keymap('n', '<leader>tn', ':tabnew<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>tp', ':tabprevious<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>tn', ':tabnext<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>tc', ':tabclose<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>to', ':tabonly<CR>', { noremap = true, silent = true })
+
+
 --explorer
 -- Map `:Ex` to `<leader>ee`
-vim.api.nvim_set_keymap('n', '<leader>ee', ':Ex<CR>', opts)
+--vim.api.nvim_set_keymap('n', '<leader>ee', ':Ex<CR>', opts)
 -- Map `:Lex 40<cr>` to `<leader>x`
 vim.api.nvim_set_keymap('n', '<leader>x', ':Lex 40<CR>', opts)
 -- Map `:Sexplore 40<cr>` to `<leader>h`
-vim.api.nvim_set_keymap('n', '<leader>h', ':Sexplore 40<CR>', opts)
+--vim.api.nvim_set_keymap('n', '<leader>h', ':Sexplore 40<CR>', opts)
+
 
 -- Function to open a file and close the netrw panel
 --[[
@@ -77,6 +88,7 @@ for i=1,9,1
 do
   map('n', '<leader>'..i, i.."gt", {})
 end
+
 map('n', '<leader>0', ":tablast<cr>", {})
 
 -- map for quick open the file init.lua
@@ -86,8 +98,8 @@ map('n', '<leader>nv', ':vsplit ~/.config/nvim/init.lua<cr>', {})
 map('n', 'U', '<C-r>', {})
 
 -- Insert empty line without entering insert mode
-map('n', '<A-o>', ':<C-u>call append(line("."), repeat([""], v:count1))<CR>', defaults)
-map('n', '<A-O>', ':<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>', defaults)
+map('n', '<A-o>', ':<C-u>call append(line("."), repeat([""], v:count1))<CR>', opts)
+map('n', '<A-O>', ':<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>', opts)
 
 -- Toggle see whitespace characters like: eol, space, ...
 set.lcs = 'tab:>-,eol:$,nbsp:X,trail:#'
@@ -98,8 +110,15 @@ map("n", "<S-l>", ":bnext<CR>", opts)
 map("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Move text up and down -- normal mode
-map("n", "<A-j>", ":m .+1<CR>==", opts)
-map("n", "<A-k>", ":m .-2<CR>==", opts)
+--map("n", "<A-j>", ":m .+1<CR>==", opts)
+--map("n", "<A-k>", ":m .-2<CR>==", opts)
+
+map("n", "<S-A-j>", ":m .+1<CR>==", opts)
+map("n", "<S-A-k>", ":m .-2<CR>==", opts)
+
+map("n", "<C-Down>", ":m .+1<CR>==", opts)
+map("n", "<C-Up>", ":m .-2<CR>==", opts)
+
 
 -- insert
 -- Press jk fast to exit insert mode 
