@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/dash
 
 swaylock \
 	--indicator-radius 100 \

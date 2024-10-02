@@ -1,92 +1,122 @@
-allow_for_physical_item_deletion = "yes"
-startup_screen = playlist
-execute_on_song_change = songinfo.sh
-mouse_support = no
-external_editor = "/usr/bin/nvim"
 
-###COLORS
-## Song List ##
-song_columns_list_format = "(38)[37]{t} (25)[37]{a}  (25)[31]{b} (10)[31]{g} (4)[31]{l} "
-song_list_format = "{$8%t$9}|{$5%f$9}$R{$6%b $9}{$3%l$9}"
+#MENUs
+################################################# Song List, Column
+
+#song_columns_list_format = "(38)[37]{t} (25)[37]{a}  (25)[31]{b} (10)[31]{g} (4)[31]{l} "
+#song_columns_list_format = "(30)[74]{t}(26)[74]{a} (33)[74]{b} (10)[74]{g} (4)[74]{l}"
+song_columns_list_format = "(30)[74]{t}(32)[74]{a} (37)[74]{b} (5)[74]{l}"
+#song_list_format = "{$8%t$9}|{$5%f$9}$R{$6%b $9}{$3%l$9}"
+song_list_format = "{$7%t$9}{$5%f$9}$R{$7%b $9}{$3%l$9}"
+
+#options available
 #song_window_title_format
+#song_library_format
+#song_status_format
 
-
-## Current Item ##
+######################################################## Current Item 
+# prefix - This is the highlight bar in Playlist,media
 #current_item_prefix = "$(69)$r"
 #current_item_prefix = "$(31)$r"
-current_item_prefix = "$(121)$r"
+#current_item_prefix = "$(106)$r"
+current_item_prefix = "$(88)$r"
 
+# suffix
 #current_item_suffix = "$/r$(end)"
+
+# inactive column
 #current_item_inactive_column_prefix = "$(24)$r"
 current_item_inactive_column_prefix = "$(24)$r"
 
+
+################################################# Alternative mode
+#alternative_header_second_line_format = TEXT
+#alternative_header_first_line_format = TEXT
+
+#alternative_ui_separator_color = 4
+alternative_ui_separator_color = 1
+#alternative_ui_separator_color = 218
+
+################################################# HEADER
 #header -> top most, browse,playlist
-header_window_color = 80
+#header_window_color = 80
+#header_window_color = 51
+#header_window_color = 44
+#header_window_color = 74
+header_window_color = 122
 #header_window_color = 153 
 #header_window_color = 38 
 #header_window_color = 120 
 #header_window_color = 3 
 
-#main
-state_line_color = 24
-main_window_color = 37 
+#eg media-lib, playlist
+header_text_scrolling = "yes"
+header_visibility = "yes"
+
+######### Main, misc stuff, state line
+#state_line_color = 24
+state_line_color = 1
+
+# search engine, playlist edior list, playing icon, playlist list text
+main_window_color = 38 
 
 #add to playlist menu
 window_border_color = 212
 
-#playerstate -> playing/paused
-player_state_color = 175 
+active_window_border = 21
 
+######### playerstate -> playing/paused indicator
+#player_state_color = 175 
+#player_state_color = 81 
+#player_state_color = 31 
 #player_state_color = 212 
+player_state_color = 31 
 
-#song playing
-statusbar_color = 12
-statusbar_time_color = 80
+######### -> song playing
+#statusbar_color = 12
+#statusbar_color = 49
+#statusbar_color = 221
+#statusbar_color = 180
+#statusbar_color = 228
+#statusbar_color = 158
+#statusbar_color = 124
+#statusbar_color = 122
+statusbar_color = 122
 
+# intereesting lime light green
+#statusbar_color = 152
+
+statusbar_time_color = 87
 #statusbar_color = 142
 #statusbar_color = 114
 #statusbar_color = 216
 
-#volume
-volume_color = 175
-
-#volume_color = 80
+######### -> volume 
+#volume_color = 175
+volume_color = 212
 #volume_color = 205
+volume_change_step = 2
 
-#progress bar
+######### -> progress bar 
 #progressbar_color = 140
 #progressbar_color = 244
-progressbar_color = 60 
+#progressbar_color = 60 
+#progressbar_color = 24 
+
+progressbar_color = 1 
 progressbar_look = "─⊙┄"
-progressbar_elapsed_color = 73 
-
-
-colors_enabled = yes
-
-#main-window
-#main_window_color = 141
-
-#visualizer_color = 25, 219, 33
-visualizer_color = 25, 38, 104
-alternative_ui_separator_color = 218
-
+#progressbar_elapsed_color = 51 
+progressbar_elapsed_color = 74 
+#progressbar_elapsed_color = 158 
 
 #One of colors used in Song info, Tiny tag editor and Search engine.
 
 
-color1 = 4
-color2 = 4
-
-active_window_border = 21
-#header
-header_text_scrolling = "yes"
-header_visibility = "yes"
-#eg media-lib
-
+color1 = 31
+color2 = 112
 
 #for add to playlist window border
 
-#visualizer
+######### -> Columns
 playlist_editor_display_mode = "columns"
 search_engine_display_mode = "columns"
 browser_display_mode = "columns"
@@ -96,41 +126,66 @@ playlist_display_mode = "columns"
 #status changes eg update db
 statusbar_visibility = "yes"
 
-#misc
+################################################# -> Mpd connection Stuff
+#mpd_connection_timeout = SECONDS
+#mpd_crossfade_time = SECONDS
+mpd_host = localhost
+mpd_port = 6600
 
-#UI
-user_interface = classic
+# needed for tag editor to work
+mpd_music_dir = ~/Music 
+audio_output {
+        type            "fifo"
+        name            "Visualizer feed"
+        path            "/tmp/mpd.fifo"
+        format          "44100:16:2"
+ }
 
-#visualizer
+################################################# -> visualizer 
 visualizer_data_source = "/tmp/mpd.fifo"
 visualizer_output_name = "Visualizer feed"
+# wave, wave_filled, spectrum, ellipse
 visualizer_type = "wave_filled"
+# yes if fifo set to 44100:16:2
 visualizer_in_stereo = "yes"
 #visualizer_look = "◆▋"
 visualizer_look = "+|"
+visualizer_autoscale = yes
+visualizer_spectrum_smooth_look = yes
 
-use_console_editor = yes
-mouse_list_scroll_whole_page = yes
+#visualizer_color = 25, 219, 33
+visualizer_color = 25, 38, 104
 
-## Visibility ##
-titles_visibility = "no"
+################################################# Misc 
+#space_add_mode = add_remove
+ask_before_clearing_playlists = yes
+#clock_display_seconds = yes
+generate_win32_compatible_filenames = yes
+ignore_diacritics = yes
 
-autocenter_mode = "yes"
-follow_now_playing_lyrics = "yes"
+#lines_scrolled = NUMBER
 
-# Misc
+#regular_expressions = none/basic/extended/perl
+block_search_constraints_change_if_items_found = yes
 display_bitrate = "no"
 enable_window_title = "no"
 connected_message_on_startup = "no"
 empty_tag_marker = "@darth"
+colors_enabled = yes
+system_encoding = utf8
+######### messages, notif 
+message_delay_time = 2
+#UI
+user_interface = classic
+use_console_editor = yes
+mouse_list_scroll_whole_page = yes
 
-#media
-#media_library_primary_tag = artist/album_artist/date/genre/composer/performer
-#media_library_primary_tag = artist
-media_library_primary_tag = genre
+## Visibility ##
+# headings to columns ie. Title, artist, album
+titles_visibility = "no"
 
-#volume
-volume_change_step = 5
+# Centers highlight on current song during switch
+autocenter_mode = "yes"
 
 ## Navigation ##
 cyclic_scrolling = "yes"
@@ -141,24 +196,40 @@ lines_scrolled = "2"
 incremental_seeking = "yes"
 seek_time = "1"
 
-
 ## Selected tracks ##
-selected_item_prefix = "+ "
-
+selected_item_prefix = "+ + + "
 
 ## Now Playing ##
 ##now_playing_prefix = " "
 now_playing_prefix = " "
-#centered_cursor = "yes"
+centered_cursor = "yes"
 
-mpd_host = localhost
-mpd_port = 6600
-mpd_music_dir = ~/Music 
+################### Physical Location
 ncmpcpp_directory = ~/.config/ncmpcpp
+lyrics_directory = ~/.local/share/darth_ncmpcpp
+external_editor = "/usr/bin/nvim"
 
- audio_output {
-        type            "fifo"
-        name            "Visualizer feed"
-        path            "/tmp/mpd.fifo"
-        format          "44100:16:2"
- }
+allow_for_physical_item_deletion = "yes"
+
+############################ Startup behaviour
+
+mouse_support = no
+startup_screen = playlist
+#startup_slave_screen = media_library
+playlist_disable_highlight_delay = 5
+
+######### Now Playing 
+execute_on_song_change = ~/.darth/scripts/player/songinfo.sh
+#execute_on_player_state_change = COMMAND
+follow_now_playing_lyrics = "yes"
+
+#now_playing_prefix = TEXT
+#now_playing_suffix = TEXT
+
+#media
+#media_library_primary_tag = artist/album_artist/date/genre/composer/performer
+#media_library_primary_tag = artist
+media_library_primary_tag = genre
+
+# see also:
+# https://linuxcommandlibrary.com/man/ncmpcpp

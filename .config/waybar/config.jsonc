@@ -1,37 +1,30 @@
 {
-    "layer": "top", // Waybar at top layer
-    "output": ["HDMI-A-1", "DP-3"], 
+    "layer": "bottom", 
+    //"output": ["HDMI-A-1", "DP-3"], 
     //"output": "HDMI-A-1", 
-    "reload_style_on_change": true,
-    //"fixed-center": false,
-    //"passthrough": true,
-    //"spacing": 4,
-    //"name": "main_bar", //nice for css sytling different bars
-    //"margin": "2",
-    //"margin-top": 4,
-    //"mode": "dock",
-    //"start-hidden": true,
-    //"exclusive": false,
+    //"reload_style_on_change": true,
+    "name": "main_bar", //nice for css sytling different bars
+    "margin": "2 2 0 2",
+    //"position": "left",
+    //"width": 2,
 
     "include": [
-        "~/.config/waybar/custom_waybar_modules.jsonc",
-        "~/.config/waybar/capsules.jsonc",
-        "~/.config/waybar/workspaces_hyprland.jsonc",
-        "~/.config/waybar/window_hyprland.jsonc",
-        "~/.config/waybar/groups.jsonc",
-        "~/.config/waybar/default_modules.jsonc"
+        "~/.config/waybar/default_modules.jsonc",
+        "~/.config/waybar/custom_modules.jsonc"
     ],
 
     "modules-left": [
-        "hyprland/workspaces",
-        "wlr/taskbar",
-        "hyprland/window"
+        "hyprland/workspaces"
+        //"wlr/taskbar"
+        //"hyprland/window"
         ],
 
     "modules-center": [
         "hyprland/submap",
+        //"hyprland/window",
+        "group/window_mpris"
         //"mpris",
-        "group/mpd_block"
+        //"group/mpd_block"
         //"mpris",
         //"mpd"
         //"mpd"
@@ -39,26 +32,23 @@
         ],
 
     "modules-right": [
-        "systemd-failed-units",
+        //"systemd-failed-units",
         "custom/updates",
-        //"custom/weather",
-        //"group/conglo",
-        //"network",
+        "custom/updates#paru",
+        //"group/mpd_block",
         "group/gpuperf",
         "group/gpu_temp_network_block",
-        //"custom/gpu_temp",
         "group/disk_block",
-        //"custom/nvme_temp",
         "group/all_disks",
         "group/cpu_block",
-        "temperature",
-        //"memory",
-        "clock",
+        //"temperature",
+        "group/temp_block",
+        //"clock",
         //"pulseaudio/slider",
         "wireplumber",
+        //"custom/audio_idle_inhibitor",
         "tray",
         "idle_inhibitor"
         //"custom/wleave"
         ]
 }
-

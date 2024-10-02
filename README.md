@@ -58,7 +58,7 @@
 </details>
 
 - Theme: 
-    - catppuccin-mocha-red - gtk
+    - catppuccin-mocha-red - gtk / Tokyonight-Dark
     - gruvbox - neovim
 - Font: quicksand - waybar, JetBrainsMono Nerd Font - ~waybar
 - Cursor: Bibata

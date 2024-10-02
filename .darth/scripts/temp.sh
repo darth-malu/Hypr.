@@ -1,6 +1,5 @@
-#!/usr/bin/env bash
+#!/bin/dash
 
-msg="gpu temp"
 #waybar can call either:
 # temp
 # fan_speed
@@ -12,8 +11,10 @@ raw_gpu_temp () {
 }
 
 celcius_gpu_temp () {
-    local temp="$(raw_gpu_temp)"
-    echo -n "$(( $temp/1000 ))"
+    local temp
+
+    temp="$(raw_gpu_temp)"
+    echo -n "$(( temp/1000 ))"
 }
 
 raw_gpu_fan () {
@@ -29,26 +30,33 @@ raw_gpu_frequency () {
     #returns number eg 700 - rpm
     # list with current *
     #cat /sys/class/drm/card1/device/pp_dpm_mclk | grep "*"
-    cat /sys/class/drm/card1/device/pp_dpm_sclk | grep -oE "\s+[0-9]*.*\*" | tr -cd "[:alnum:]"
+    grep -oE "\s+[0-9]*.*\*" < /sys/class/drm/card1/device/pp_dpm_sclk | tr -cd "[:alnum:]" 
     #outputs [:digit:]Mhz eg 600Mhz
 }
 
 raw_cpu_frequency () {
+    local frequency_hz
+    local frequency_ghz
+
     #2cpu , 1gpu, 0- nvme
-    local frequency_hz="$(cat /sys/class/hwmon/hwmon1/freq1_input)"
-    local frequency_ghz=$(echo "scale=2; $frequency_hz / 100000000" | bc)
+    frequency_hz="$(cat /sys/class/hwmon/hwmon1/freq1_input)"
+    frequency_ghz=$(echo "scale=2; $frequency_hz / 100000000" | bc)
+
     #outputs raw Ghz eg. just 3.5
-    echo -n $frequency_ghz
+    echo -n "$frequency_ghz"
 }
 
 raw_nvme_temp () {
-    
+    local nvme_temp
+    local temp
+
     #get temp in mC
-    local nvme_temp="$(cat /sys/class/hwmon/hwmon0/temp1_input)"
+    nvme_temp="$(cat /sys/class/hwmon/hwmon0/temp1_input)"
+
     #convert to C
-    local temp=$(echo "scale=2; $nvme_temp / 1000" | bc)
+    temp=$(echo "scale=2; $nvme_temp / 1000" | bc)
     #outputs temp .0f
-    printf "%.0f\n" $temp
+    printf "%.0f\n" "$temp"
 }
 
 proc_cpu () {

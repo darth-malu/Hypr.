@@ -1,8 +1,11 @@
 
 configuration {
-    modi:                       "drun,filebrowser,window";
-    font:                       "FiraMono Nerd Font Bold 11";
+    //modi:                       "drun,filebrowser,window";
+    combi-modes:                       [ drun,filebrowser,window ];
+    modes:                       [ window , drun, filebrowser];
     show-icons:                 true;
+    icon-theme:                 "Papirus-Dark";
+    icon-size:                  32;
     display-drun:               " ";
     display-run:                " ";
     display-filebrowser:        " ";
@@ -12,9 +15,22 @@ configuration {
     me-select-entry:            "MouseSecondary";
     terminal:                   "kitty";
     me-accept-entry:            "MousePrimary";
-    window-format:              "{w} · {c} · {t}";
-    icon-theme:                 "WhiteSur";
+    /*window-format:              "{w} · {c} · {t}";*/
+    window-format:              "{w}  .{c}  \t.  {t}";
+    window-thumbnail: true;
+    /*icon-theme:                 "Kanagawa";*/
+    /*icon-theme:                 "Win10Sur";*/
     scroll-method:              1;
+    /*dpi:                        110;*/
+    /*matching:                   "fuzzy";*/
+    window {
+        hide-active-window:     false;
+        close-on-delete: true;
+    }
 }
+
 @theme "/dev/null"
 @theme "~/.config/rofi/theme.rasi"
+
+//@theme "~/.config/rofi/darth_dmenu.rasi"
+/*@theme "dmenu"*/

@@ -1,12 +1,6 @@
-/*
- * arc-dark.rasi
- * rofi theme inspired by plasma breeze
- * jbouter
- */
-
 * {
-    /* Base */
-    /*default-background: rgba ( 45, 48, 59, 95 % ); // <- change this for transparency*/
+     //Base 
+    //default-background: rgba ( 45, 48, 59, 95 % ); // <- change this for transparency
     default-background: rgba ( 19,35,36, 100 % ); // <- change this for transparency
     default-foreground: rgba ( 196, 203, 212, 100 % );
     default-border: rgba ( 124, 131, 137, 100 % );
@@ -28,38 +22,77 @@
     /* Universal */
     background-color: @invisible;
     border-color: @default-border;
-    font: "JetBrainsMono Nerd Font 13";
+    /*font: "cream 13";*/
     text-color: @default-foreground;
 }
 
 #window {
+    font: "cream 14";
     background-color: @default-background;
     border: 1;
     border-radius: 3;
     border-color: @default-border;
-    padding: 7;
+    padding: 2;
+    //width: 500px;
 }
+
+
+    //mainbox Packs: inputbar, message, listview, mode-switcher
+    //inputbar Packs: prompt,entry,case-indicator
 
 #mainbox {
     border:  0;
     padding: 0;
 }
 
-#message {
-    border: 1;
-    border-radius: 3;
-    padding: 5;
-    background-color: @alternative-background;
+/*
+textbox-custom {
+  expand: false;
+  content: "My Message";
+}
+*/
+
+#inputbar {
+    spacing: 0;
+    padding: 1;
+    children: [prompt,entry];
+    //children: [prompt,entry,overlay,case-indicator];
 }
 
-#textbox {
-    background-color: @entry-background;
+
+// right of entry?? what its purpose
+#case-indicator {
+    spacing: 0;
+    padding: 3px;
+    //background-color: @alternative-background;
+    background-color: transparent;
+    border: 1 1 1 0;
+    border-radius: 0 2 2 0;
+}
+
+#entry {
+    //background-color: @alternative-background;
+    background-color: transparent;
+    padding: 3px;
+    border: 1 0 1 1;
+    border-radius: 2 0 0 2;
+    //placeholder: "Type here";
+
+    // cursor: text, pointer
+    cursor: text;
+    //cursor-color: rgb(220,20,60);
+    //cursor-width: 8px;
+}
+
+#prompt {
+    padding: 3 7 3 0;
 }
 
 #listview {
     fixed-height: 0;
     spacing: 2;
     scrollbar: false;
+    layout:     vertical;
     padding: 2 0 0;
 }
 
@@ -68,7 +101,24 @@
     border: 1;
     border-radius: 3;
     border-color: @invisible;
+    /*children: [ element-text, element-icon ];*/
+    children: [ element-icon , element-text];
+    spacing: 19px;
+    /*orientation: vertical;*/
+    cursor: pointer;
 }
+
+element-icon {
+    /*size: 2.5em;*/
+    size: 20px;
+    cursor: pointer;
+}
+
+element-text {
+    vertical-align: 0.5;
+    cursor: pointer;
+}
+
 
 #element.normal.normal {
     background-color: @invisible;
@@ -111,26 +161,15 @@
     border-color: @hard-blue;
 }
 
-#inputbar {
-    spacing: 0;
-    padding: 1;
+#message {
+    border: 1;
+    border-radius: 3;
+    padding: 5;
+    //background-color: @alternative-background;
+    background-color: transparent;
 }
 
-#case-indicator {
-    spacing: 0;
-    padding: 3px;
-    background-color: @alternative-background;
-    border: 1 1 1 0;
-    border-radius: 0 2 2 0;
-}
-
-#entry {
-    background-color: @alternative-background;
-    padding: 3px;
-    border: 1 0 1 1;
-    border-radius: 2 0 0 2;
-}
-
-#prompt {
-    padding: 3 7 3 0;
+#textbox {
+    //background-color: @entry-background;
+    background-color: transparent;
 }

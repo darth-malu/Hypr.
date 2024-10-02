@@ -1,4 +1,4 @@
-#$include /etc/inputrc
+$include /etc/inputrc
 #set show-mode-in-prompt on
 
 #VI MODE
@@ -35,8 +35,15 @@ set colored-completion-prefix On
 # Color the common prefix in menu-complete
 set menu-complete-display-prefix On
 
+# suffix for file type like with ls -F
+set page-completions off
+
+$if mode=vi
+
 "\e[A": history-search-backward
 "\e[B": history-search-forward
+"\e[D":        backward-char
+"\M-[C":        forward-char
 
 #bind '"\e[A": history-search-backward'
 #bind '"\e[B": history-search-forward'
@@ -45,8 +52,8 @@ set menu-complete-display-prefix On
 "\C-p":"cd ~/.darth/scripts\n"
 "\C-l":"clear\n"
 "\C-o":"cd ~/.config\n"
-"\eh":"cd ..\n"
-"\el":"cd -\n"
+#"\eh":"cd ..\n"
+#"\el":"cd -\n"
 #"\C-h":"cd /home/malu/Documents/dotfiles/hypr/hypr-configs\n"
 #"\C-y":"yy\n"
 #"\C-y":"pwd\n"
@@ -64,6 +71,16 @@ set menu-complete-display-prefix On
 
 #quickly send a command in the background with Ctrl+Alt+b, discarding all of its output
 #"\e\C-b": "\C-e > /dev/null 2>&1 &\C-m"
+
+# Arrow keys in keypad mode
+#
+#"\M-OD":        backward-char
+#"\M-OC":        forward-char
+#"\M-OA":        previous-history
+#"\M-OB":        next-history
+
+C-q: quoted-insert
+$endif
 
 #keys legend
 #\e -alt . soo \es = alt+s

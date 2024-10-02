@@ -1,6 +1,9 @@
 return {
-    "catppuccin/nvim", name = "catppuccin", priority = 1000,
-    lazy=true,
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    lazy=false,
+
     config = function ()
         require("catppuccin").setup({
             flavour = "auto", -- latte, frappe, macchiato, mocha
@@ -21,7 +24,8 @@ return {
             no_underline = false, -- Force no underline
             styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
                 comments = { "italic" }, -- Change the style of comments
-                conditionals = { "italic" },
+                --conditionals = { "italic" },
+                conditionals = {},
                 loops = {},
                 functions = {},
                 keywords = {},
@@ -56,6 +60,6 @@ return {
         -- mocha inbtwn
         -- macchiato darkest
         -- latte light
-        --vim.cmd.colorscheme "catppuccin-mocha"
+        vim.cmd.colorscheme "catppuccin"
     end
 }

@@ -8,7 +8,7 @@ keymap = [
 	{ on = [ "<Esc>" ], run = "escape",             desc = "Exit visual mode, clear selected, or cancel search" },
 	{ on = [ "q" ],     run = "quit",               desc = "Exit the process" },
 	{ on = [ "Q" ],     run = "quit --no-cwd-file", desc = "Exit the process without writing cwd-file" },
-	{ on = [ "<C-q>" ], run = "close",              desc = "Close the current tab, or quit if it is last tab" },
+	{ on = [ "<C-x>" ], run = "close",              desc = "Close the current tab, or quit if it is last tab" },
 	{ on = [ "<C-z>" ], run = "suspend",            desc = "Suspend the process" },
 
 	# Navigation
@@ -76,8 +76,10 @@ keymap = [
 	{ on = [ "D" ],         run = [ "escape --visual", "remove --permanently" ],       desc = "Permanently delete the files" },
 	{ on = [ "a" ],         run = "create",                                            desc = "Create a file or directory (ends with / for directories)" },
 	{ on = [ "r" ],         run = [ "escape --visual", "rename --cursor=before_ext" ], desc = "Rename a file or directory" },
+
+    # SHELL
 	{ on = [ ";" ],         run = [ "escape --visual", "shell --interactive" ],                      desc = "Run a shell --interactive command" },
-	{ on = [ ":" ],         run = [ "escape --visual", "shell --interactive" ],              desc = "Run a shell command (block the UI until the command finishes)" },
+	{ on = [ ":" ],         run = [ "escape --visual", "shell --block --interactive" ],              desc = "Run a shell command (block the UI until the command finishes)" },
 	#{ on = [ ":" ],         run = [ "escape --visual", "shell --block" ],              desc = "Run a shell command (block the UI until the command finishes)" },
 	{ on = [ "." ],         run = "hidden toggle",                                     desc = "Toggle the visibility of hidden files" },
 	{ on = [ "s" ],         run = "search fd",                                         desc = "Search files by name using fd" },

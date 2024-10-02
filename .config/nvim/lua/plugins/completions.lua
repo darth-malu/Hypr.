@@ -4,10 +4,26 @@ return{
         "hrsh7th/cmp-nvim-lsp"
     },
 
+    {
+        'hrsh7th/cmp-path'
+    },
+
+    {
+        'hrsh7th/cmp-cmdline'
+    },
+
+    {
+        'hrsh7th/cmp-buffer'
+    },
+
+    {
+        'neovim/nvim-lspconfig'
+    },
+
     --nvim-cmp
     {
     'hrsh7th/nvim-cmp',
-    event = "InsertEnter",
+    --event = "InsertEnter",
     config = function()
         -- Set up nvim-cmp.
         local cmp = require'cmp'
