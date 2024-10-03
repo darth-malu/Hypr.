@@ -43,6 +43,8 @@ vim.g.mapleader=' '
 -- save file, custom
 map('n', "<A-;>", ':w <CR>', opts)
 
+map({'n'}, "<leader>r", ':term python % <CR>', opts)
+
 -- split navigatorrr
 -- down
 --map('n', "<C-j>", '<C-w>j', opts)

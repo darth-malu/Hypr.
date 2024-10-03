@@ -74,13 +74,13 @@ player_state_color = 31
 ######### -> song playing
 #statusbar_color = 12
 #statusbar_color = 49
-#statusbar_color = 221
+statusbar_color = 221
 #statusbar_color = 180
 #statusbar_color = 228
 #statusbar_color = 158
 #statusbar_color = 124
 #statusbar_color = 122
-statusbar_color = 122
+# statusbar_color = 122
 
 # intereesting lime light green
 #statusbar_color = 152

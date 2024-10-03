@@ -74,31 +74,32 @@ case $- in
             workon_env_indicator() {
                 if [ -n "$VIRTUAL_ENV" ];then
                     x="${VIRTUAL_ENV##*/}"
-                    printf '%s \n' "$x"
+                    printf '%s' "$x"
                 fi
             }
 
             #217 -pink
-            CLEAR="\[$(tput el1)\]"
-            RESET="\[$(tput sgr0)\]"
-            DARK_GREEN="\[$(tput setaf 43 bold)\]"
             # GREEN="\[$(tput setaf 2)\]"
             # BRIGHTER_GREEN="\[$(tput setaf 23)\]"
             # HOT_PINK="\[$(tput setaf 204)\]"
             # TEXT_GREEN="\[$(tput setaf 36)\]"
             # NICE_RED="\[$(tput setaf 161)\]"
+            # PS1="$CLEAR$DARK_GREEN$LEFT_PROMPT$RESET$GITT$EXITT\n$DARK_GREEN$CARET$RESET"
+
+            DARK_GREEN="\[$(tput setaf 43 bold)\]"
             GIT_COLOR="\[$(tput setaf 183)\]"
             BOLD="\[$(tput bold)\]"
             DIM="\[$(tput dim)\]"
 
-            GITT="$GIT_COLOR\[\$(parse_git_branch)\$(parse_git_dirty)\]"
-            EXITT="\[\$(exitstatus)\]"
-            WORK="\[\$(workon_env_indicator)\]"
-            CARET=" "
-            GIT_PWD="\n$DIM$BOLD\[\w\] $RESET$EXITT$RESET"
+            CLEAR="\[$(tput el1)\]"
+            RESET="\[$(tput sgr0)\]"
+            GIT_STATUS="$GIT_COLOR\[\$(parse_git_branch)\$(parse_git_dirty)\]$RESET"
+            EXIT_STATUS="\[\$(exitstatus)\]"
+            WORK_ENV="$GIT_COLOR\[\$(workon_env_indicator)\]$RESET "
+            CARET="$DARK_GREEN $RESET"
+            DIM_BOLD_PWD="$DARK_GREEN$DIM$BOLD\[\w\] $RESET$EXIT_STATUS$RESET" # exit statu has its own color
 
-            # PS1="$CLEAR$DARK_GREEN$LEFT_PROMPT$RESET$GITT$EXITT\n$DARK_GREEN$CARET$RESET"
-            PS1="$CLEAR$DARK_GREEN$GIT_PWD$RESET$GITT$EXITT\n$WORK$DARK_GREEN$CARET$RESET"
+            PS1="$CLEAR\n$WORK_ENV$DIM_BOLD_PWD$GIT_STATUS$RESET\n$RESET$CARET"
         }
 
         PS2="* -->"
@@ -133,7 +134,7 @@ case $- in
             #█░▀█ ▀▄▀ █ █░▀░█
             alias v="nvim"
             alias sv="sudo nvim"
-            alias hypr="cd ~/.config/hypr/hypr-configs"
+            alias hypr="cd ~/.config/hypr/confolder"
             #alias mime="nvim ~/.config/mimeapps.list"
             alias bashv="nvim ~/.bashrc"
 
@@ -231,7 +232,7 @@ case $- in
             function yy() {
                 local yazi_tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
                 yazi "$@" --cwd-file="$yazi_tmp"
-                if cwd="$(cat -- "$yazi_tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+                if cwd="$(cat -- "$yazi_tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$DIM_BOLD_PWD" ]; then
                     builtin cd -- "$cwd"
                 fi
                 rm -f -- "$yazi_tmp"
