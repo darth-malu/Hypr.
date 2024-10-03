@@ -160,7 +160,7 @@ case $- in
             fuego () {
                 #wl-copy -n < ~/Documents/rupurupu.txt && echo "Copy success :)"
                 #wl-copy -n < ~/Documents/fragger.txt && echo "Copy success :)"
-                wl-copy -n < ~/Documents/frag.txt && echo "Copy success :)"
+                wl-copy -n < ~/Documents/talk.txt && echo "Copy success :)"
             }
 
             #lusb () {
